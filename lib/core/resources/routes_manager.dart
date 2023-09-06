@@ -1,3 +1,4 @@
+import 'package:father_delivery_user/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -6,8 +7,6 @@ import 'strings_manager.dart';
 
 class Routes {
   static const String splashRoute = "/";
-  static const String onBoardingRoute = "/onBoarding";
-  static const String languageRoute = "/language";
   static const String loginRoute = "/login";
   static const String mapRoute = "/map";
   static const String registerRoute = "/register";
@@ -61,6 +60,7 @@ class Routes {
   appRoutes(context) {
     return {
       Routes.splashRoute: (context) => const SplashView(),
+      Routes.loginRoute: (context) => const LoginView(),
 
     };
   }
@@ -70,6 +70,7 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashRoute:return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.loginRoute:return MaterialPageRoute(builder: (_) => const LoginView());
 
       default:return unDefinedRoute();
     }

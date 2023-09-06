@@ -19,7 +19,7 @@ ThemeData getApplicationTheme() {
     // ripple effect color
     splashColor: ColorManager.gray100,
     // scaffold Background color
-    scaffoldBackgroundColor:ColorManager.primaryGray,
+    scaffoldBackgroundColor:ColorManager.whiteColor,
 
 
     // cardview theme
@@ -55,16 +55,15 @@ ThemeData getApplicationTheme() {
             backgroundColor: ColorManager.primaryBlack,
 
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppSize.s12)))),
+                borderRadius: BorderRadius.circular(AppSize.s5)))),
 
     textTheme: TextTheme(
-        // titleLarge: getExtraBoldStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s21,),
-        bodyLarge:  getBoldStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s16),
-        bodyMedium:getMediumStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s14),
-        bodySmall: getRegularStyle(color: ColorManager.primaryBlack),
+      displayLarge:  getBoldStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s16),
+      displayMedium : getSemiBoldStyle(color: ColorManager.primaryBlack,fontSize: FontSize.s16),
+      headlineMedium: getMediumStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s14),
+      displaySmall:getRegularStyle(color: ColorManager.primaryBlack),
+
         // headlineLarge: getSemiBoldStyle(color:ColorManager.primaryBlack, fontSize: FontSize.s16)
-
-
         // headlineLarge:getExtraBoldStyle(color: ColorManager.black, fontSize: FontSize.s16),
         // labelLarge: getSemiExtraBoldStyle(color:ColorManager.darkGrey, fontSize: FontSize.s16),
         // displayLarge: getBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s16),

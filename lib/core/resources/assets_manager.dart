@@ -30,50 +30,10 @@ class ImageAssets {
 }
 
 class SvgAssets {
-  static const String background = "$svgPath/background.svg";
-  static const String googleIcon = "$svgPath/google_icon.svg";
-  static const String homeIcon = "$svgPath/home_icon.svg";
-  static const String accountIcon = "$svgPath/account_icon.svg";
-  static const String cartIcon = "$svgPath/cart_icon.svg";
-  static const String activeCategoriesIcon = "$svgPath/categories_icon_active.svg";
-  static const String activeHomeIcon = "$svgPath/home_icon_active.svg";
-  static const String activeAccountIcon = "$svgPath/account_icon_active.svg";
-  static const String activeCartIcon = "$svgPath/cart_active_icon.svg";
-  static const String iconApple = "$svgPath/apple_icon.svg";
-  static const String iconFacebook = "$svgPath/facebook_icon.svg";
-  static const String filterIcon = "$svgPath/filter_icon.svg";
-  static const String warrantyIcon = "$svgPath/warranty_icon.svg";
-  static const String returnIcon = "$svgPath/return_icon.svg";
-  static const String gift = "$svgPath/gift.svg";
-  static const String ordersIcon = "$svgPath/orders_icon.svg";
-  static const String communityActivitiesIcon = "$svgPath/community_activities_icon.svg";
-  static const String profileIcon = "$svgPath/profile_icon.svg";
-  static const String gorillaWalletIcon = "$svgPath/gorilla_wallet_icon.svg";
-  static const String addressIcon = "$svgPath/address_icon.svg";
-  static const String notificationsIcon = "$svgPath/notifications_icon.svg";
-  static const String changeLanguageIcon = "$svgPath/change_langu_icon.svg";
-  static const String paymentIcon = "$svgPath/payment_icon.svg";
-  static const String contactUsIcon = "$svgPath/contact_us_icon.svg";
-  static const String rateIcon = "$svgPath/rate_icon.svg";
-  static const String aboutIcon = "$svgPath/about_icon.svg";
-  static const String signOutIcon = "$svgPath/sign_out_icon.svg";
-  static const String trashIcon = "$svgPath/trash_icon.svg";
-  static const String contactUs = "$svgPath/contact_us.svg";
-  static const String linkedIn = "$svgPath/linken_in.svg";
-  static const String twitter = "$svgPath/twitter.svg";
-  static const String instagram = "$svgPath/instagram.svg";
-  static const String facebook = "$svgPath/facebook.svg";
-  static const String locationIcon = "$svgPath/location_icon.svg";
-  static const String cashIcon = "$svgPath/cash_icon.svg";
-  static const String scheduledDeliveryIcon = "$svgPath/scheduled_delivery_icon.svg";
-  static const String deliveryIcon = "$svgPath/delivery_icon.svg";
-  static const String callIcon = "$svgPath/call_icon.svg";
-  static const String leaveAtDoorIcon = "$svgPath/leave_at_door_icon.svg";
-  static const String dontRingIcon = "$svgPath/dont_ring_icon.svg";
-  static const String walletIcon = "$svgPath/wallet_icon.svg";
-  static const String onlinePaymentIcon = "$svgPath/online_payment_icon.svg";
-  static const String personIcon = "$svgPath/person_icon.svg";
-  static const String notLogin = "$svgPath/notLogin.svg";
+  static const String authTopShape = "$svgPath/auth_top_shape.svg";
+  static const String deliveryWorker = "$svgPath/delivery_worker.svg";
+  static const String saudiFlag = "$svgPath/saudi_flag.svg";
+
 
 
 }

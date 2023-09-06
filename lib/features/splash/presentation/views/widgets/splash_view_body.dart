@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/resources/constants_manager.dart';
 import '../../../../../core/resources/routes_manager.dart';
-import '../../../../../core/utils/shard_pref.dart';
 import '../../../../../core/utils/size_config.dart';
 import 'sliding_image.dart';
 
@@ -59,18 +58,18 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: AppConstants.splashDelay), () {
-      Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
-      CacheHelper.isOnBoardingScreenViewed().then((isOnBoardingScreenViewed) =>  {
-                if (isOnBoardingScreenViewed)
-                {
-                  // navigate to language screen
-                  Navigator.pushReplacementNamed(context, Routes.loginRoute)
-                } else {
-                  // navigate to onboarding screen
-                  Navigator.pushReplacementNamed(context, Routes.onBoardingRoute)
-                }
-              });
-
+      Navigator.pushReplacementNamed(context, Routes.loginRoute);
+      // CacheHelper.isOnBoardingScreenViewed().then((isOnBoardingScreenViewed) =>  {
+      //           if (isOnBoardingScreenViewed)
+      //           {
+      //             // navigate to language screen
+      //             Navigator.pushReplacementNamed(context, Routes.loginRoute)
+      //           } else {
+      //             // navigate to onboarding screen
+      //             Navigator.pushReplacementNamed(context, Routes.onBoardingRoute)
+      //           }
+      //         });
+      //
         });
   }
 }

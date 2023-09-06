@@ -11,11 +11,12 @@ class RadiantGradientMask extends StatelessWidget {
     return ShaderMask(
       blendMode:BlendMode.srcATop ,
       shaderCallback: (bounds) =>  LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
+        begin: Alignment.centerRight,
+        end: Alignment.centerLeft,
+         tileMode: TileMode.decal,
         colors: colors??[
-          const Color(0xff8643FF),
-          const Color(0xff4136F1),
+          const Color(0xffFF8C69),
+          const Color(0xffEF554A),
         ],
       ).createShader(bounds),
       child: child,

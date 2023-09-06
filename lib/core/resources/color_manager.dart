@@ -30,9 +30,10 @@ class ColorManager {
 
   //TODO:Text Field Colors
   static const Color cursorColor = Color(0xff363A40);
+  static const Color hintTextColor = Color(0xff909090);
 
   //TODO:Shadow Colors
-  static const Color shadowColor = Color(0x0d000000);
+  static const Color shadowColor = Color(0x29000000);
   static const Color shadowColor2 = Color(0x1A103262);
   static const Color shadowColor3 = Color(0x13ffffff);
 

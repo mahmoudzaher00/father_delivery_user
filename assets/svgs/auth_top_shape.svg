@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="428" height="411" viewBox="0 0 428 411">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_399" data-name="Rectangle 399" width="428" height="411" transform="translate(-0.002 110)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Subtraction_3" data-name="Subtraction 3" d="M559,586H437.863A17.005,17.005,0,0,1,422.1,575.376c-.252-3.8-.668-7.634-1.236-11.388v-1h-.155C410.24,497.211,354.428,449.47,288,449.47S165.758,497.211,155.29,562.989h-.155v1c-.569,3.754-.985,7.586-1.237,11.388A17,17,0,0,1,138.135,586H17A17,17,0,0,1,0,569V0H576V569a17,17,0,0,1-17,17Z" transform="translate(0.343 -0.362)" fill="#4a4b4d" opacity="0.35"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(0.002 -110)" clip-path="url(#clip-path)">
+    <g id="Organe_top_shape" data-name="Organe top shape" transform="translate(-74.343 -108.638)">
+      <path id="Subtraction_2" data-name="Subtraction 2" d="M559,586H437.863A17.005,17.005,0,0,1,422.1,575.376c-.252-3.8-.668-7.634-1.236-11.388v-1h-.155C410.24,497.211,354.428,449.47,288,449.47S165.758,497.211,155.29,562.989h-.155v1c-.569,3.754-.985,7.586-1.237,11.388A17,17,0,0,1,138.135,586H17A17,17,0,0,1,0,569V0H576V569a17,17,0,0,1-17,17Z" transform="translate(0.343 36.638)" fill="#4a4b4d" opacity="0.28"/>
+      <path id="Shaped_subtraction" data-name="Shaped subtraction" d="M559,586H437.863A17.005,17.005,0,0,1,422.1,575.376c-.252-3.8-.668-7.634-1.236-11.388v-1h-.155C410.24,497.211,354.428,449.47,288,449.47S165.758,497.211,155.29,562.989h-.155v1c-.569,3.754-.985,7.586-1.237,11.388A17,17,0,0,1,138.135,586H17A17,17,0,0,1,0,569V0H576V569a17,17,0,0,1-17,17Z" transform="translate(0.343 -0.362)" fill="#ef554a"/>
+      <g id="Background_objects" data-name="Background objects" clip-path="url(#clip-path-2)">
+        <g id="background_objects-2" data-name="background objects" transform="translate(-135.095 -244.091)">
+          <circle id="Ellipse_3" data-name="Ellipse 3" cx="136.5" cy="136.5" r="136.5" transform="translate(41.437 159.729)" fill="#fff" opacity="0.14"/>
+          <circle id="Ellipse_5" data-name="Ellipse 5" cx="222" cy="222" r="222" transform="translate(389.437 -0.271)" fill="#fff" opacity="0.14"/>
+          <circle id="Ellipse_4" data-name="Ellipse 4" cx="80.5" cy="80.5" r="80.5" transform="translate(167.438 362.729)" fill="#fff" opacity="0.14"/>
+          <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="14" cy="13.5" rx="14" ry="13.5" transform="translate(366.437 425.729)" fill="#fff" opacity="0.21"/>
+          <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="9.5" cy="10" rx="9.5" ry="10" transform="translate(370.437 580.729)" fill="#fff" opacity="0.21"/>
+          <circle id="Ellipse_9" data-name="Ellipse 9" cx="16" cy="16" r="16" transform="translate(689.437 747.729)" fill="#fff" opacity="0.21"/>
+          <circle id="Ellipse_7" data-name="Ellipse 7" cx="22" cy="22" r="22" transform="translate(479.437 443.729)" fill="#fff" opacity="0.21"/>
+          <circle id="Ellipse_2" data-name="Ellipse 2" cx="178" cy="178" r="178" transform="translate(0.437 580.729)" fill="#fff" opacity="0.14"/>
+          <g id="Group_911" data-name="Group 911" transform="translate(478.97 477.435)" opacity="0.18">
+            <path id="Path_2987" data-name="Path 2987" d="M317.7,197.745c0,6.4-5.7,11.632-12.651,11.632H23.137c-6.953,0-12.651-5.228-12.651-11.632,0-6.378,5.7-11.58,12.651-11.58H305.051C312,186.165,317.7,191.367,317.7,197.745ZM178.85,51.887a14.761,14.761,0,0,0-29.485-.078,117.636,117.636,0,0,1,29.485.078ZM293.706,175.892H34.482a130.014,130.014,0,0,1,259.224,0ZM149.26,67.492S76.592,83.333,54.9,163.79H82.369S97.582,96.69,149.26,67.492Z" transform="translate(-10.486 -37.824)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

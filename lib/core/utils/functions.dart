@@ -25,13 +25,7 @@ Future<void> makePhoneCall(String phoneNumber) async {
 
 
 
-// Future<void> makePhoneCall(String phoneNumber) async {
-//   final Uri launchUri = Uri(
-//     scheme: 'tel',
-//     path: phoneNumber,
-//   );
-//   await launchUrl(launchUri);
-// }
+
 
 Future<void> launchEmail(String email) async {
   final Uri emailUri = Uri(
@@ -43,16 +37,4 @@ Future<void> launchEmail(String email) async {
     await launchUrl(emailUri,mode: LaunchMode.externalApplication);
   }
 
-// void launchEmail2() async {
-//   final Uri emailUri = Uri(
-//     scheme: 'mailto',
-//     path: 'example@example.com', // Replace with the desired email address
-//     queryParameters: {'subject': 'Hello', 'body': 'Hi, there!'}, // Optional email subject and body
-//   );
-//
-//   if (await canLaunch(emailUri.toString())) {
-//     await launch(emailUri.toString());
-//   } else {
-//     throw 'Could not launch email';
-//   }
-// }
+

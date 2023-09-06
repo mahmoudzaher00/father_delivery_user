@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:father_delivery_user/core/app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,17 +9,16 @@ import 'core/app/app.dart';
 import 'core/app/di.dart';
 import 'core/resources/language_manager.dart';
 import 'core/utils/bloc_observer.dart';
-import 'core/utils/shard_pref.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   Bloc.observer = CustomBlocObserver();
-  CacheHelper.init();
   await initAppModule();
+  // Constants.systemUiOverlayStyle;
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
-      // const SystemUiOverlayStyle(statusBarColor: ColorManager.white)
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+
       );
   runApp(
     // MultiBlocProvider(
@@ -46,7 +46,7 @@ void main() async {
         supportedLocales: const [ARABIC_LOCAL, ENGLISH_LOCAL],
         path: ASSET_PATH_LOCALISATIONS,
         child: ScreenUtilInit(
-          designSize: const Size(375, 812),
+          designSize: const Size(428, 926),
           builder: (context, child) => child!,
           child: MyApp(),
         ),

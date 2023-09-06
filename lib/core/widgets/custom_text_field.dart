@@ -1,3 +1,4 @@
+import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -50,13 +51,16 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: height,
       width: width??MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        boxShadow: ContainerManager.shadow
+      ),
       child: TextFormField(
         controller: controller,
         enableSuggestions: true,
-        style:inputTextStyle?? Theme.of(context).textTheme.bodyMedium!,
+        style:inputTextStyle?? Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 20),
         cursorColor: cursorColor??ColorManager.cursorColor,
         keyboardType: textType ?? TextInputType.text,
         inputFormatters: inputFormatters,
@@ -65,27 +69,28 @@ class CustomTextField extends StatelessWidget {
         decoration:  InputDecoration(
           // floatingLabelBehavior: FloatingLabelBehavior.never,
           hintText: hintText??'',
+
           errorMaxLines: errorMaxLines??1,
-          errorStyle:errorTextStyle?? Theme.of(context).textTheme.bodySmall!.copyWith(color: ColorManager.errorColor,fontSize: FontSize.s10),
+          errorStyle:errorTextStyle?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.errorColor,fontSize: FontSize.s10),
           labelText: labelText,
           labelStyle: labelStyle ?? Theme.of(context).textTheme.bodySmall!.copyWith(color: ColorManager.gray300, fontSize: FontSize.s10),
-          hintStyle: hintStyle ?? Theme.of(context).textTheme.bodySmall!.copyWith(color: ColorManager.gray300, fontSize: FontSize.s12),
-          fillColor: fillColorTextFiled ?? ColorManager.whiteColor,
+          hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.hintTextColor, fontSize: FontSize.s20),
+          fillColor: fillColorTextFiled ?? ColorManager.primaryGray,
           filled: filledColorTextFiled  ?? true,
           prefixIcon: prefixIconWidget,
           suffixIcon: suffixIconWidget,
           enabledBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color:enabledBorderColor??ColorManager.gray200, width: widthBorder??1),
-            borderRadius: BorderRadius.circular(enabledBorderRadius??AppSize.s12),
+            borderSide:  BorderSide(color:enabledBorderColor??ColorManager.primaryGray, width: widthBorder??1),
+            borderRadius: BorderRadius.circular(enabledBorderRadius??AppSize.s5),
           ),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(focusedBorderRadius??AppSize.s12),
-              borderSide:  BorderSide(color: focusedBorderColor??ColorManager.gray200, width: widthBorder??AppSize.s1)),
+              borderRadius: BorderRadius.circular(focusedBorderRadius??AppSize.s5),
+              borderSide:  BorderSide(color: focusedBorderColor??ColorManager.primaryGray, width: widthBorder??AppSize.s1)),
           errorBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: ColorManager.errorColor, width: AppSize.s1),
-              borderRadius: BorderRadius.circular(errorBorderRadius??AppSize.s12)),
+              borderRadius: BorderRadius.circular(errorBorderRadius??AppSize.s5)),
           focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(focusedErrorBorderRadius??AppSize.s12),
+              borderRadius: BorderRadius.circular(focusedErrorBorderRadius??AppSize.s5),
               borderSide: const BorderSide(color: ColorManager.errorColor, width: AppSize.s1)
           ),
           contentPadding: EdgeInsets.symmetric(horizontal: AppPadding.p10, vertical: vertical??AppPadding.p12),

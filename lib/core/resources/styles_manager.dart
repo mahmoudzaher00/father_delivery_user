@@ -25,10 +25,10 @@ TextStyle getMediumStyle(
 
 // semi bold style
 
-// TextStyle getSemiBoldStyle(
-//     {double fontSize = FontSize.s15, required Color color}) {
-//   return _getTextStyle(fontSize, FontWeightManager.semiExtraBold, color);
-// }
+TextStyle getSemiBoldStyle(
+    {double fontSize = FontSize.s16, required Color color}) {
+  return _getTextStyle(fontSize, FontWeightManager.semiExtraBold, color);
+}
 
 // bold style
 
