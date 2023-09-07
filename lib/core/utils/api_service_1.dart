@@ -7,7 +7,7 @@ const String AUTHORIZATION = "authorization";
 const String DEFAULT_LANGUAGE = "language";
 
 class ApiService1 {
-  bool test=false;
+  bool test= false;
   final _baseUrl = 'http://fomoisreal-001-site9.btempurl.com/api/v1/';
   // final _baseUrl1 =  ;
   final Dio _dio;
@@ -40,6 +40,15 @@ class ApiService1 {
       return {'data':response.data};
     }else {
       print('s');
+      return response.data;
+    }
+  }
+
+  Future<Map<String, dynamic>> getMapSearchData({required String endPoint,Map<String,dynamic>? parameters,String? lang}) async {
+    var response = await Dio().get(endPoint,queryParameters: parameters??{});
+    if(response.data is! Map){
+      return {'data':response.data};
+    }else {
       return response.data;
     }
   }

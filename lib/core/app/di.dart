@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:father_delivery_user/core/utils/api_service_1.dart';
 import 'package:get_it/get_it.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-import '../utils/api_service.dart';
+import '../../features/map/presntation/manager/map_cubit.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -23,7 +23,7 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
 
   //TODO:Cubit instance
-  // instance.registerLazySingleton<LanguageBloc>(() => LanguageBloc());
+   instance.registerLazySingleton<MapCubit>(() => MapCubit());
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   // // instance.registerFactory<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
@@ -69,7 +69,7 @@ Future<void> initAppModule() async {
   //     () => NetworkInfoImpl(InternetConnectionChecker()));
 
   // dio factory
-  instance.registerSingleton<ApiService>(ApiService(Dio()));
+  instance.registerSingleton<ApiService1>(ApiService1(Dio()));
 
 
   // instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));

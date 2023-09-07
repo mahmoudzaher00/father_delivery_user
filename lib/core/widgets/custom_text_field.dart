@@ -25,6 +25,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefixIconWidget;
   final Widget? suffixIconWidget;
   final bool? obscure;
+  final bool isShadow;
   final double? height;
   final double? width;
   final double? vertical;
@@ -44,7 +45,9 @@ class CustomTextField extends StatelessWidget {
   final int? errorMaxLines;
 
 
-  const CustomTextField({super.key, this.controller, this.fillColorTextFiled, this.inputFormatters, this.filledColorTextFiled, this.textType, this.hintStyle, this.hintText, this.onChangedFunction, this.validatorFunction, this.onEditingCompleteFunction, this.focusNode, this.textInputAction, this.prefixIconWidget, this.suffixIconWidget, this.obscure, this.height, this.width, this.vertical, this.labelText, this.labelStyle, this.cursorColor, this.onFieldSubmitted, this.focusedBorderColor, this.enabledBorderColor, this.widthBorder, this.maxLines, this.errorTextStyle, this.enabledBorderRadius, this.focusedBorderRadius, this.inputTextStyle, this.focusedErrorBorderRadius, this.errorBorderRadius, this.errorMaxLines});
+  const CustomTextField({super.key, this.controller, this.fillColorTextFiled, this.inputFormatters, this.filledColorTextFiled, this.textType, this.hintStyle, this.hintText, this.onChangedFunction, this.validatorFunction, this.onEditingCompleteFunction, this.focusNode, this.textInputAction, this.prefixIconWidget, this.suffixIconWidget, this.obscure, this.height, this.width, this.vertical, this.labelText, this.labelStyle, this.cursorColor, this.onFieldSubmitted, this.focusedBorderColor, this.enabledBorderColor, this.widthBorder, this.maxLines, this.errorTextStyle, this.enabledBorderRadius, this.focusedBorderRadius, this.inputTextStyle, this.focusedErrorBorderRadius, this.errorBorderRadius, this.errorMaxLines,
+  this.isShadow = true
+  });
 
 
 
@@ -55,7 +58,7 @@ class CustomTextField extends StatelessWidget {
       height: height,
       width: width??MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        boxShadow: ContainerManager.shadow
+        boxShadow: isShadow ? ContainerManager.shadow:ContainerManager.noShadow
       ),
       child: TextFormField(
         controller: controller,
