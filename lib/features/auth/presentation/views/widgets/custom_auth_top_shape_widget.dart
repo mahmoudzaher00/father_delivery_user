@@ -39,7 +39,7 @@ class CustomStackedTopShapeWidget extends StatelessWidget {
           ),
         ),
         if(isHaveTopWidget!)
-          CustomSkipLoginButtonWidget()
+          const CustomSkipLoginButtonWidget()
 
       ],
     );

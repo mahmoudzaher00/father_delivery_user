@@ -39,7 +39,7 @@ dependencies:
   dropdown_button2: ^2.1.4
 
   # Otp Package
-  pin_code_fields: ^7.4.0
+  pinput: ^3.0.1
 
   # Toast and output print
   fluttertoast: ^8.2.2

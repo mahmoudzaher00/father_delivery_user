@@ -1,6 +1,7 @@
 import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 import '../resources/color_manager.dart';
@@ -60,8 +61,8 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         enableSuggestions: true,
-        style:inputTextStyle?? Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 20),
-        cursorColor: cursorColor??ColorManager.cursorColor,
+        style:inputTextStyle?? Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 20.sp),
+        cursorColor: cursorColor??ColorManager.primaryBlack,
         keyboardType: textType ?? TextInputType.text,
         inputFormatters: inputFormatters,
 

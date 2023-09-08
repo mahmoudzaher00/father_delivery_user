@@ -47,7 +47,6 @@ ThemeData getApplicationTheme() {
         buttonColor: ColorManager.gray400,
         splashColor: ColorManager.gray100
     ),
-
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -116,7 +115,8 @@ ThemeData getApplicationTheme() {
     //             BorderSide(color: ColorManager.primaryBlue, width: AppSize.s1_5),
     //         borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)))),
     textSelectionTheme: const TextSelectionThemeData(
-        cursorColor: ColorManager.primaryBlack
+      selectionColor: ColorManager.primaryOrange,
+      selectionHandleColor: ColorManager.primaryOrange,
     ),
     // label style
   );

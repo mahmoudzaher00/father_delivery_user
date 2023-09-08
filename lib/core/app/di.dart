@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:father_delivery_user/features/auth/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:father_delivery_user/features/auth/presentation/manager/register_cubit/register_cubit.dart';
+import 'package:father_delivery_user/features/auth/presentation/views/auth_input_data.dart';
 import 'package:get_it/get_it.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,13 +22,16 @@ Future<void> initAppModule() async {
 
 
   // app prefs instance
-
   instance.registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
+
+  //TODO:Generics instance
+  instance.registerLazySingleton<AuthInputData>(() => AuthInputData());
 
   //TODO:Cubit instance
   // instance.registerLazySingleton<LanguageBloc>(() => LanguageBloc());
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
-  // // instance.registerFactory<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
+  instance.registerFactory<LoginCubit>(() => LoginCubit());
+  instance.registerFactory<RegisterCubit>(() => RegisterCubit());
   // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<OtpBloc>(() => OtpBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<MainBloc>(() => MainBloc());

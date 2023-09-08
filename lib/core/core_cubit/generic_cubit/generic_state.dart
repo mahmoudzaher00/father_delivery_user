@@ -1,5 +1,4 @@
-part of 'auth_generic_bloc.dart';
-
+part of 'generic_cubit.dart';
 
 abstract class GenericState<T> extends Equatable {
   final bool change;
@@ -16,8 +15,8 @@ class GenericInitial<T> extends GenericState<T> {
 }
 
 class GenericUpdate<T> extends GenericState<T> {
-
-  GenericUpdate({required bool change, required T data}) : super(change: change, data: data);
+  GenericUpdate({required bool change, required T data})
+      : super(change: change, data: data);
 
   @override
   List<Object> get props => [change];
