@@ -3,6 +3,7 @@ const String svgPath = "assets/svgs";
 const String jsonPath = "assets/json";
 
 class ImageAssets {
+  // static const String mapMarker = "$imagePath/map_marker.png";
   static const String mapMarker = "$imagePath/map_pin.png";
   static const String mobile = "$imagePath/mobile.png";
   static const String mobile1 = "$imagePath/mobile_1.png";

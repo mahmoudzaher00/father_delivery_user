@@ -1,10 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:father_delivery_user/core/utils/api_service_1.dart';
+import 'package:father_delivery_user/features/user_locations/data/repository/user_locations_repo_impl.dart';
+import 'package:father_delivery_user/features/user_locations/presentation/views/user_locations_input_data.dart';
 import 'package:get_it/get_it.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../features/map/presntation/manager/map_cubit.dart';
+import '../../features/auth/presentation/manager/login_cubit/login_cubit.dart';
+import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
+import '../../features/auth/presentation/views/auth_input_data.dart';
+import '../core_cubit/map_cubit/map_cubit.dart';
+import '../utils/api_service_1.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -24,9 +28,10 @@ Future<void> initAppModule() async {
 
   //TODO:Generics instance
   instance.registerLazySingleton<AuthInputData>(() => AuthInputData());
+  instance.registerLazySingleton<UserLocationsInputData>(() => UserLocationsInputData());
 
   //TODO:Cubit instance
-   instance.registerLazySingleton<MapCubit>(() => MapCubit());
+   instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   instance.registerFactory<LoginCubit>(() => LoginCubit());
   instance.registerFactory<RegisterCubit>(() => RegisterCubit());
@@ -83,8 +88,8 @@ Future<void> initAppModule() async {
   // instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
 
 
-  //repository
-  // instance.registerSingleton<AuthRepoImpl>(AuthRepoImpl(instance.get<ApiService>()));
+  // repository
+  instance.registerSingleton<UserLocationsRepoImpl>(UserLocationsRepoImpl(instance.get<ApiService1>()));
   // instance.registerSingleton<UserAddressRepoImpl>(UserAddressRepoImpl(instance.get<ApiService>()));
   // instance.registerSingleton<MapRepoImpl>(MapRepoImpl(instance.get<ApiService1>()));
   // instance.registerSingleton<MainRepoImpl>(MainRepoImpl(instance.get<ApiService>(),instance.get<ApiService1>()));

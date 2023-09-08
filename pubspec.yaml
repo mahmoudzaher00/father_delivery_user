@@ -51,6 +51,9 @@ dependencies:
   # Value equality
   equatable: ^2.0.5
 
+  # functional programming things
+  dartz: ^0.10.1
+
   #  Network and remote API
   dio: ^5.3.2
   url_launcher: ^6.1.11

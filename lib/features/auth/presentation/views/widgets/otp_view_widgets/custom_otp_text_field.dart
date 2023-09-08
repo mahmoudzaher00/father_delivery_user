@@ -1,6 +1,4 @@
-import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
-import 'package:father_delivery_user/features/auth/presentation/views/auth_input_data.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:pin_code_fields/pin_code_fields.dart';

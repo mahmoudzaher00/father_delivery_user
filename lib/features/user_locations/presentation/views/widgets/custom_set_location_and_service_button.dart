@@ -3,25 +3,31 @@ import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/elavated_button.dart';
-import 'package:father_delivery_user/features/map/presntation/manager/map_cubit.dart';
-import 'package:father_delivery_user/features/map/presntation/views/widgets/services_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-class MapButton extends StatelessWidget {
-  const MapButton({super.key,required this.controller});
-  final MapCubit controller;
+import 'package:flutter/material.dart';
+
+import '../user_locations_input_data.dart';
+import 'custom_services_widget.dart';
+
+class CustomSetLocationAndServiceButton extends StatelessWidget {
+  const CustomSetLocationAndServiceButton({super.key,});
   @override
   Widget build(BuildContext context) {
-    return MyElevatedButton(
-      width: SizeConfig.screenWidth,
-      borderRadius: BorderRadius.circular(AppSize.s8),
-      onPressed: () {
-        selectServicesDialog(context);
-      },
-      child: Text(
-          "أكد مكانك واختار الخدمة",
-          style: Theme.of(context).textTheme.displayLarge!.copyWith(color: ColorManager.whiteColor)
+    return Container(
+      color: Colors.transparent,
+      padding: const EdgeInsets.all(8.0),
+      child: MyElevatedButton(
+        width: SizeConfig.screenWidth,
+        height: 50,
+
+        borderRadius: BorderRadius.circular(AppSize.s8),
+        onPressed: () {
+          selectServicesDialog(context);
+        },
+        child: Text(
+            "أكد مكانك واختار الخدمة",
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(color: ColorManager.whiteColor)
+        ),
       ),
     );
   }
@@ -51,7 +57,7 @@ selectServicesDialog(BuildContext context) {
                   ListView.separated(
                       shrinkWrap: true,
                       physics: const BouncingScrollPhysics(),
-                      itemCount: instance<MapCubit>().servicesList.length,
+                      itemCount: instance<UserLocationsInputData>().servicesList.length,
                       itemBuilder: (context,i){
                         return ServicesWidget(index: i);
                         },

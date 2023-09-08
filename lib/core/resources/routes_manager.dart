@@ -1,12 +1,12 @@
 import 'package:father_delivery_user/features/auth/presentation/views/login_view.dart';
-import 'package:father_delivery_user/features/map/presntation/views/first_map.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/otp_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-import '../../features/home/presntation/views/HomeScreen.dart';
+import '../../features/home/presentation/views/HomeScreen.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
 
 class Routes {
@@ -62,7 +62,7 @@ class Routes {
   appRoutes(context) {
     return {
       Routes.splashRoute: (context) => const SplashView(),
-      Routes.mapRoute: (context) => const MapScreen(),
+      Routes.mapRoute: (context) =>  const InitialLocationMapView(),
       Routes.loginRoute: (context) => const LoginView(),
       Routes.homeRoute: (context) => const HomeView(),
       Routes.registerRoute: (context) => const RegisterView(),
@@ -76,7 +76,7 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashRoute:return MaterialPageRoute(builder: (_) => const SplashView());
-      case Routes.mapRoute:return MaterialPageRoute(builder: (_) => const MapScreen());
+      case Routes.mapRoute:return MaterialPageRoute(builder: (_) => const InitialLocationMapView());
       case Routes.loginRoute:return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.homeRoute:return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.registerRoute:return MaterialPageRoute(builder: (_) => const RegisterView());

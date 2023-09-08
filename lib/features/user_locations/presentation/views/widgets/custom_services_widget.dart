@@ -1,7 +1,7 @@
 import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/routes_manager.dart';
-import 'package:father_delivery_user/features/map/presntation/manager/map_cubit.dart';
+import 'package:father_delivery_user/features/user_locations/presentation/views/user_locations_input_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -29,11 +29,11 @@ class ServicesWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: ColorManager.gray100
               ),
-              child: SvgPicture.asset(instance<MapCubit>().servicesList[index].image!),
+              child: SvgPicture.asset(instance<UserLocationsInputData>().servicesList[index].image!),
             ),
             const SizedBox(width: AppSize.s40),
             Text(
-              instance<MapCubit>().servicesList[index].title!,
+              instance<UserLocationsInputData>().servicesList[index].title!,
               style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 14),
             )
           ],

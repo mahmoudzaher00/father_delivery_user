@@ -1,7 +1,7 @@
-class SearchData {
+class SearchDataModel {
   late List<Result> results;
 
-  SearchData.fromJson(Map<String, dynamic> json){
+  SearchDataModel.fromJson(Map<String, dynamic> json){
     results = List.from(json['features']??[]).map((e) => Result.fromJson(e)).toList();
   }
 }

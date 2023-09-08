@@ -4,7 +4,7 @@ import 'package:father_delivery_user/features/splash/presentation/manager/splash
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../features/map/presntation/manager/map_cubit.dart';
+import '../core_cubit/map_cubit/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
 import '../utils/snackbar_message.dart';
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<MapCubit>(create: (BuildContext context) => MapCubit()),
+        BlocProvider<MapCubit>(create: (BuildContext context) => instance<MapCubit>()..getCustomMarker(),lazy: false,),
         BlocProvider<SplashCubit>(create: (BuildContext context) => SplashCubit()),
       ],
 
