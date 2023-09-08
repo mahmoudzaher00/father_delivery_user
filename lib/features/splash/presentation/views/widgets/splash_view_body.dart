@@ -46,7 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
 
   void initSlidingAnimation(){
-    animationController = AnimationController(vsync: this,duration: const Duration(milliseconds:AppConstants.splashDelay));
+    animationController = AnimationController(vsync: this,duration: const Duration(milliseconds:AppConstants.splashAnimationDelay));
     slidingAnimation=Tween<Offset>(begin: const Offset(-1,0) ,end:Offset.zero).animate(animationController);
     animationController.forward();
     slidingAnimation.addListener(() {setState((){}); });

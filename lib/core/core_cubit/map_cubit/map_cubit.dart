@@ -29,6 +29,7 @@ class MapCubit extends Cubit<MapState> {
   //TODO:Map Inputs
   var emptyMarker = HashSet<Marker>();
   final Completer<GoogleMapController> googleMapCompleter = Completer<GoogleMapController>();
+  FocusNode textFieldFocusNode = FocusNode();
   BitmapDescriptor? customDestinationMarker;
   Position? currentPosition;
   CameraPosition? cameraPosition;
@@ -39,6 +40,9 @@ class MapCubit extends Cubit<MapState> {
   Marker marker = const Marker(markerId: MarkerId('location'),);
 
   //TODO:Ui functions
+  void updateTextFieldStatus(){
+    emit(UpdateTextFieldStatus(textFieldFocusNode.hasFocus));
+  }
   Marker customMarker(LatLng latLng) => Marker(
     markerId: const MarkerId('location'),
     position: latLng,
@@ -116,7 +120,7 @@ class MapCubit extends Cubit<MapState> {
   }
 
   //TODO:Apis functions
-  Future<void> fetchSearchData(value,) async {
+  Future<void> fetchSearchData(value) async {
     emit(FetchSearchDataLoadingState());
     var result = await userLocationRepo.fetchSearchData(value);
     result.fold((failure) {

@@ -45,6 +45,7 @@ class SvgAssets {
   static const String hamburger = "$svgPath/hamburger.svg";
   static const String openBox = "$svgPath/open_box_icon.svg";
   static const String storeIcon = "$svgPath/store_icon.svg";
+  static const String profileImage = "$svgPath/profile_image.svg";
 
 
 

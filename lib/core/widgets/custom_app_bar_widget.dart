@@ -53,8 +53,21 @@ class CustomAppBar2 extends StatelessWidget with PreferredSizeWidget {
   final double? appBarToolbarHeight;
   final bool? centerTitle;
   final double? appElevation;
+  final double? leadingWidth;
   final SystemUiOverlayStyle? systemOverlayStyle;
-  CustomAppBar2({Key? key, this.titleContent,this.systemOverlayStyle ,this.leadingWidget,this.actionsWidgets,this.appBarBackgroundColor,this.appBarToolbarHeight,this.appElevation,required this.automaticallyLeading,this.centerTitle}): preferredSize =  Size.fromHeight(appBarToolbarHeight!), super(key: key);
+  CustomAppBar2({Key? key,
+    this.titleContent,
+    this.systemOverlayStyle ,
+    this.leadingWidget,
+    this.actionsWidgets,
+    this.appBarBackgroundColor,
+    this.appBarToolbarHeight,
+    this.appElevation,
+    this.automaticallyLeading = false,
+    this.centerTitle,
+    this.leadingWidth,
+
+  }): preferredSize =  Size.fromHeight(appBarToolbarHeight!), super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,14 +77,14 @@ class CustomAppBar2 extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: automaticallyLeading,
       title: titleContent,
-      centerTitle: centerTitle??true,
+      centerTitle: centerTitle ?? true,
       leading: leadingWidget ,
       actions: actionsWidgets,
-      leadingWidth: 65,
-      elevation: appElevation??0,
-      backgroundColor: appBarBackgroundColor??Colors.white,
-      toolbarHeight:appBarToolbarHeight??80,
-      systemOverlayStyle: systemOverlayStyle,
+      leadingWidth: leadingWidth ?? 65,
+      elevation: appElevation?? 0,
+      backgroundColor: appBarBackgroundColor ?? Colors.white,
+      toolbarHeight: appBarToolbarHeight ?? 80,
+      //systemOverlayStyle: systemOverlayStyle,
 
       // shape: ContinuousRectangleBorder(
       //   borderRadius: const BorderRadius.only(
@@ -85,5 +98,6 @@ class CustomAppBar2 extends StatelessWidget with PreferredSizeWidget {
       // ),
     );
   }
+
 }
 
