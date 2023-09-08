@@ -1,12 +1,9 @@
+import 'package:father_delivery_user/core/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
-
-import 'sliding_text.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SlidingImage extends StatelessWidget {
-  const SlidingImage({
-    Key? key,
-    required this.slidingAnimation,
-  }) : super(key: key);
+  const SlidingImage({Key? key, required this.slidingAnimation}) : super(key: key);
 
   final Animation<Offset> slidingAnimation;
 
@@ -14,13 +11,8 @@ class SlidingImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTransition(
         position: slidingAnimation,
-        child: Column(
-          children: [
-            // SvgPicture.asset(SvgAssets.logo),
-            // SizedBox(height: 12.h,),
-            SlidingText(slidingAnimation: slidingAnimation,),
-          ],
-        )
+        child: SvgPicture.asset(SvgAssets.splashBike)
     );
   }
 }
+

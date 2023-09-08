@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:father_delivery_user/core/utils/location_permission.dart';
+import 'package:father_delivery_user/features/splash/presentation/manager/splash_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/map/presntation/manager/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
 import '../utils/snackbar_message.dart';
@@ -23,6 +27,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final AppPreferences _appPreferences = instance<AppPreferences>();
+  @override
+  void initState() {
+    super.initState();
+    openLocation();
+  }
 
   @override
   void didChangeDependencies() {
@@ -32,17 +41,24 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      title: 'Father Delivery',
-      navigatorKey: navigatorKey,
-      debugShowCheckedModeBanner: false,
-      routes: Routes().appRoutes(context),
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.splashRoute,
-      theme: getApplicationTheme(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<MapCubit>(create: (BuildContext context) => MapCubit()),
+        BlocProvider<SplashCubit>(create: (BuildContext context) => SplashCubit()),
+      ],
+
+      child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        title: 'Father Delivery',
+        navigatorKey: navigatorKey,
+        debugShowCheckedModeBanner: false,
+        routes: Routes().appRoutes(context),
+        onGenerateRoute: RouteGenerator.getRoute,
+        initialRoute: Routes.splashRoute,
+        theme: getApplicationTheme(),
+      ),
     );
   }
 }

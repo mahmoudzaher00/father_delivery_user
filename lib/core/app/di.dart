@@ -1,13 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:father_delivery_user/features/auth/presentation/manager/login_cubit/login_cubit.dart';
-import 'package:father_delivery_user/features/auth/presentation/manager/register_cubit/register_cubit.dart';
-import 'package:father_delivery_user/features/auth/presentation/views/auth_input_data.dart';
+import 'package:father_delivery_user/core/utils/api_service_1.dart';
 import 'package:get_it/get_it.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-import '../utils/api_service.dart';
+import '../../features/map/presntation/manager/map_cubit.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -22,13 +19,14 @@ Future<void> initAppModule() async {
 
 
   // app prefs instance
+
   instance.registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
 
   //TODO:Generics instance
   instance.registerLazySingleton<AuthInputData>(() => AuthInputData());
 
   //TODO:Cubit instance
-  // instance.registerLazySingleton<LanguageBloc>(() => LanguageBloc());
+   instance.registerLazySingleton<MapCubit>(() => MapCubit());
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   instance.registerFactory<LoginCubit>(() => LoginCubit());
   instance.registerFactory<RegisterCubit>(() => RegisterCubit());
@@ -75,7 +73,7 @@ Future<void> initAppModule() async {
   //     () => NetworkInfoImpl(InternetConnectionChecker()));
 
   // dio factory
-  instance.registerSingleton<ApiService>(ApiService(Dio()));
+  instance.registerSingleton<ApiService1>(ApiService1(Dio()));
 
 
   // instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
