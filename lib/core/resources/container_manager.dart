@@ -18,7 +18,7 @@ class ContainerManager {
   ];
   static List<BoxShadow> thirdShadow = [
     const BoxShadow(
-        color: ColorManager.shadowColor, offset: Offset(0, 0), blurRadius: 4,spreadRadius: 0)
+        color: Color(0xffFF8C69), offset: Offset(0, 0), blurRadius: 6,spreadRadius: 0)
   ];
   static List<BoxShadow> dropDownShadow = [
     const BoxShadow(

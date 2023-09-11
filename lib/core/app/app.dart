@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:father_delivery_user/core/utils/location_permission.dart';
-import 'package:father_delivery_user/features/splash/presentation/manager/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
+import '../utils/location_permission.dart';
 import '../utils/snackbar_message.dart';
 import 'app_prefs.dart';
 import 'di.dart';
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<MapCubit>(create: (BuildContext context) => instance<MapCubit>()..getCustomMarker(),lazy: false,),
-        BlocProvider<SplashCubit>(create: (BuildContext context) => SplashCubit()),
+        BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
       ],
 
       child: MaterialApp(

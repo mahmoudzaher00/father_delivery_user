@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../../core/app/di.dart';
 import '../../views/auth_input_data.dart';
@@ -10,6 +14,7 @@ part 'register_state.dart';
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(RegisterInitial());
   AuthInputData authInputData=AuthInputData();
+  //TODO:Register Ui Function
   void formatInput() {
     if (instance<AuthInputData>().registerPhoneController.text.isEmpty) {
       return;
@@ -32,5 +37,15 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
     emit(RegisterPhoneInputFormatState(formattedText));
 
+  }
+
+
+  @override
+  Future<void> close() {
+    // TODO: implement close
+    instance<AuthInputData>().registerPhoneController.removeListener(instance<RegisterCubit>().formatInput);
+    instance<AuthInputData>().registerPhoneController.dispose();
+
+    return super.close();
   }
 }

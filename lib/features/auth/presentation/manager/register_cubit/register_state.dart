@@ -17,3 +17,6 @@ class RegisterPhoneInputFormatState extends RegisterState {
   List<Object> get props => [phoneFormat];
 
 }
+class SetTechnicalImageFromCameraState extends RegisterState {}
+class SetTechnicalImageFromGalleryState extends RegisterState {}
+class DeleteTechnicalImageState extends RegisterState {}

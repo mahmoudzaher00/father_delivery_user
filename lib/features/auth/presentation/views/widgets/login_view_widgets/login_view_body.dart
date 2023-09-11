@@ -44,11 +44,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           final scrolled = constraints.scrollOffset > 0;
           return SliverAppBar(
             toolbarHeight: 65,
+            automaticallyImplyLeading: false,
             systemOverlayStyle: Constants.systemUiOverlayStyle,
             title: const CustomSkipLoginButtonWidget(),
             titleSpacing: scrolled?4:16,
             pinned: true,
-            expandedHeight: SizeConfig.screenHeight! * .44,
+            expandedHeight: SizeConfig.screenHeight! * .45+7,
             backgroundColor: scrolled ? ColorManager.primaryOrange : Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
                 expandedTitleScale: 1,
@@ -63,7 +64,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   children: [
                     if(!scrolled)
                       SizedBox(
-                        height: SizeConfig.screenHeight! * .44,
+                        height: SizeConfig.screenHeight! * .42,
                         width: SizeConfig.screenWidth,
                         child: SvgPicture.asset(
                           SvgAssets.authTopShape,

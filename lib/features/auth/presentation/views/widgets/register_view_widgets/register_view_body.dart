@@ -5,9 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../core/app/constants.dart';
+import '../../../../../../core/app/di.dart';
 import '../../../../../../core/resources/assets_manager.dart';
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/utils/size_config.dart';
+import '../../auth_input_data.dart';
 import '../custom_father_delivery_rich_text_widget.dart';
 import 'custom_go_login_text.dart';
 import 'custom_register_button.dart';
@@ -23,18 +25,9 @@ class RegisterViewBody extends StatefulWidget {
 class _RegisterViewBodyState extends State<RegisterViewBody> {
   @override
   void initState() {
-    // instance<AuthInputData>().registerPhoneController.addListener(instance<RegisterCubit>().formatInput);
-    context.read<RegisterCubit>().authInputData.registerPhoneController.addListener(context.read<RegisterCubit>().formatInput);
+    instance<AuthInputData>().registerPhoneController.addListener(instance<RegisterCubit>().formatInput);
+    // context.read<RegisterCubit>().authInputData.registerPhoneController.addListener(context.read<RegisterCubit>().formatInput);
     super.initState();
-  }
-  @override
-  void dispose() {
-    // instance<AuthInputData>().registerPhoneController.removeListener(instance<RegisterCubit>().formatInput);
-    context.read<RegisterCubit>().authInputData.registerPhoneController.removeListener(context.read<RegisterCubit>().formatInput);
-    context.read<RegisterCubit>().authInputData.registerPhoneController.dispose();
-
-    // instance<AuthInputData>().registerPhoneController.dispose();
-    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -47,7 +40,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
           titleSpacing: scrolled?4:16,
           pinned: true,
           automaticallyImplyLeading: false,
-          expandedHeight: SizeConfig.screenHeight! * .44,
+          expandedHeight: SizeConfig.screenHeight! * .45+7,
           backgroundColor: scrolled ? ColorManager.primaryOrange : Colors.transparent,
           flexibleSpace: FlexibleSpaceBar(
               expandedTitleScale: 1,
@@ -62,7 +55,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 children: [
                   if(!scrolled)
                     SizedBox(
-                      height: SizeConfig.screenHeight! * .44,
+                      height: SizeConfig.screenHeight! * .42,
                       width: SizeConfig.screenWidth,
                       child: SvgPicture.asset(
                         SvgAssets.authTopShape,

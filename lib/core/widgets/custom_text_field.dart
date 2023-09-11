@@ -78,7 +78,7 @@ class CustomTextField extends StatelessWidget {
           errorStyle:errorTextStyle?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.errorColor,fontSize: FontSize.s10),
           labelText: labelText,
           labelStyle: labelStyle ?? Theme.of(context).textTheme.bodySmall!.copyWith(color: ColorManager.gray300, fontSize: FontSize.s10),
-          hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.hintTextColor, fontSize: FontSize.s20),
+          hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.borderColor, fontSize: FontSize.s20.sp),
           fillColor: fillColorTextFiled ?? ColorManager.primaryGray,
           filled: filledColorTextFiled  ?? true,
           prefixIcon: prefixIconWidget,

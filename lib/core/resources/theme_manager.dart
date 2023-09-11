@@ -16,6 +16,7 @@ ThemeData getApplicationTheme() {
     androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
     useMaterial3: true,
 
+
     // ripple effect color
     splashColor: ColorManager.gray100,
     // scaffold Background color

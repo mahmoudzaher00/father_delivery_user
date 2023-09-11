@@ -1,10 +1,11 @@
-import 'package:father_delivery_user/core/resources/values_manager.dart';
-import 'package:father_delivery_user/features/splash/presentation/manager/splash_cubit.dart';
-import 'package:father_delivery_user/features/splash/presentation/views/widgets/splash_animation_image.dart';
-import 'package:father_delivery_user/features/splash/presentation/views/widgets/splash_animation_text.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/resources/constants_manager.dart';
+import '../../../../../core/resources/routes_manager.dart';
+import '../../../../../core/resources/values_manager.dart';
 import '../../../../../core/utils/size_config.dart';
+import 'splash_animation_image.dart';
+import 'splash_animation_text.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   @override
   void initState(){
     initSlidingAnimation();
-    SplashCubit.get(context).navigateToHome(context);
+    navigateToHome();
     super.initState();
   }
 
@@ -51,6 +52,22 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     animationController.forward();
     slidingAnimation.addListener(() {setState((){}); });
 
+  }
+  void navigateToHome() {
+    Future.delayed(const Duration(milliseconds: AppConstants.splashDelay), () {
+      Navigator.pushReplacementNamed(context, Routes.restaurantRoute);
+      // CacheHelper.isOnBoardingScreenViewed().then((isOnBoardingScreenViewed) =>  {
+      //   if (isOnBoardingScreenViewed)
+      //     {
+      //       // navigate to language screen
+      //       Navigator.pushReplacementNamed(context, Routes.loginRoute)
+      //     } else {
+      //     // navigate to onboarding screen
+      //     Navigator.pushReplacementNamed(context, Routes.onBoardingRoute)
+      //   }
+      // });
+
+    });
   }
 }
 

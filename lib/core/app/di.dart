@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:father_delivery_user/features/auth/presentation/manager/registerDataCubit/register_data_cubit.dart';
+import 'package:father_delivery_user/features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import 'package:father_delivery_user/features/user_locations/data/repository/user_locations_repo_impl.dart';
 import 'package:father_delivery_user/features/user_locations/presentation/views/user_locations_input_data.dart';
 import 'package:get_it/get_it.dart';
@@ -33,8 +35,10 @@ Future<void> initAppModule() async {
   //TODO:Cubit instance
    instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
-  instance.registerFactory<LoginCubit>(() => LoginCubit());
-  instance.registerFactory<RegisterCubit>(() => RegisterCubit());
+  instance.registerLazySingleton<LoginCubit>(() => LoginCubit());
+  instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());
+  instance.registerLazySingleton<RegisterDataCubit>(() => RegisterDataCubit());
+  instance.registerLazySingleton<RestaurantCubit>(() => RestaurantCubit());
   // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<OtpBloc>(() => OtpBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<MainBloc>(() => MainBloc());

@@ -42,7 +42,7 @@ class OtpViewBody extends StatelessWidget {
               ),
             ),
             pinned: true,
-            expandedHeight: SizeConfig.screenHeight! * .44,
+            expandedHeight: SizeConfig.screenHeight! * .45,
             backgroundColor: scrolled ? ColorManager.primaryOrange : Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
                 expandedTitleScale: 1,
@@ -57,7 +57,7 @@ class OtpViewBody extends StatelessWidget {
                   children: [
                     if(!scrolled)
                       SizedBox(
-                        height: SizeConfig.screenHeight! * .44,
+                        height: SizeConfig.screenHeight! * .41,
                         width: SizeConfig.screenWidth,
                         child: SvgPicture.asset(
                           SvgAssets.authTopShape,

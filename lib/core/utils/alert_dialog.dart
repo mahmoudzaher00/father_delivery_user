@@ -40,42 +40,21 @@ customAlertDialog(
               sigmaY: 1.0,
             ),
             child: AlertDialog(
-                alignment: dialogAlignment ?? Alignment.center,
+                alignment: dialogAlignment ?? Alignment.bottomCenter,
                 backgroundColor: ColorManager.whiteColor,
                 surfaceTintColor: Colors.white,
                 insetPadding: dialogInsetsPadding ??
-                    const EdgeInsets.symmetric(horizontal: 16),
+                    const EdgeInsets.symmetric(horizontal: 0),
                 contentPadding: dialogContentPadding ??
                     const EdgeInsets.symmetric(horizontal: 16),
                 shape: dialogShape ??
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s24)),
+                    const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 content: SizedBox(
                   height: alertDialogHeight ?? AppSize.s265,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: IconButton(
-                            onPressed: () => Navigator.pop(context),
-                            icon: Container(
-                              height: 24,
-                              width: 24,
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: ColorManager.lightGray),
-                              child: const Icon(
-                                FontAwesomeIcons.xmark,
-                                color: ColorManager.primaryBlack,
-                                size: 17,
-                              ),
-                            )),
-                      ),
-                      Text(
-                        titleText!,
-                        style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: titleTextColor!),
-                      ),
                       contentTextWidget == null
                           ? const SizedBox.shrink()
                           : const SizedBox(height: AppSize.s18,),

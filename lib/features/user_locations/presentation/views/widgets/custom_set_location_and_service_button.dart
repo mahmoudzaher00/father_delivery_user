@@ -2,7 +2,7 @@ import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
-import 'package:father_delivery_user/core/widgets/elavated_button.dart';
+import 'package:father_delivery_user/core/widgets/custom_elevated_button_widget.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class CustomSetLocationAndServiceButton extends StatelessWidget {
     return Container(
       color: Colors.transparent,
       padding: const EdgeInsets.all(8.0),
-      child: MyElevatedButton(
+      child: CustomElevatedButtonWidget(
         width: SizeConfig.screenWidth,
         height: 50,
 

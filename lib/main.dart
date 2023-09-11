@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/app/app.dart';
+import 'core/app/constants.dart';
 import 'core/app/di.dart';
 import 'core/resources/language_manager.dart';
 import 'core/utils/bloc_observer.dart';
@@ -14,7 +15,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   Bloc.observer = CustomBlocObserver();
   await initAppModule();
-  // Constants.systemUiOverlayStyle;
+  Constants.systemUiOverlayStyleDark;
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
 

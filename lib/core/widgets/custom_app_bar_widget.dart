@@ -1,60 +1,29 @@
+import 'package:father_delivery_user/core/app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../resources/color_manager.dart';
 import '../resources/values_manager.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String titleAppBar;
-  const CustomAppBar({Key? key, required this.titleAppBar,}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(
-              Icons.arrow_back_ios_new,
-              color: ColorManager.blackColor,
-              size: AppSize.s20,
-            )),
-        const SizedBox(
-          width: AppSize.s2,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: AppPadding.p4),
-          child: Text(
-            titleAppBar,
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
-        ),
-      ],
-    );
-  }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(60);
-}
 
 
 
 ///Custom App Bar
-class CustomAppBar2 extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
   final Widget? titleContent;
   final Widget? leadingWidget;
-  final bool automaticallyLeading;
+  final bool? automaticallyLeading;
   final List<Widget>? actionsWidgets;
   final Color? appBarBackgroundColor;
   final double? appBarToolbarHeight;
   final bool? centerTitle;
   final double? appElevation;
+  final  void Function()?  leadingOnPressed;
   final SystemUiOverlayStyle? systemOverlayStyle;
-  CustomAppBar2({Key? key, this.titleContent,this.systemOverlayStyle ,this.leadingWidget,this.actionsWidgets,this.appBarBackgroundColor,this.appBarToolbarHeight,this.appElevation,required this.automaticallyLeading,this.centerTitle}): preferredSize =  Size.fromHeight(appBarToolbarHeight!), super(key: key);
+  
+  CustomAppBar({Key? key, this.titleContent,this.systemOverlayStyle=Constants.systemUiOverlayStyleDark ,this.leadingWidget,this.actionsWidgets,this.appBarBackgroundColor,this.appBarToolbarHeight,this.appElevation, this.automaticallyLeading=false,this.centerTitle, this.leadingOnPressed}): preferredSize =  Size.fromHeight(appBarToolbarHeight!), super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +31,32 @@ class CustomAppBar2 extends StatelessWidget with PreferredSizeWidget {
 
 
     return AppBar(
-      automaticallyImplyLeading: automaticallyLeading,
+      automaticallyImplyLeading: automaticallyLeading!,
       title: titleContent,
       centerTitle: centerTitle??true,
-      leading: leadingWidget ,
+      leading: leadingWidget??FittedBox(
+        child: Padding(
+          padding: const EdgeInsetsDirectional.only(start: 16, bottom: 0),
+          child: ElevatedButton(
+            onPressed: leadingOnPressed??()=>Navigator.pop(context),
+            style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                elevation: 3,
+                foregroundColor: ColorManager.shadowColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                backgroundColor: ColorManager.whiteColor,
+                surfaceTintColor: ColorManager.whiteColor,
+                minimumSize: const Size(54, 40)),
+            child: const Icon(
+              Icons.arrow_back,
+              size: 30,
+              color: ColorManager.primaryBlack,
+            ),
+          ),
+        ),
+      ) ,
       actions: actionsWidgets,
       leadingWidth: 65,
       elevation: appElevation??0,

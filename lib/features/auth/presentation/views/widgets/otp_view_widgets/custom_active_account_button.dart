@@ -11,7 +11,7 @@ class CustomActiveAccountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin:  EdgeInsetsDirectional.only( start: 20, bottom: 22.h,end: 10),
+      margin:  EdgeInsetsDirectional.only( start: 20, bottom: 18.h,end: 10),
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
@@ -26,7 +26,7 @@ class CustomActiveAccountButton extends StatelessWidget {
           )),
       child: ElevatedButton(
           onPressed: (){
-            Navigator.pushNamed(context, Routes.otpRoute);
+            Navigator.pushNamed(context, Routes.activeAccountRoute);
           },
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,

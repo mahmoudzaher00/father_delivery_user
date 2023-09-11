@@ -7,8 +7,8 @@ import '../resources/color_manager.dart';
 
 class CustomImage extends StatelessWidget {
   const CustomImage(
-    this.image, {
-      super.key,
+      this.image, {
+        super.key,
         this.width = 100,
         this.height = 100,
         this.bgColor,
@@ -20,11 +20,12 @@ class CustomImage extends StatelessWidget {
         this.radius = 6,
         this.borderRadius,
         this.isShadow = true,
-        this.shape = false,
+        this.isCircular = false,
         this.horizontal = 0,
         this.vertical = 0,
         this.radiusCircleAvatar,
-  });
+        this.isAsset=false,
+      });
 
   final String image;
   final double width;
@@ -33,11 +34,12 @@ class CustomImage extends StatelessWidget {
   final double height;
   final double borderWidth;
   final bool isShadow;
-  final bool shape;
+  final bool isCircular;
   final Color? borderColor;
   final Color? bgColor;
   final bool trBackground;
   final bool isNetwork;
+  final bool? isAsset;
   final double radius;
   final double? radiusCircleAvatar;
   final BorderRadius? borderRadius;
@@ -62,28 +64,38 @@ class CustomImage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: horizontal!, vertical: vertical!),
         child: ClipRRect(
           borderRadius: borderRadius??BorderRadius.circular(radius),
-          child: isNetwork ?
-          shape ?
+          child:isAsset!?
+          isCircular?
           CircleAvatar(
             radius:radiusCircleAvatar,
-            backgroundColor: ColorManager.primaryBlack,
-            child:  CachedNetworkImage(
-              imageUrl: image,
-              height: height,
-              width: width,
-              fit: fit,
-              placeholder: (context, url) =>  const SpinKitRipple(
-                color: ColorManager.primaryOrange,
-                size: 50.0,
-              ),
-              errorWidget: (context, url, error) => const BlankImageWidget(),
-              imageBuilder: (context, imageProvider) => Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle  ,
-                  image: DecorationImage(image: imageProvider, fit: fit),
+            backgroundColor: ColorManager.whiteColor,
+            backgroundImage: AssetImage(image),
+            // child:  Image.asset(ImageAssets.profile)
+          ):
+          Image.asset(image,height: height,width: width,fit: fit,):
+
+          isNetwork ?
+          isCircular ?
+          CircleAvatar(
+              radius:radiusCircleAvatar,
+              backgroundColor: ColorManager.whiteColor,
+              child:  CachedNetworkImage(
+                imageUrl: image,
+                height: height,
+                width: width,
+                fit: fit,
+                placeholder: (context, url) =>  const SpinKitRipple(
+                  color: ColorManager.primaryOrange,
+                  size: 50.0,
                 ),
-              ),
-            )
+                errorWidget: (context, url, error) => const BlankImageWidget(),
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle  ,
+                    image: DecorationImage(image: imageProvider, fit: fit),
+                  ),
+                ),
+              )
           ) :
           CachedNetworkImage(
             imageUrl: image,
@@ -101,25 +113,6 @@ class CustomImage extends StatelessWidget {
               ),
             ),
           ) :
-            // CachedNetworkImage(
-          //   imageUrl: image,
-          //   fit: fit,
-          //   height: height,
-          //   width: width,
-          //   placeholder: (context, url) => const SpinKitRipple(
-          //     color: ColorManager.primaryBlue,
-          //     size: 50.0,
-          //   ),
-          //   errorWidget: (context, url, error) => const BlankImageWidget(),
-          //   imageBuilder: (context, imageProvider) => Container(
-          //     decoration: BoxDecoration(
-          //       borderRadius: borderRadius ?? BorderRadius.circular(radius),
-          //       shape: shape ? BoxShape.circle : BoxShape.rectangle,
-          //       image: DecorationImage(image: imageProvider, fit: fit),
-          //     ),
-          //   ),
-          // ) :
-
           Container(
             height: height,
             width: width,
@@ -151,10 +144,7 @@ class _BlankImageWidgetState extends State<BlankImageWidget> {
               child: Card(
                   margin: EdgeInsets.zero,
                   clipBehavior: Clip.antiAlias,
-                  elevation: 0.0,
-                child: Icon(Icons.info_outline,color: ColorManager.primaryBlack,),
-              )
-          )),
+                  elevation: 0.0))),
     );
   }
 }

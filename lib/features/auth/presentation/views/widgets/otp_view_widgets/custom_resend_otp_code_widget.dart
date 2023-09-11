@@ -11,7 +11,7 @@ class CustomResendOtpCodeWidget extends StatelessWidget {
     return Align(
       alignment: AlignmentDirectional.centerStart,
       child: Padding(
-        padding: EdgeInsetsDirectional.only(top: 10.h, start: 16, bottom: 22.h),
+        padding: EdgeInsetsDirectional.only(top: 10.h, start: 16, bottom: 18.h),
         child: TextButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
