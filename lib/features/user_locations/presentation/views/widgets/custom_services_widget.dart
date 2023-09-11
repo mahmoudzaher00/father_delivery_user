@@ -15,6 +15,7 @@ class ServicesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
+        Navigator.pop(context);
         Navigator.pushReplacementNamed(context, Routes.homeRoute);
       },
       child: Padding(

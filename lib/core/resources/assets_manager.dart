@@ -5,6 +5,9 @@ const String jsonPath = "assets/json";
 class ImageAssets {
   // static const String mapMarker = "$imagePath/map_marker.png";
   static const String mapMarker = "$imagePath/map_pin.png";
+  static const String profileImage = "$imagePath/profile_image.png";
+  static const String imageSlider = "$imagePath/image_slider.png";
+  static const String beak = "$imagePath/beak.png";
   static const String mobile = "$imagePath/mobile.png";
   static const String mobile1 = "$imagePath/mobile_1.png";
   static const String deals = "$imagePath/deals.png";
@@ -36,7 +39,8 @@ class SvgAssets {
   static const String saudiFlag = "$svgPath/saudi_flag.svg";
   static const String splashBackground = "$svgPath/splash_background.svg";
   static const String splashBike = "$svgPath/splash_bike.svg";
-  static const String contactUs = "$svgPath/contact_us.svg";
+  static const String shoppingCart = "$svgPath/shopping_cart.svg";
+  static const String contactUs = "$svgPath/contact_us_icon.svg";
   static const String linkedIn = "$svgPath/linken_in.svg";
   static const String twitter = "$svgPath/twitter.svg";
   static const String instagram = "$svgPath/instagram.svg";
@@ -45,8 +49,12 @@ class SvgAssets {
   static const String hamburger = "$svgPath/hamburger.svg";
   static const String openBox = "$svgPath/open_box_icon.svg";
   static const String storeIcon = "$svgPath/store_icon.svg";
-  static const String profileImage = "$svgPath/profile_image.svg";
-
+  static const String contactUsIcon = "$svgPath/contact_us_icon.svg";
+  static const String creditCard = "$svgPath/creditcard.svg";
+  static const String money = "$svgPath/money.svg";
+  static const String pricing = "$svgPath/pricing.svg";
+  static const String termsIcon = "$svgPath/terms_icon.svg";
+  static const String settings = "$svgPath/settings.svg";
 
 
 }

@@ -36,43 +36,6 @@ class SelectedLocationOnMapViewBody extends StatelessWidget {
                   ],
                 ),
               )
-              // GoogleMap(
-              //   initialCameraPosition: instance<MapCubit>().cameraPosition(),
-              //   mapType: MapType.normal,
-              //   onTap: (l) async {
-              //     if (kDebugMode) {
-              //       // print(l);
-              //       print('dd.........');
-              //     }
-              //     // instance<MapBloc>().add(GetLatLngOnMapEvent(l));
-              //     // instance<MapBloc>().add(GetLocationDetailsEvent(l));
-              //   },
-              //   onMapCreated: (GoogleMapController googleMapController) {
-              //     // instance<MapBloc>().completer.complete(googleMapController);
-              //     // _completer.complete(googleMapController);
-              //     // instance<MapBloc>().mapController = googleMapController;
-              //     // googleMapController.setMapStyle(MapManager.mapStyle);
-              //     // instance<MapBloc>().add(GetMyLocationOnMspEvent());
-              //   },
-              //   onCameraMove: (c) {},
-              //   markers: instance<MapCubit>().mapMarker,
-              //   zoomControlsEnabled: false,
-              //   // myLocationEnabled: true,
-              //   zoomGesturesEnabled: true,
-              //   scrollGesturesEnabled: true,
-              //   compassEnabled: false,
-              // ),
-              // Padding(
-              //   padding:const EdgeInsets.only(right:AppSize.s12,left:AppSize.s12,top:AppSize.s50,bottom:AppSize.s20),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       MapSearchWidget(),
-              //       MapButton(),
-              //     ],
-              //   ),
-              // )
             ],
           );
         }
