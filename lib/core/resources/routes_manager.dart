@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
-import '../../features/home/presentation/views/HomeScreen.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';

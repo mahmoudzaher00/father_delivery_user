@@ -5,10 +5,13 @@ import 'package:get_it/get_it.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../features/auth/presentation/manager/login_cubit/login_cubit.dart';
+import '../../features/auth/presentation/manager/registerDataCubit/register_data_cubit.dart';
 import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
 import '../../features/auth/presentation/views/auth_input_data.dart';
 import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
+import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
+import '../utils/api_service_1.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;

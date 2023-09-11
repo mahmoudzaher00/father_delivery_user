@@ -16,30 +16,65 @@ class RestaurantSearchWidget extends StatefulWidget {
 }
 
 class _RestaurantSearchWidgetState extends State<RestaurantSearchWidget> {
+
+  final FocusNode focusNode = FocusNode();
+  Color _iconColor = Colors.grey; // Default color
+
   @override
   void initState() {
     super.initState();
-    instance<HomeCubit>().searchTextFieldFocusNode.addListener(instance<HomeCubit>().updateTextFieldStatus);
-  }
 
-  @override
+    // Add a listener to the FocusNode to update the icon color
+    focusNode.addListener(() {
+      setState(() {
+        _iconColor = focusNode.hasFocus ? Colors.blue : Colors.grey;
+      });
+    });
+  }
   void dispose() {
-    context.read<HomeCubit>().searchTextFieldFocusNode.dispose();
-    //instance<HomeCubit>().searchTextFieldFocusNode.dispose();
+    // Dispose of the FocusNode to avoid memory leaks
+    focusNode.dispose();
     super.dispose();
   }
+
+ //  @override
+ //  void initState() {
+ //    super.initState();
+ //    instance<HomeCubit>().searchTextFieldFocusNode.addListener(instance<HomeCubit>().updateTextFieldStatus);
+ //  }
+ //  @override
+ //  void didChangeDependencies() {
+ //    // TODO: implement didChangeDependencies
+ //      instance<HomeCubit>().searchTextFieldFocusNode.addListener(instance<HomeCubit>().updateTextFieldStatus);
+ //
+ //    super.didChangeDependencies();
+ //  }
+ // // @override
+ // //  void deactivate() {
+ // //   context.read<HomeCubit>().searchTextFieldFocusNode.dispose();
+ // //    // TODO: implement deactivate
+ // //    super.deactivate();
+ // //  }
+ //  @override
+ //  void dispose() {
+ //    context.read<HomeCubit>().searchTextFieldFocusNode.dispose();
+ //    //instance<HomeCubit>().searchTextFieldFocusNode.dispose();
+ //    super.dispose();
+ //  }
 
   @override
   Widget build(BuildContext context) {
     return CustomSearchContainer(
       icon:Icons.search,
       containerColor: ColorManager.primaryGray,
-      hasFocus: instance<HomeCubit>().searchTextFieldFocusNode.hasFocus,
+      hasFocus:focusNode.hasFocus,
+      // hasFocus: context.read<HomeCubit>().searchTextFieldFocusNode.hasFocus,
+      // hasFocus: context.read<HomeCubit>().searchTextFieldFocusNode.hasFocus,
       child: Container(
         width: SizeConfig.screenWidth! - AppSize.s90,
         margin: const EdgeInsets.symmetric(horizontal: AppMargin.m2),
         child: CustomTextField(
-          focusNode: instance<HomeCubit>().searchTextFieldFocusNode,
+          focusNode: focusNode,
           enabledBorderRadius: AppSize.s0,
           widthBorder: AppSize.s0,
           isShadow: false,
@@ -53,5 +88,41 @@ class _RestaurantSearchWidgetState extends State<RestaurantSearchWidget> {
         ),
       ),
     );
+
+    // return CustomTextField(
+    //   focusNode: focusNode,
+    //   enabledBorderRadius: AppSize.s0,
+    //   widthBorder: AppSize.s0,
+    //   prefixIconWidget: SizedBox(
+    //     width: 70,
+    //     child: Row(
+    //         mainAxisAlignment: MainAxisAlignment.start,
+    //         children: [
+    //         IconButton(
+    //         onPressed: (){},
+    //         padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+    //         icon: Icon(Icons.add,
+    //             color: _iconColor
+    //         )
+    //     ),
+    //       SizedBox(
+    //         height: 30,
+    //         width: 1,
+    //         child: VerticalDivider(
+    //             width: AppSize.s1,
+    //             thickness: 1,
+    //             color: _iconColor
+    //         ),
+    //       )]
+    //     ),
+    //   ),
+    //   isShadow: false,
+    //   hintText: 'ابحث عن مطعمك المفضل',
+    //   fillColorTextFiled: ColorManager.primaryGray,
+    //   hintStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.grayIcon),
+    //   // inputTextStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.blackColor),
+    //   onFieldSubmitted: (value) async {
+    //     if(value.isNotEmpty){}},
+    // );
   }
 }
