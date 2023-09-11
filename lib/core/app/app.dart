@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:father_delivery_user/core/utils/location_permission.dart';
+import 'package:father_delivery_user/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,6 +46,7 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<MapCubit>(create: (BuildContext context) => instance<MapCubit>()..getCustomMarker(),lazy: false,),
+        BlocProvider<HomeCubit>(create: (BuildContext context) => HomeCubit()),
         BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
       ],
 

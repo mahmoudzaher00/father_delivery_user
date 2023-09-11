@@ -38,7 +38,7 @@ class CustomMapWidget extends StatelessWidget {
               mapType: MapType.normal,
               onTap: onTap??(latLng){
                 instance<MapCubit>().getLocationDetailsByTapping(latLng);
-                instance<MapCubit>().getLatLngOnMap(latLng);
+                //instance<MapCubit>().getLatLngOnMap(latLng);
                 if (kDebugMode) {
                   print(latLng);
                 }

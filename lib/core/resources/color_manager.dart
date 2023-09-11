@@ -4,6 +4,7 @@ class ColorManager {
   //TODO:Primary Colors
   static const Color primaryOrange = Color(0xffEF554A);
   static const Color lightOrange = Color(0xffFF8C69);
+  static  Color primaryOrange30 = const Color(0xffEF554A).withOpacity(0.3);
   static const Color extraLightOrange = Color(0xffFFDFBF);
   static const Color primaryBlack = Color(0xff2A2A2A);
   static const Color primaryGray = Color(0xffF2F5F5);

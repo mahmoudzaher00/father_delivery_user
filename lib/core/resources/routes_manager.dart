@@ -2,6 +2,7 @@ import 'package:father_delivery_user/features/auth/presentation/views/active_acc
 import 'package:father_delivery_user/features/auth/presentation/views/login_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/otp_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
+import 'package:father_delivery_user/features/home/presentation/views/home_view.dart';
 import 'package:father_delivery_user/features/notification/presentation/views/notification_view.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/restaurant_view.dart';
 import 'package:flutter/material.dart';

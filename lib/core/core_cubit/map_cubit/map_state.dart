@@ -54,4 +54,10 @@ class GoToSearchLocation extends MapState {
 }
 
 
+class UpdateTextFieldStatus extends MapState {
+  final bool hasFocus;
 
+  const UpdateTextFieldStatus(this.hasFocus);
+  @override
+  List<Object> get props => [hasFocus];
+}

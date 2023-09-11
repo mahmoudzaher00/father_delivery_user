@@ -29,6 +29,7 @@ class MapCubit extends Cubit<MapState> {
   //TODO:Map Inputs
   var emptyMarker = HashSet<Marker>();
   final Completer<GoogleMapController> googleMapCompleter = Completer<GoogleMapController>();
+  FocusNode textFieldFocusNode = FocusNode();
   BitmapDescriptor? customDestinationMarker;
   Position? currentPosition;
   CameraPosition? cameraPosition;
@@ -36,9 +37,14 @@ class MapCubit extends Cubit<MapState> {
   GoogleMapController? mapController;
   String? zoneAddress;
   SearchDataModel? searchData;
+  bool searchLoader = false ;
   Marker marker = const Marker(markerId: MarkerId('location'),);
 
   //TODO:Ui functions
+  void updateTextFieldStatus(){
+    emit(UpdateTextFieldStatus(textFieldFocusNode.hasFocus));
+  }
+
   Marker customMarker(LatLng latLng) => Marker(
     markerId: const MarkerId('location'),
     position: latLng,
@@ -102,6 +108,7 @@ class MapCubit extends Cubit<MapState> {
       zoneAddress = addressList.first.subAdministrativeArea!.isNotEmpty ?
       addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
       addressList.first.administrativeArea : addressList.first.locality);
+      cameraMoving(latLng.latitude, latLng.longitude);
       marker = customMarker(latLng);
     } catch (e) {
       log('Error: $e');
@@ -116,12 +123,15 @@ class MapCubit extends Cubit<MapState> {
   }
 
   //TODO:Apis functions
-  Future<void> fetchSearchData(value,) async {
+  Future<void> fetchSearchData(value) async {
+    searchLoader = true ;
     emit(FetchSearchDataLoadingState());
     var result = await userLocationRepo.fetchSearchData(value);
     result.fold((failure) {
+      searchLoader = false ;
       emit(FetchSearchDataFailureState(failure.errMessage));
     }, (dataModel) {
+      searchLoader = false ;
       searchData = dataModel;
       emit(FetchSearchDataSuccessState(dataModel));
     });

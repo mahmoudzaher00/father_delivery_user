@@ -36,7 +36,10 @@ class UserLocationsInputData{
                     instance<MapCubit>().goToSearchLocation(results[index].lat.toDouble(), results[index].lng.toDouble());
                     // controller!.goToSearchLocation(results[index].lat.toDouble(), results[index].lng.toDouble());
                   },
-                  child: Text(results[index].name,style: Theme.of(context).textTheme.displaySmall)
+                  child: SizedBox(
+                      width: SizeConfig.screenWidth,
+                      height: AppSize.s30,
+                      child: Text(results[index].name,style: Theme.of(context).textTheme.displaySmall!))
               )
           );
         }
