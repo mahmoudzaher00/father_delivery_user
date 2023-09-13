@@ -61,3 +61,17 @@ class UpdateTextFieldStatus extends MapState {
   @override
   List<Object> get props => [hasFocus];
 }
+
+class FetchImageMarker extends MapState {
+
+}
+
+
+class AddRestaurantAndUserMarker extends MapState {
+  final double lat;
+  final double lng;
+
+  const AddRestaurantAndUserMarker(this.lat,this.lng);
+  @override
+  List<Object> get props => [lat,lng];
+}

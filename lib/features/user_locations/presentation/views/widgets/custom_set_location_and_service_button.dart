@@ -1,4 +1,6 @@
+import 'package:father_delivery_user/core/app/app_prefs.dart';
 import 'package:father_delivery_user/core/app/di.dart';
+import 'package:father_delivery_user/core/core_cubit/map_cubit/map_cubit.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
@@ -22,6 +24,15 @@ class CustomSetLocationAndServiceButton extends StatelessWidget {
 
         borderRadius: BorderRadius.circular(AppSize.s8),
         onPressed: () {
+          instance<AppPreferences>().putDataInSharedPreference(
+              value: instance<MapCubit>().savedLocation!.latitude,
+              key: 'lat'
+          );
+          instance<AppPreferences>().putDataInSharedPreference(
+              value: instance<MapCubit>().savedLocation!.longitude ,
+              key: 'lng'
+          );
+
           selectServicesDialog(context);
         },
         child: Text(

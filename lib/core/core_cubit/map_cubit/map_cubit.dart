@@ -14,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart' as geocoding;
@@ -27,6 +28,7 @@ class MapCubit extends Cubit<MapState> {
   MapCubit(this.userLocationRepo) : super(MapInitial());
 
   //TODO:Map Inputs
+  LatLng? savedLocation;
   var emptyMarker = HashSet<Marker>();
   final Completer<GoogleMapController> googleMapCompleter = Completer<GoogleMapController>();
   FocusNode textFieldFocusNode = FocusNode();
@@ -41,6 +43,39 @@ class MapCubit extends Cubit<MapState> {
   Marker marker = const Marker(markerId: MarkerId('location'),);
 
   //TODO:Ui functions
+
+  void convertNetworkImageToMapMarker() async{
+    String iconUrl ="https://w7.pngwing.com/pngs/753/264/png-transparent-map-marker-icon-google-map-maker-google-maps-map-marker-blue-angle-triangle-thumbnail.png";
+    Uint8List dataBytes;
+    var request = await http.get(Uri.parse(iconUrl));
+    Uint8List bytes = request.bodyBytes;
+    dataBytes = bytes;
+    emit(FetchImageMarker());
+
+    LatLng restaurantLocation = const LatLng(31.44377763284619, 31.691754944622517);
+    emptyMarker.add(
+        Marker(
+         // icon: BitmapDescriptor.fromBytes(dataBytes.buffer.asUint8List(),size: const Size(20,20)),
+          icon: BitmapDescriptor.defaultMarkerWithHue(20),
+          markerId: const MarkerId('RestaurantLocation'),
+          position: restaurantLocation,
+        )
+    );
+    getUserLocationFromCache();
+    emit(AddRestaurantAndUserMarker(restaurantLocation.latitude,restaurantLocation.longitude));
+    cameraMoving(restaurantLocation.latitude, restaurantLocation.longitude);
+
+  }
+  void getUserLocationFromCache(){
+    emptyMarker.add(
+        Marker(
+          markerId: const MarkerId('UserLocation'),
+          position: const LatLng(31.45295797598678,31.69081181287766),
+          icon: BitmapDescriptor.defaultMarkerWithHue(90),
+        )
+    );
+  }
+
   void updateTextFieldStatus(){
     emit(UpdateTextFieldStatus(textFieldFocusNode.hasFocus));
   }
@@ -74,6 +109,7 @@ class MapCubit extends Cubit<MapState> {
     try {
       currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
       LatLng myLatLng = LatLng(currentPosition!.latitude, currentPosition!.longitude);
+      savedLocation = myLatLng;
       List<Placemark> addressList = [];
       addressList = await geocoding.placemarkFromCoordinates(currentPosition!.latitude, currentPosition!.longitude);
       cameraPosition = CameraPosition(target: myLatLng, zoom: mapZoom);
@@ -104,6 +140,7 @@ class MapCubit extends Cubit<MapState> {
   void getLocationDetailsByTapping(LatLng latLng) async {
     List<geocoding.Placemark> addressList = [];
     try {
+      savedLocation = latLng;
       addressList = await geocoding.placemarkFromCoordinates(latLng.latitude, latLng.longitude);
       zoneAddress = addressList.first.subAdministrativeArea!.isNotEmpty ?
       addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?

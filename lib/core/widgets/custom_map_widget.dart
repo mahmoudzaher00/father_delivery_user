@@ -44,9 +44,9 @@ class CustomMapWidget extends StatelessWidget {
                 }
               },
               onMapCreated: onMapCreated??(GoogleMapController googleMapController) {
+                instance<MapCubit>().googleMapCompleter.complete(googleMapController);
+                instance<MapCubit>().mapController=googleMapController;
                 if(getMyLocation!) {
-                  instance<MapCubit>().googleMapCompleter.complete(googleMapController);
-                  instance<MapCubit>().mapController=googleMapController;
                   instance<MapCubit>().getMyLocation(context);
                 }
 

@@ -45,6 +45,9 @@ class ColorManager {
   static const Color shadowColor3 = Color(0x13ffffff);
 
 
+  static const Color transparentColor = Colors.transparent;
+
+
 
 }
 //
