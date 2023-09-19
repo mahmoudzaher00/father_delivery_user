@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/resources/assets_manager.dart';
-import '../../../../../core/resources/color_manager.dart';
-import '../../../../../core/utils/size_config.dart';
-import '../../../../../core/widgets/custom_image_widget.dart';
+import '../../../../../../core/resources/assets_manager.dart';
+import '../../../../../../core/resources/color_manager.dart';
+import '../../../../../../core/utils/size_config.dart';
+import '../../../../../../core/widgets/custom_image_widget.dart';
 
 class CustomRestaurantMealDetailsWidget extends StatelessWidget {
   const CustomRestaurantMealDetailsWidget({Key? key}) : super(key: key);

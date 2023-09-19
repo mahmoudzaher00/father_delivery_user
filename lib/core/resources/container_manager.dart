@@ -9,7 +9,7 @@ class ContainerManager {
   ];
   static List<BoxShadow> noShadow = [
     const BoxShadow(
-        color: ColorManager.whiteColor, blurRadius: 0, spreadRadius: 0, offset: Offset(0, 0))
+        color: Colors.transparent, blurRadius: 0, spreadRadius: 0, offset: Offset(0, 0))
   ];
   static List<BoxShadow> secondShadow = [
     const BoxShadow(

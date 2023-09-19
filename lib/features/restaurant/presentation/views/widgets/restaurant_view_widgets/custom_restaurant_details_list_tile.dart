@@ -3,9 +3,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../../core/resources/assets_manager.dart';
-import '../../../../../core/resources/color_manager.dart';
-import '../../../../../core/widgets/custom_image_widget.dart';
+import '../../../../../../core/resources/assets_manager.dart';
+import '../../../../../../core/resources/color_manager.dart';
+import '../../../../../../core/widgets/custom_image_widget.dart';
 
 class CustomRestaurantDetailsListTile extends StatelessWidget {
   const CustomRestaurantDetailsListTile({

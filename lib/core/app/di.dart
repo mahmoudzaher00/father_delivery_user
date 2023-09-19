@@ -9,6 +9,7 @@ import '../../features/auth/presentation/manager/registerDataCubit/register_data
 import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
 import '../../features/auth/presentation/views/auth_input_data.dart';
 import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
+import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../utils/api_service_1.dart';
@@ -41,6 +42,7 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());
   instance.registerLazySingleton<RegisterDataCubit>(() => RegisterDataCubit());
   instance.registerLazySingleton<RestaurantCubit>(() => RestaurantCubit());
+  instance.registerLazySingleton<IngredientsBottomSheetCubit>(() => IngredientsBottomSheetCubit());
   // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<OtpBloc>(() => OtpBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<MainBloc>(() => MainBloc());

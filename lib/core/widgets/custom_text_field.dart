@@ -83,6 +83,7 @@ class CustomTextField extends StatelessWidget {
           filled: filledColorTextFiled  ?? true,
           prefixIcon: prefixIconWidget,
           suffixIcon: suffixIconWidget,
+
           enabledBorder: OutlineInputBorder(
             borderSide:  BorderSide(color:enabledBorderColor??ColorManager.primaryGray, width: widthBorder??1),
             borderRadius: BorderRadius.circular(enabledBorderRadius??AppSize.s5),

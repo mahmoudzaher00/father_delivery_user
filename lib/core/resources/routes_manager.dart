@@ -10,6 +10,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
+import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
@@ -26,6 +27,7 @@ class Routes {
   static const String notificationRoute = "/notification";
   static const String restaurantRoute = "/restaurant";
   static const String restaurantMapRoute = "/restaurant_map";
+  static const String mealIngredientsRoute = "/mealIngredients";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -82,6 +84,7 @@ class Routes {
       Routes.notificationRoute: (context) => const NotificationView(),
       Routes.restaurantRoute: (context) => const RestaurantView(),
       Routes.restaurantMapRoute: (context) => const RestaurantMapView(),
+      Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
 
     };
   }
@@ -101,6 +104,7 @@ class RouteGenerator {
       case Routes.notificationRoute:return MaterialPageRoute(builder: (_) => const NotificationView());
       case Routes.restaurantRoute:return MaterialPageRoute(builder: (_) => const RestaurantView());
       case Routes.restaurantMapRoute:return MaterialPageRoute(builder: (_) => const RestaurantMapView());
+      case Routes.mealIngredientsRoute:return MaterialPageRoute(builder: (_) => const MealIngredientsView());
 
       default:return unDefinedRoute();
     }

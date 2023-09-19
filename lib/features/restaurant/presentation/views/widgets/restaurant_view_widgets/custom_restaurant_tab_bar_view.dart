@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/app/di.dart';
-import '../../manager/restaurant_cubit/restaurant_cubit.dart';
+import '../../../../../../core/app/di.dart';
+import '../../../manager/restaurant_cubit/restaurant_cubit.dart';
 import 'custom_restaurant_meal_details_grid_view.dart';
 import 'custom_restaurant_offer_list_view.dart';
 

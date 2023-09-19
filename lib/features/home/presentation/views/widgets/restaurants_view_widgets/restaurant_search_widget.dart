@@ -8,7 +8,7 @@ import 'package:father_delivery_user/features/home/presentation/manager/home_cub
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class RestaurantSearchWidget extends StatefulWidget {
+class RestaurantSearchWidget extends StatefulWidget{
   const RestaurantSearchWidget({super.key});
 
   @override
@@ -37,30 +37,6 @@ class _RestaurantSearchWidgetState extends State<RestaurantSearchWidget> {
     super.dispose();
   }
 
- //  @override
- //  void initState() {
- //    super.initState();
- //    instance<HomeCubit>().searchTextFieldFocusNode.addListener(instance<HomeCubit>().updateTextFieldStatus);
- //  }
- //  @override
- //  void didChangeDependencies() {
- //    // TODO: implement didChangeDependencies
- //      instance<HomeCubit>().searchTextFieldFocusNode.addListener(instance<HomeCubit>().updateTextFieldStatus);
- //
- //    super.didChangeDependencies();
- //  }
- // // @override
- // //  void deactivate() {
- // //   context.read<HomeCubit>().searchTextFieldFocusNode.dispose();
- // //    // TODO: implement deactivate
- // //    super.deactivate();
- // //  }
- //  @override
- //  void dispose() {
- //    context.read<HomeCubit>().searchTextFieldFocusNode.dispose();
- //    //instance<HomeCubit>().searchTextFieldFocusNode.dispose();
- //    super.dispose();
- //  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,4 +101,5 @@ class _RestaurantSearchWidgetState extends State<RestaurantSearchWidget> {
     //     if(value.isNotEmpty){}},
     // );
   }
+
 }

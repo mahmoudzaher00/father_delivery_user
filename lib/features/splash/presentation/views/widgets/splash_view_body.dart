@@ -55,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(milliseconds: AppConstants.splashDelay), () {
-      Navigator.pushReplacementNamed(context, Routes.restaurantMapRoute);
+      Navigator.pushReplacementNamed(context, Routes.mealIngredientsRoute);
       // CacheHelper.isOnBoardingScreenViewed().then((isOnBoardingScreenViewed) =>  {
       //   if (isOnBoardingScreenViewed)
       //     {

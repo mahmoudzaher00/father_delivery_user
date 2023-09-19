@@ -56,6 +56,10 @@ ThemeData getApplicationTheme() {
 
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AppSize.s5)))),
+    //bottom sheet theme
+    bottomSheetTheme: BottomSheetThemeData(
+      surfaceTintColor: ColorManager.whiteColor
+    ),
 
     textTheme: TextTheme(
       displayLarge:  getBoldStyle(color: ColorManager.primaryBlack, fontSize: FontSize.s16),

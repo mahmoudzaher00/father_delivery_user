@@ -1,13 +1,13 @@
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
-import 'package:father_delivery_user/features/restaurant/presentation/views/widgets/restaurant_map_button_widget.dart';
+import 'package:father_delivery_user/features/restaurant/presentation/views/widgets/restaurant_map_view_widgets/restaurant_map_button_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 
-import '../../../../../core/resources/assets_manager.dart';
-import '../../../../../core/resources/color_manager.dart';
-import '../../../../../core/utils/size_config.dart';
+import '../../../../../../core/resources/assets_manager.dart';
+import '../../../../../../core/resources/color_manager.dart';
+import '../../../../../../core/utils/size_config.dart';
 
 class RestaurantDetailsMapContainerWidget extends StatelessWidget {
   const RestaurantDetailsMapContainerWidget({super.key});
