@@ -9,9 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
+import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
 import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../../features/store/presentation/views/store_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
 
@@ -28,6 +30,8 @@ class Routes {
   static const String restaurantRoute = "/restaurant";
   static const String restaurantMapRoute = "/restaurant_map";
   static const String mealIngredientsRoute = "/mealIngredients";
+  static const String cartRoute = "/cart_view";
+  static const String storeRoute = "/store_view";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -85,6 +89,8 @@ class Routes {
       Routes.restaurantRoute: (context) => const RestaurantView(),
       Routes.restaurantMapRoute: (context) => const RestaurantMapView(),
       Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
+      Routes.cartRoute: (context) => const CartView(),
+      Routes.storeRoute: (context) => const StoreView(),
 
     };
   }
@@ -105,6 +111,8 @@ class RouteGenerator {
       case Routes.restaurantRoute:return MaterialPageRoute(builder: (_) => const RestaurantView());
       case Routes.restaurantMapRoute:return MaterialPageRoute(builder: (_) => const RestaurantMapView());
       case Routes.mealIngredientsRoute:return MaterialPageRoute(builder: (_) => const MealIngredientsView());
+      case Routes.cartRoute:return MaterialPageRoute(builder: (_) => const CartView());
+      case Routes.storeRoute:return MaterialPageRoute(builder: (_) => const StoreView());
 
       default:return unDefinedRoute();
     }

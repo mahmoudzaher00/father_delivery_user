@@ -30,3 +30,12 @@ class UpdateTextFieldStatus extends HomeState {
   @override
   List<Object> get props => [hasFocus];
 }
+
+class ChangeFavouriteState extends HomeState {
+  final int index;
+  final bool value;
+
+  const ChangeFavouriteState(this.index,this.value);
+  @override
+  List<Object> get props => [index,value];
+}

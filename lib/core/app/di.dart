@@ -8,6 +8,7 @@ import '../../features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import '../../features/auth/presentation/manager/registerDataCubit/register_data_cubit.dart';
 import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
 import '../../features/auth/presentation/views/auth_input_data.dart';
+import '../../features/cart/presentation/manager/cart_cubit.dart';
 import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
 import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
@@ -37,6 +38,7 @@ Future<void> initAppModule() async {
   //TODO:Cubit instance
    instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
    instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
+   instance.registerLazySingleton<CartCubit>(() => CartCubit());
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   instance.registerLazySingleton<LoginCubit>(() => LoginCubit());
   instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());

@@ -1,12 +1,12 @@
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/app/di.dart';
 import '../../../../../core/resources/assets_manager.dart';
+import '../../../../../core/resources/routes_manager.dart';
 import '../../manager/home_cubit/home_cubit.dart';
 
 class SliverAppBarWidget extends StatelessWidget {
@@ -64,23 +64,21 @@ class SliverAppBarWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:  [
-              SvgPicture.asset(SvgAssets.shoppingCart),
-              const Icon(Icons.notifications_none_outlined,
-                size: AppSize.s28,
-                color: ColorManager.blackColor,
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, Routes.cartRoute);
+                    },
+                  child: SvgPicture.asset(SvgAssets.shoppingCart)
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.notificationRoute);
+                },
+                child: const Icon(Icons.notifications_none_outlined,
+                  size: AppSize.s28,
+                  color: ColorManager.blackColor,
+                ),
               )
-              // IconButton(
-              //   padding: EdgeInsets.zero,
-              //     style:  ButtonStyle(
-              //      fixedSize: MaterialStateProperty.all(Size(20, 20))
-              //     ),
-              //     onPressed: () {},
-              //     icon: const Icon(Icons.notifications_none_outlined,
-              //       size: AppSize.s28,
-              //       color: ColorManager.blackColor,
-              //     )
-              // ),
-
             ],
           ),
         ),

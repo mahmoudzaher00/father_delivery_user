@@ -16,6 +16,7 @@ class ImageAssets {
   static const String beak = "$imagePath/beak.png";
   static const String mealIngredients = "$imagePath/mealIngredients.png";
   static const String person = "$imagePath/person.jpeg";
+  static const String pharmacy = "$imagePath/pharmacy.png";
 
 
 

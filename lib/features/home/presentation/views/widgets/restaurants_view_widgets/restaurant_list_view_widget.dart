@@ -6,6 +6,10 @@ import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
 import 'package:father_delivery_user/features/home/presentation/views/widgets/restaurants_view_widgets/tooltip_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../manager/home_cubit/home_cubit.dart';
+import '../../../manager/home_cubit/home_state.dart';
 
 class RestaurantListViewWidget extends StatelessWidget {
   const RestaurantListViewWidget({super.key});
@@ -51,13 +55,26 @@ class RestaurantListViewWidget extends StatelessWidget {
                           children: [
                             Text('مطعم البيك',
                                 style: Theme.of(context).textTheme.displayMedium!.
-                                copyWith(fontWeight: FontWeight.bold),
+                                copyWith(fontWeight: FontWeight.bold,fontSize: 15),
                               overflow: TextOverflow.ellipsis,
                             ),
                             const SizedBox(width: AppSize.s10),
                             const TooltipWidget(),
                             const Spacer(),
-                            const Icon(Icons.favorite,color: ColorManager.errorColor)
+                            BlocBuilder<HomeCubit, HomeState>(
+                              builder: (context, state) {
+                                return InkWell(
+                                  onTap: (){
+                                    HomeCubit.get(context).changeFavouriteIconStatus(index);
+                                    },
+                                  child: Icon(
+                                      HomeCubit.get(context).favouriteList[index]?
+                                      Icons.favorite:Icons.favorite_border,
+                                      color: HomeCubit.get(context).favouriteList[index]?
+                                      ColorManager.primaryOrange:ColorManager.gray700
+                                  ),
+                                );
+                                }),
                           ]
                       ),
                     ),
@@ -73,7 +90,7 @@ class RestaurantListViewWidget extends StatelessWidget {
                          overflow: TextOverflow.ellipsis,
                          text: TextSpan(
                            text: 'حى البيان , الرياض',
-                           style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 14),
+                           style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 13),
                            children: <InlineSpan>[
                              const WidgetSpan(
                                  alignment: PlaceholderAlignment.baseline,
