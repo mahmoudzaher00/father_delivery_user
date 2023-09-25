@@ -37,6 +37,7 @@ Future<void> initAppModule() async {
 
   //TODO:Cubit instance
    instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
+   //instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
    instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
    instance.registerLazySingleton<CartCubit>(() => CartCubit());
   // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));

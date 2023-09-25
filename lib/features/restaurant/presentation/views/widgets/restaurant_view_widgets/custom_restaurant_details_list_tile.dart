@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../core/resources/assets_manager.dart';
 import '../../../../../../core/resources/color_manager.dart';
+import '../../../../../../core/resources/routes_manager.dart';
 import '../../../../../../core/widgets/custom_image_widget.dart';
 
 class CustomRestaurantDetailsListTile extends StatelessWidget {
@@ -56,7 +57,9 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
         trailing: Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: IconButton(
-            onPressed: () {  },
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.restaurantMapRoute);
+            },
             padding: EdgeInsets.zero,
             icon: const Icon(FontAwesomeIcons.mapLocationDot,color: ColorManager.primaryBlack,),
             iconSize: 20,

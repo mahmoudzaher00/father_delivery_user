@@ -13,6 +13,7 @@ import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
 import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../../features/store/presentation/views/store_products_view.dart';
 import '../../features/store/presentation/views/store_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
@@ -32,6 +33,7 @@ class Routes {
   static const String mealIngredientsRoute = "/mealIngredients";
   static const String cartRoute = "/cart_view";
   static const String storeRoute = "/store_view";
+  static const String storeProductsRoute = "/store_products_view";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -40,7 +42,7 @@ class Routes {
   static const String categoryProductRoute = "/CategoryProduct";
   static const String filtersRoute = "/filters";
   static const String storeFilterRoute = "/storeFilter";
-  static const String storeProductsRoute = "/storeProducts";
+  //static const String storeProductsRoute = "/storeProducts";
   static const String ratingProductsRoute = "/ratingProducts";
   static const String storeProfileRoute = "/storeProfile";
   static const String addressRoute = "/address";
@@ -91,6 +93,7 @@ class Routes {
       Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
       Routes.cartRoute: (context) => const CartView(),
       Routes.storeRoute: (context) => const StoreView(),
+      Routes.storeProductsRoute: (context) => StoreProductsView(),
 
     };
   }
@@ -113,6 +116,7 @@ class RouteGenerator {
       case Routes.mealIngredientsRoute:return MaterialPageRoute(builder: (_) => const MealIngredientsView());
       case Routes.cartRoute:return MaterialPageRoute(builder: (_) => const CartView());
       case Routes.storeRoute:return MaterialPageRoute(builder: (_) => const StoreView());
+      case Routes.storeProductsRoute:return MaterialPageRoute(builder: (_) =>  StoreProductsView());
 
       default:return unDefinedRoute();
     }

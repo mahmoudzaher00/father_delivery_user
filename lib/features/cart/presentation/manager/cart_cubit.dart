@@ -15,10 +15,10 @@ class CartCubit extends Cubit<CartState> {
   List<int> productCounts = [];
 
   List<CartModel> cartList = [
-    CartModel(productPrice: '80 ر.س',productName: 'وجبة بروست 5 قطع',productCount: 1,productDescription: "صدور حاره خالص"),
-    CartModel(productPrice: '40 ر.س',productName: 'وجبة بروست 5 قطع',productCount: 2,productDescription: null),
-    CartModel(productPrice: '30 ر.س',productName: 'وجبة بروست 5 قطع',productCount: 3,productDescription: null),
-    CartModel(productPrice: '20 ر.س',productName: 'وجبة بروست 5 قطع',productCount: 4,productDescription: null)
+    CartModel(productPrice: 20,productName: 'وجبة بروست 5 قطع',productCount: 1,productDescription: "صدور حاره خالص"),
+    CartModel(productPrice: 20,productName: 'وجبة بروست 5 قطع',productCount: 2,productDescription: null),
+    CartModel(productPrice: 20,productName: 'وجبة بروست 5 قطع',productCount: 3,productDescription: null),
+    CartModel(productPrice: 20,productName: 'وجبة بروست 5 قطع',productCount: 4,productDescription: null)
   ];
 
   List<DeliveryAndPaymentRadioModel> deliveryRadioList = [
@@ -46,6 +46,7 @@ class CartCubit extends Cubit<CartState> {
     paymentStatusValue = value ;
     emit(ChangePaymentStatusState(value));
   }
+
   void incrementProductCount(int index){
     productCounts[index] =  productCounts[index] + 1;
     emit(IncrementProductCountState(index,productCounts[index]));
@@ -57,6 +58,7 @@ class CartCubit extends Cubit<CartState> {
     }
     emit(DecrementProductCountState(index,productCounts[index]));
   }
+
   void deleteProductFromCart(int index){
     cartList.removeAt(index);
     emit(RemoveProductState(index));

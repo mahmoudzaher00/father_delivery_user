@@ -46,8 +46,17 @@ class CartListItemWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.displaySmall!.copyWith(color:ColorManager.gray700)
                 ):const SizedBox.shrink(),
-                Text(CartCubit.get(context).cartList[index].productPrice!,
-                    style: Theme.of(context).textTheme.displaySmall!.copyWith(color:ColorManager.gray700))
+                Row(
+                  children: [
+                    Text((CartCubit.get(context).cartList[index].productPrice! *
+                        CartCubit.get(context).productCounts[index]).toString(),
+                        style: Theme.of(context).textTheme.displaySmall!.copyWith(color:ColorManager.gray700)
+                    ),
+                    Text(' ر.س ',
+                        style: Theme.of(context).textTheme.displaySmall!.copyWith(color:ColorManager.gray700)
+                    ),
+                  ],
+                )
               ],
             ),
           ),
