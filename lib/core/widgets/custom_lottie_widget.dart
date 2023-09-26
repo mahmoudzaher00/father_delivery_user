@@ -24,7 +24,7 @@ class CustomLottieWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Lottie.asset(
-        lottieName??JsonAssets.loading,
+        lottieName??JsonAssets.recordAudio,
         width:width??SizeConfig.screenWidth!*.7,
         height: height??SizeConfig.screenHeight!*.5,
         repeat: true,

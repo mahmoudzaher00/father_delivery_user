@@ -16,6 +16,7 @@ class ImageAssets {
   static const String beak = "$imagePath/beak.png";
   static const String mealIngredients = "$imagePath/mealIngredients.png";
   static const String person = "$imagePath/person.jpeg";
+  static const String pharmacy = "$imagePath/pharmacy.png";
 
 
 
@@ -50,9 +51,10 @@ class SvgAssets {
   static const String settings = "$svgPath/settings.svg";
 
 
+
 }
 
 class JsonAssets {
-  static const String loading = "$jsonPath/loading_plane.json";
-  static const String login = "$jsonPath/login.json";
+  static const String recordAudio = "$jsonPath/record_audio.json";
+
 }

@@ -69,8 +69,9 @@ class CustomImage extends StatelessWidget {
           CircleAvatar(
             radius:radiusCircleAvatar,
             backgroundColor: ColorManager.whiteColor,
-            backgroundImage: AssetImage(image),
-            // child:  Image.asset(ImageAssets.profile)
+            // backgroundImage: AssetImage(image,),
+
+            child:  Image.asset(image,height: height,width: width,fit: fit,)
           ):
           Image.asset(image,height: height,width: width,fit: fit,):
 

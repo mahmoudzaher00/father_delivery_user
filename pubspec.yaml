@@ -72,12 +72,16 @@ dependencies:
   # Adapting screen and font size
   flutter_screenutil: ^5.7.0
 
-  # google maps
+  # Google maps
   #google_maps_flutter: ^2.1.1
   google_maps_flutter: ^2.2.8
   geocoding: ^2.0.5
   geolocator: ^9.0.2
   permission_handler: ^10.2.0
+
+  # Record and play audio
+  record: ^4.4.4
+  audioplayers: ^4.1.0
 
 
   # rating star package

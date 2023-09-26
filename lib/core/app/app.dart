@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:father_delivery_user/core/core_cubit/audio_cubit/audio_record_cubit.dart';
 import 'package:father_delivery_user/core/utils/location_permission.dart';
 import 'package:father_delivery_user/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import '../../features/restaurant/presentation/manager/tt/counter_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
-import '../utils/location_permission.dart';
 import '../utils/snackbar_message.dart';
 import 'app_prefs.dart';
 import 'di.dart';
@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
         BlocProvider<CounterCubit>(create: (BuildContext context) => CounterCubit()),
         BlocProvider<IngredientsBottomSheetCubit>(create: (BuildContext context) => instance<IngredientsBottomSheetCubit>(),),
+        BlocProvider<AudioCubit>(create: (BuildContext context) => instance<AudioCubit>(),),
       ],
 
       child: MaterialApp(

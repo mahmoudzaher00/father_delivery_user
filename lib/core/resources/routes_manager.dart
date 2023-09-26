@@ -4,11 +4,16 @@ import 'package:father_delivery_user/features/auth/presentation/views/otp_view.d
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
 import 'package:father_delivery_user/features/home/presentation/views/home_view.dart';
 import 'package:father_delivery_user/features/notification/presentation/views/notification_view.dart';
+import 'package:father_delivery_user/features/orders/presentation/views/order_details_view.dart';
+import 'package:father_delivery_user/features/orders/presentation/views/orders_view.dart';
+import 'package:father_delivery_user/features/orders/presentation/views/track_order_view.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/restaurant_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
+import '../../features/orders/presentation/views/new_order_view.dart';
+import '../../features/restaurant/presentation/views/offer_meal_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
 import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
@@ -28,6 +33,11 @@ class Routes {
   static const String restaurantRoute = "/restaurant";
   static const String restaurantMapRoute = "/restaurant_map";
   static const String mealIngredientsRoute = "/mealIngredients";
+  static const String offerMealRoute = "/offerMeal";
+  static const String trackOrderRoute = "/trackOrder";
+  static const String newOrderRoute = "/newOrder";
+  static const String orderViewRoute = "/orderView";
+  static const String orderDetailsRoute = "/orderDetails";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -85,6 +95,11 @@ class Routes {
       Routes.restaurantRoute: (context) => const RestaurantView(),
       Routes.restaurantMapRoute: (context) => const RestaurantMapView(),
       Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
+      Routes.offerMealRoute: (context) => const OfferMealView(),
+      Routes.trackOrderRoute: (context) => const TrackOrderView(),
+      Routes.newOrderRoute: (context) => const NewOrderView(),
+      Routes.ordersRoute: (context) => const OrderView(),
+      Routes.orderDetailsRoute: (context) => const OrderDetailsView(),
 
     };
   }
@@ -105,6 +120,14 @@ class RouteGenerator {
       case Routes.restaurantRoute:return MaterialPageRoute(builder: (_) => const RestaurantView());
       case Routes.restaurantMapRoute:return MaterialPageRoute(builder: (_) => const RestaurantMapView());
       case Routes.mealIngredientsRoute:return MaterialPageRoute(builder: (_) => const MealIngredientsView());
+      case Routes.offerMealRoute:return MaterialPageRoute(builder: (_) => const OfferMealView());
+      case Routes.trackOrderRoute:return MaterialPageRoute(builder: (_) => const TrackOrderView());
+      case Routes.newOrderRoute:return MaterialPageRoute(builder: (_) => const NewOrderView());
+      case Routes.ordersRoute:return MaterialPageRoute(builder: (_) => const OrderView());
+      case Routes.orderDetailsRoute:
+        final String? value = settings.arguments as String?;
+        // return MaterialPageRoute(builder: (_) =>  OrderDetailsView(someData: value ??'Default Value',));
+        return MaterialPageRoute(builder: (_) =>  const OrderDetailsView());
 
       default:return unDefinedRoute();
     }

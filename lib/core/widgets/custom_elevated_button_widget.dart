@@ -10,6 +10,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
   final Color? buttonBorderColor;
   final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? buttonPadding;
+  final EdgeInsetsGeometry? buttonMargin;
   final double? width;
   final double height;
   final double? buttonBorderWidth;
@@ -31,7 +32,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
     this.buttonBackgroundColor,
     this.buttonSurfaceTintColor,
     this.buttonShadowColor,
-    this.buttonForegroundColor, this.buttonPadding, this.buttonBorderColor,  this.buttonBorderWidth,  this.buttonElevation,  this.buttonIsGradient=true,
+    this.buttonForegroundColor, this.buttonPadding, this.buttonBorderColor,  this.buttonBorderWidth,  this.buttonElevation,  this.buttonIsGradient=true, this.buttonMargin,
   }) : super(key: key);
 
   @override
@@ -40,6 +41,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      margin: buttonMargin??EdgeInsets.zero,
       decoration:buttonIsGradient? BoxDecoration(
         gradient: gradient??const LinearGradient(
             begin: Alignment.centerRight,

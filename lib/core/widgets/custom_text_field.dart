@@ -41,13 +41,15 @@ class CustomTextField extends StatelessWidget {
   final double? errorBorderRadius;
   final double? focusedBorderRadius;
   final double? focusedErrorBorderRadius;
+  final double? hintTextSize;
   final double? widthBorder;
   final int? maxLines;
   final int? errorMaxLines;
+  final Widget? suffix;
 
 
   const CustomTextField({super.key, this.controller, this.fillColorTextFiled, this.inputFormatters, this.filledColorTextFiled, this.textType, this.hintStyle, this.hintText, this.onChangedFunction, this.validatorFunction, this.onEditingCompleteFunction, this.focusNode, this.textInputAction, this.prefixIconWidget, this.suffixIconWidget, this.obscure, this.height, this.width, this.vertical, this.labelText, this.labelStyle, this.cursorColor, this.onFieldSubmitted, this.focusedBorderColor, this.enabledBorderColor, this.widthBorder, this.maxLines, this.errorTextStyle, this.enabledBorderRadius, this.focusedBorderRadius, this.inputTextStyle, this.focusedErrorBorderRadius, this.errorBorderRadius, this.errorMaxLines,
-  this.isShadow = true
+  this.isShadow = true, this.hintTextSize, this.suffix
   });
 
 
@@ -78,11 +80,12 @@ class CustomTextField extends StatelessWidget {
           errorStyle:errorTextStyle?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.errorColor,fontSize: FontSize.s10),
           labelText: labelText,
           labelStyle: labelStyle ?? Theme.of(context).textTheme.bodySmall!.copyWith(color: ColorManager.gray300, fontSize: FontSize.s10),
-          hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.borderColor, fontSize: FontSize.s20.sp),
+          hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.borderColor, fontSize: hintTextSize??FontSize.s20.sp),
           fillColor: fillColorTextFiled ?? ColorManager.primaryGray,
           filled: filledColorTextFiled  ?? true,
           prefixIcon: prefixIconWidget,
           suffixIcon: suffixIconWidget,
+          suffix:suffix ,
 
           enabledBorder: OutlineInputBorder(
             borderSide:  BorderSide(color:enabledBorderColor??ColorManager.primaryGray, width: widthBorder??1),

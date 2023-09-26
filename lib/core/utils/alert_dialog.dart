@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
-import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants_manager.dart';
 import '../resources/font_manager.dart';
@@ -19,7 +18,6 @@ import 'size_config.dart';
 //TODO:General dialog
 customAlertDialog(
     {required BuildContext context,
-    String? titleText,
     Color? titleTextColor,
     double? alertDialogHeight,
     Widget? contentTextWidget,
@@ -238,7 +236,7 @@ showLoginDialog({required BuildContext context,}) {
                       )),
                 ),
                 CustomLottieWidget(
-                  lottieName: JsonAssets.login,
+                  lottieName:' JsonAssets.login',
                   height: 250,
                   width: SizeConfig.screenWidth!,
                 ),

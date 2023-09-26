@@ -30,6 +30,55 @@
             </list>
           </value>
         </entry>
+        <entry key="audioplayers">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers-4.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_android">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_android-3.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_darwin">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_darwin-4.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_linux">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_linux-2.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_platform_interface-5.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_web-3.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="audioplayers_windows">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_windows-2.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="badges">
           <value>
             <list>
@@ -786,6 +835,48 @@
             </list>
           </value>
         </entry>
+        <entry key="record">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record-4.4.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="record_linux">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record_linux-0.4.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="record_macos">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record_macos-0.2.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="record_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record_platform_interface-0.5.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="record_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record_web-0.5.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="record_windows">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/record_windows-0.7.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="rxdart">
           <value>
             <list>
@@ -874,13 +965,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.9.1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="sprintf">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -1020,7 +1104,7 @@
         <entry key="uuid">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-4.0.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-3.0.7/lib" />
             </list>
           </value>
         </entry>
@@ -1080,6 +1164,13 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/archive-3.3.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.10.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers-4.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_android-3.0.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_darwin-4.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_linux-2.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_platform_interface-5.0.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_web-3.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/audioplayers_windows-2.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/badges-3.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bloc-8.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib" />
@@ -1184,6 +1275,12 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/provider-6.0.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/quick_log-5.3.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record-4.4.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record_linux-0.4.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record_macos-0.2.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record_platform_interface-0.5.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record_web-0.5.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/record_windows-0.7.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/rxdart-0.27.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sanitize_html-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences-2.2.1/lib" />
@@ -1196,7 +1293,6 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shimmer-3.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-1.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.9.1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite-2.2.8+4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite_common-2.4.5+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.0/lib" />
@@ -1216,7 +1312,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.1.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_web-2.0.19/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_windows-3.0.8/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-4.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-3.0.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics-1.1.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.5/lib" />

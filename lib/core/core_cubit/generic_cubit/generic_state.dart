@@ -5,6 +5,7 @@ abstract class GenericState<T> extends Equatable {
   T? data;
 
   GenericState({required this.change, required this.data});
+
 }
 
 class GenericInitial<T> extends GenericState<T> {

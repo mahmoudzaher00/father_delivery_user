@@ -1,4 +1,10 @@
 # This is a generated file; do not edit or check into version control.
+audioplayers=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers-4.1.0/
+audioplayers_android=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers_android-3.0.2/
+audioplayers_darwin=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers_darwin-4.1.0/
+audioplayers_linux=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers_linux-2.1.0/
+audioplayers_web=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers_web-3.1.0/
+audioplayers_windows=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/audioplayers_windows-2.0.2/
 connectivity_plus=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/connectivity_plus-4.0.2/
 file_selector_linux=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1/
 file_selector_macos=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+2/
@@ -34,6 +40,11 @@ permission_handler=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/permission_hand
 permission_handler_android=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/permission_handler_android-10.3.6/
 permission_handler_apple=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4/
 permission_handler_windows=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.3/
+record=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/record-4.4.4/
+record_linux=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/record_linux-0.4.1/
+record_macos=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/record_macos-0.2.2/
+record_web=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/record_web-0.5.0/
+record_windows=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/record_windows-0.7.1/
 shared_preferences=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/shared_preferences-2.2.1/
 shared_preferences_android=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/shared_preferences_android-2.2.1/
 shared_preferences_foundation=/Users/mahmoudzaher/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.3.4/

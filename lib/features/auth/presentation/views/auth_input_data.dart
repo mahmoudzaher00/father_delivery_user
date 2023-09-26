@@ -8,13 +8,10 @@ import 'package:image_picker/image_picker.dart';
 
 
 import '../../../../core/app/di.dart';
-import '../../../../core/core_cubit/generic_cubit/generic_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/utils/alert_dialog.dart';
-import '../../../../core/utils/snak_bar_message.dart';
 import '../manager/registerDataCubit/register_data_cubit.dart';
-import '../manager/register_cubit/register_cubit.dart';
 
 class AuthInputData{
   //TODO: Login Input Data & TextField Validation
@@ -95,7 +92,7 @@ class AuthInputData{
   buildSetProfileImageAlertDialog(BuildContext context) {
     customAlertDialog(
         context: context,
-        titleText: 'الصورة الشخصية',
+
         titleTextColor: ColorManager.primaryOrange,
         alertDialogHeight: 200,
         height: 0,

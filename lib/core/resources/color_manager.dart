@@ -4,7 +4,8 @@ class ColorManager {
   //TODO:Primary Colors
   static const Color primaryOrange = Color(0xffEF554A);
   static const Color lightOrange = Color(0xffFF8C69);
-  static  Color primaryOrange30 = const Color(0xffEF554A).withOpacity(0.3);
+  // static  Color primaryOrange30 = const Color(0xffEF554A).withOpacity(0.3);
+  static  Color primaryOrange30 = const Color(0x4def554a);
   static const Color extraLightOrange = Color(0xffFFDFBF);
   static const Color primaryBlack = Color(0xff2A2A2A);
   static const Color primaryGray = Color(0xffF2F5F5);
@@ -32,6 +33,7 @@ class ColorManager {
   static const Color extraLightGreen = Color(0xffC2F4C6);
   static const Color dividerColor = Color(0xffD5D7DB);
   static const Color throughLineColor =Color(0xff7F7F7F);
+  static const Color transparentColor = Colors.transparent;
 
   //TODO:Text Field Colors
   static const Color cursorColor = Color(0xff363A40);
@@ -45,7 +47,7 @@ class ColorManager {
   static const Color shadowColor3 = Color(0x13ffffff);
 
 
-  static const Color transparentColor = Colors.transparent;
+
 
 
 

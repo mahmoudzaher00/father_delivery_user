@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:father_delivery_user/core/core_cubit/audio_cubit/audio_record_cubit.dart';
+import 'package:father_delivery_user/features/orders/presentation/manager/new_order_cubit/new_order_cubit.dart';
 import 'package:father_delivery_user/features/user_locations/data/repository/user_locations_repo_impl.dart';
 import 'package:father_delivery_user/features/user_locations/presentation/views/user_locations_input_data.dart';
 import 'package:get_it/get_it.dart';
@@ -9,6 +11,7 @@ import '../../features/auth/presentation/manager/registerDataCubit/register_data
 import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
 import '../../features/auth/presentation/views/auth_input_data.dart';
 import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
+import '../../features/orders/presentation/views/orders_input_data.dart';
 import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
@@ -33,6 +36,7 @@ Future<void> initAppModule() async {
   //TODO:Generics instance
   instance.registerLazySingleton<AuthInputData>(() => AuthInputData());
   instance.registerLazySingleton<UserLocationsInputData>(() => UserLocationsInputData());
+  instance.registerLazySingleton<OrdersInputData>(() => OrdersInputData());
 
   //TODO:Cubit instance
    instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
@@ -43,6 +47,8 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RegisterDataCubit>(() => RegisterDataCubit());
   instance.registerLazySingleton<RestaurantCubit>(() => RestaurantCubit());
   instance.registerLazySingleton<IngredientsBottomSheetCubit>(() => IngredientsBottomSheetCubit());
+  instance.registerLazySingleton<AudioCubit>(() => AudioCubit());
+  instance.registerLazySingleton<NewOrderCubit>(() => NewOrderCubit());
   // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<OtpBloc>(() => OtpBloc(instance.get<AuthRepoImpl>()));
   // instance.registerLazySingleton<MainBloc>(() => MainBloc());
