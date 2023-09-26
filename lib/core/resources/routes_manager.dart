@@ -4,19 +4,19 @@ import 'package:father_delivery_user/features/auth/presentation/views/otp_view.d
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
 import 'package:father_delivery_user/features/home/presentation/views/home_view.dart';
 import 'package:father_delivery_user/features/notification/presentation/views/notification_view.dart';
-import 'package:father_delivery_user/features/orders/presentation/views/order_details_view.dart';
-import 'package:father_delivery_user/features/orders/presentation/views/orders_view.dart';
-import 'package:father_delivery_user/features/orders/presentation/views/track_order_view.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/restaurant_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
+import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/orders/presentation/views/new_order_view.dart';
 import '../../features/restaurant/presentation/views/offer_meal_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
 import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../../features/store/presentation/views/store_products_view.dart';
+import '../../features/store/presentation/views/store_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
 
@@ -33,6 +33,9 @@ class Routes {
   static const String restaurantRoute = "/restaurant";
   static const String restaurantMapRoute = "/restaurant_map";
   static const String mealIngredientsRoute = "/mealIngredients";
+  static const String cartRoute = "/cart_view";
+  static const String storeRoute = "/store_view";
+  static const String storeProductsRoute = "/store_products_view";
   static const String offerMealRoute = "/offerMeal";
   static const String trackOrderRoute = "/trackOrder";
   static const String newOrderRoute = "/newOrder";
@@ -46,7 +49,7 @@ class Routes {
   static const String categoryProductRoute = "/CategoryProduct";
   static const String filtersRoute = "/filters";
   static const String storeFilterRoute = "/storeFilter";
-  static const String storeProductsRoute = "/storeProducts";
+  //static const String storeProductsRoute = "/storeProducts";
   static const String ratingProductsRoute = "/ratingProducts";
   static const String storeProfileRoute = "/storeProfile";
   static const String addressRoute = "/address";
@@ -95,6 +98,9 @@ class Routes {
       Routes.restaurantRoute: (context) => const RestaurantView(),
       Routes.restaurantMapRoute: (context) => const RestaurantMapView(),
       Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
+      Routes.cartRoute: (context) => const CartView(),
+      Routes.storeRoute: (context) => const StoreView(),
+      Routes.storeProductsRoute: (context) => StoreProductsView(),
       Routes.offerMealRoute: (context) => const OfferMealView(),
       Routes.trackOrderRoute: (context) => const TrackOrderView(),
       Routes.newOrderRoute: (context) => const NewOrderView(),
@@ -128,6 +134,9 @@ class RouteGenerator {
         final String? value = settings.arguments as String?;
         // return MaterialPageRoute(builder: (_) =>  OrderDetailsView(someData: value ??'Default Value',));
         return MaterialPageRoute(builder: (_) =>  const OrderDetailsView());
+      case Routes.cartRoute:return MaterialPageRoute(builder: (_) => const CartView());
+      case Routes.storeRoute:return MaterialPageRoute(builder: (_) => const StoreView());
+      case Routes.storeProductsRoute:return MaterialPageRoute(builder: (_) =>  StoreProductsView());
 
       default:return unDefinedRoute();
     }

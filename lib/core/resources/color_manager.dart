@@ -14,6 +14,7 @@ class ColorManager {
   static const Color gray600 = Color(0xff343844);
   static const Color gray500 = Color(0xffA2A2A2);
   static const Color gray400 = Color(0xff646B7A);
+  static const Color gray700 = Color(0xff707070);
   static const Color gray300 = Color(0xff949EAE);
   static const Color grayIcon = Color(0xffBEBEBE);
   static const Color gray200 = Color(0xffBAC2CF);

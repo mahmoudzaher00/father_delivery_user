@@ -20,8 +20,9 @@ class HomeCubit extends Cubit<HomeState> {
   List<LanguageModel> lang = [
     LanguageModel(title: "عربي",value: "ar"),
     LanguageModel(title: "English",value: "en"),
+ ];
 
-  ];
+  List<bool> favouriteList = List.generate(10, (index) => false);
 
   List<String> sliderImages = [
     ImageAssets.imageSlider,
@@ -36,6 +37,11 @@ class HomeCubit extends Cubit<HomeState> {
   void changeLang(String lang){
     currentLang = lang;
     emit(ChangeLangState(lang));
+  }
+
+  void changeFavouriteIconStatus(int index) {
+    favouriteList[index] = !favouriteList[index];
+    emit(ChangeFavouriteState(index, favouriteList[index]));
   }
 
   void updateTextFieldStatus(){

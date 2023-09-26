@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
+import '../../features/cart/presentation/manager/cart_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
 import '../../features/restaurant/presentation/manager/tt/counter_cubit.dart';
+import '../../features/store/presentation/manager/store_cubit/store_cubit.dart';
+import '../../features/store/presentation/manager/store_products_cubit/store_products_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
@@ -49,6 +52,9 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider<MapCubit>(create: (BuildContext context) => instance<MapCubit>()..getCustomMarker(),lazy: false,),
         BlocProvider<HomeCubit>(create: (BuildContext context) => HomeCubit()),
+        BlocProvider<CartCubit>(create: (BuildContext context) => CartCubit()),
+        BlocProvider<StoreCubit>(create: (BuildContext context) => StoreCubit()),
+        BlocProvider<StoreProductsCubit>(create: (BuildContext context) => StoreProductsCubit()),
         BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
         BlocProvider<CounterCubit>(create: (BuildContext context) => CounterCubit()),
         BlocProvider<IngredientsBottomSheetCubit>(create: (BuildContext context) => instance<IngredientsBottomSheetCubit>(),),

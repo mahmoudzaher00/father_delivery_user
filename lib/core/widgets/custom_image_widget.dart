@@ -25,6 +25,7 @@ class CustomImage extends StatelessWidget {
         this.vertical = 0,
         this.radiusCircleAvatar,
         this.isAsset=false,
+        this.circleBorderColor
       });
 
   final String image;
@@ -36,6 +37,7 @@ class CustomImage extends StatelessWidget {
   final bool isShadow;
   final bool isCircular;
   final Color? borderColor;
+  final Color? circleBorderColor;
   final Color? bgColor;
   final bool trBackground;
   final bool isNetwork;
@@ -66,12 +68,18 @@ class CustomImage extends StatelessWidget {
           borderRadius: borderRadius??BorderRadius.circular(radius),
           child:isAsset!?
           isCircular?
-          CircleAvatar(
-            radius:radiusCircleAvatar,
-            backgroundColor: ColorManager.whiteColor,
-            // backgroundImage: AssetImage(image,),
-
-            child:  Image.asset(image,height: height,width: width,fit: fit,)
+          Container(
+            padding: const EdgeInsets.all(1),
+            decoration: BoxDecoration(
+              border: Border.all(color: circleBorderColor ?? ColorManager.whiteColor),
+              shape: BoxShape.circle
+            ),
+            child: CircleAvatar(
+              radius:radiusCircleAvatar,
+              backgroundColor: ColorManager.whiteColor,
+              backgroundImage: AssetImage(image),
+              // child:  Image.asset(ImageAssets.profile)
+            ),
           ):
           Image.asset(image,height: height,width: width,fit: fit,):
 

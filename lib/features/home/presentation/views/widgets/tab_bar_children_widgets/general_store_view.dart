@@ -5,6 +5,8 @@ import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../../core/resources/routes_manager.dart';
+
 class GeneralStoresView extends StatelessWidget{
   const GeneralStoresView({super.key});
 
@@ -24,7 +26,9 @@ class GeneralStoresView extends StatelessWidget{
            child: Wrap(
                children: List.generate(32,(index){
                  return InkWell(
-                     onTap: (){},
+                     onTap: (){
+                       Navigator.pushNamed(context, Routes.storeRoute);
+                     },
                      child: Container(
                        width: MediaQuery.of(context).size.width * 0.3333 - AppSize.s20,
                        height: AppSize.s120,
@@ -33,8 +37,8 @@ class GeneralStoresView extends StatelessWidget{
                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                          children: [
                            Container(
-                             width: AppSize.s80,
-                             height: AppSize.s80,
+                             width: AppSize.s70,
+                             height: AppSize.s70,
                              padding: const EdgeInsets.all(AppPadding.p16),
                              decoration: const BoxDecoration(
                                  shape: BoxShape.circle,
