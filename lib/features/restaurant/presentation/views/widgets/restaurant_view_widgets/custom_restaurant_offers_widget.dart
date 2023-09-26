@@ -2,7 +2,6 @@ import 'package:father_delivery_user/core/resources/assets_manager.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

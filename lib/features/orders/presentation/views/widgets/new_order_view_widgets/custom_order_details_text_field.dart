@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:audio_waveforms/audio_waveforms.dart';
 
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/utils/play_audio_helper.dart';
@@ -28,13 +27,12 @@ class _CustomOrderDetailsTextFieldState extends State<CustomOrderDetailsTextFiel
   var path;
   final myRecorder = RecordAudioHelper();
   PlayAudioHelper playAudioHelper = PlayAudioHelper();
-  late PlayerController playerController;
 
   @override
   initState(){
     myRecorder.init(setState);
     playAudioHelper.init(setState);
-    playerController = PlayerController();
+
     super.initState();
   }
   @override

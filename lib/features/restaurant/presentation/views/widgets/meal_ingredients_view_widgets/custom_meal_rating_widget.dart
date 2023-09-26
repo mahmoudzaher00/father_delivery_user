@@ -1,15 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:father_delivery_user/core/resources/assets_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
-import 'package:father_delivery_user/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/color_manager.dart';
-import '../../../../../../core/resources/values_manager.dart';
 import 'custom_add_review_for_meal_widget.dart';
 
 class CustomMealRatingWidget extends StatelessWidget {

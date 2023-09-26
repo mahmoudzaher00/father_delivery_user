@@ -6,7 +6,6 @@ import '../../../../../../core/app/di.dart';
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/widgets/custom_elevated_button_widget.dart';
 import '../../../manager/registerDataCubit/register_data_cubit.dart';
-import '../../../manager/register_cubit/register_cubit.dart';
 import 'custom_email_text_field.dart';
 import 'custom_register_data_image_widget.dart';
 import 'custom_user_name_text_field.dart';
@@ -27,11 +26,11 @@ class RegisterDataViewBody extends StatelessWidget {
           SizedBox(height: 25.h,),
           Text('اسم المستخدم',style: Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp),),
           SizedBox(height: 15.h,),
-          CustomUserNameTextField(),
+          const CustomUserNameTextField(),
           SizedBox(height: 25.h,),
           Text('البريد الإلكترونى',style: Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp),),
           SizedBox(height: 15.h,),
-          CustomEmailTextField(),
+          const CustomEmailTextField(),
           SizedBox(height: 40.h,),
           CustomElevatedButtonWidget(
             onPressed: (){},

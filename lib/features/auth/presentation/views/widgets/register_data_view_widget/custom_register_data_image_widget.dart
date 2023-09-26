@@ -2,14 +2,11 @@ import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/auth_input_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../core/app/di.dart';
-import '../../../../../../core/resources/assets_manager.dart';
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/resources/values_manager.dart';
 import '../../../manager/registerDataCubit/register_data_cubit.dart';
-import '../../../manager/register_cubit/register_cubit.dart';
 
 class CustomRegisterDataImageWidget extends StatelessWidget {
   const CustomRegisterDataImageWidget({Key? key}) : super(key: key);

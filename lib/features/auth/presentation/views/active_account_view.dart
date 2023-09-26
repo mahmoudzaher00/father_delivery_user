@@ -18,7 +18,7 @@ class ActiveAccountView extends StatelessWidget {
         surfaceTintColor: ColorManager.whiteColor,
           toolbarHeight: SizeConfig.statusBarHeight,
       ),
-      body: ActiveAccountViewBody(),
+      body: const ActiveAccountViewBody(),
     );
   }
 }

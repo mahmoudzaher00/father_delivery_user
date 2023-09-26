@@ -1,4 +1,3 @@
-import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

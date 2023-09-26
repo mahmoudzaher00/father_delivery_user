@@ -1,6 +1,5 @@
 import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_restaurant_sliver_app_bar.dart';

@@ -57,7 +57,7 @@ ThemeData getApplicationTheme() {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AppSize.s5)))),
     //bottom sheet theme
-    bottomSheetTheme: BottomSheetThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
       surfaceTintColor: ColorManager.whiteColor
     ),
 

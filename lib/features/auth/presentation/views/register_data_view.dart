@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/resources/color_manager.dart';
 import '../../../../core/widgets/custom_app_bar_widget.dart';
 import 'widgets/register_data_view_widget/register_data_view_body.dart';
 

@@ -11,10 +11,10 @@ class IngredientsData{
   }
   double get flavorsPricing{
     double price=0.0;
-    list.forEach((element) {
+    for (var element in list) {
       var item=element.count*(double.tryParse(element.price)??0);
       price+=item;
-    });
+    }
     return price;
   }
 

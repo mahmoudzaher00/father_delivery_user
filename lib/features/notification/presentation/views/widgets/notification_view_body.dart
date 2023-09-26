@@ -51,7 +51,7 @@ class NotificationViewBody extends StatelessWidget {
                             fontSize: 16.sp,
                             color: ColorManager.primaryBlack
                         )),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Text('المندوب فى الطريق إليك',
                         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                             fontSize: 11.sp,
