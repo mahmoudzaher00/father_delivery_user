@@ -5,6 +5,7 @@ import 'package:father_delivery_user/features/home/presentation/views/widgets/dr
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/resources/assets_manager.dart';
+import '../../../../../core/resources/routes_manager.dart';
 import 'drawer_widgets/drawer_header.dart';
 import 'drawer_widgets/lang_widget.dart';
 
@@ -26,8 +27,12 @@ class DrawerWidget extends StatelessWidget {
             DrawerCustomItem(title: 'طلبباتي', image: SvgAssets.creditCard, imageSize: AppSize.s16, onPressed: (){}),
             DrawerCustomItem(title: 'الفواتير', imageSize: AppSize.s16, image: SvgAssets.money,onPressed: (){}),
             DrawerCustomItem(title: 'التسعيرات',image: SvgAssets.pricing,onPressed: (){}),
-            DrawerCustomItem(title: 'الشروط والأحكام',image: SvgAssets.termsIcon,onPressed: (){}),
-            DrawerCustomItem(title: 'تواصل معنا',image: SvgAssets.contactUsIcon,onPressed: (){}),
+            DrawerCustomItem(title: 'الشروط والأحكام',image: SvgAssets.termsIcon,onPressed: (){
+              Navigator.pushNamed(context, Routes.termsAndConditionsRoute);
+            }),
+            DrawerCustomItem(title: 'تواصل معنا',image: SvgAssets.contactUsIcon,onPressed: (){
+              Navigator.pushNamed(context, Routes.contactUsRoute);
+            }),
             const Spacer(),
             const LangWidget(),
             SizedBox(height: 30.h),

@@ -45,6 +45,7 @@ class SvgAssets {
   static const String iconGallery = "$svgPath/icon_gallery.svg";
   static const String cartIcon = "$svgPath/cart_icon.svg";
   static const String contactUsIcon = "$svgPath/contact_us_icon.svg";
+  static const String contact = "$svgPath/contact.svg";
   static const String creditCard = "$svgPath/creditcard.svg";
   static const String money = "$svgPath/money.svg";
   static const String pricing = "$svgPath/pricing.svg";
@@ -58,4 +59,10 @@ class SvgAssets {
 class JsonAssets {
   static const String recordAudio = "$jsonPath/record_audio.json";
 
+  static const String loading = "$jsonPath/loading_plane.json";
+  static const String login = "$jsonPath/login.json";
+  static const String instagram = "$jsonPath/instagram.json";
+  static const String snapchat = "$jsonPath/snapchat.json";
+  static const String twitter = "$jsonPath/twitter.json";
+  static const String whatsapp = "$jsonPath/whatsapp.json";
 }
