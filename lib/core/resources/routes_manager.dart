@@ -10,6 +10,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
+import '../../features/my_orders/presentation/views/my_orders_view.dart';
 import '../../features/orders/presentation/views/new_order_view.dart';
 import '../../features/orders/presentation/views/order_details_view.dart';
 import '../../features/orders/presentation/views/orders_view.dart';
@@ -47,6 +48,7 @@ class Routes {
   static const String newOrderRoute = "/newOrder";
   static const String orderViewRoute = "/orderView";
   static const String orderDetailsRoute = "/orderDetails";
+  static const String myOrdersViewRoute = "/myOrdersView";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -105,15 +107,15 @@ class Routes {
       Routes.mealIngredientsRoute: (context) => const MealIngredientsView(),
       Routes.cartRoute: (context) => const CartView(),
       Routes.storeRoute: (context) => const StoreView(),
-      Routes.storeProductsRoute: (context) => StoreProductsView(),
+      Routes.storeProductsRoute: (context) => const StoreProductsView(),
       Routes.offerMealRoute: (context) => const OfferMealView(),
       Routes.trackOrderRoute: (context) => const TrackOrderView(),
       Routes.newOrderRoute: (context) => const NewOrderView(),
       Routes.ordersRoute: (context) => const OrderView(),
       Routes.orderDetailsRoute: (context) => const OrderDetailsView(),
-      Routes.storeProductsRoute: (context) => const StoreProductsView(),
       Routes.contactUsRoute: (context) => const ContactUsView(),
       Routes.termsAndConditionsRoute: (context) => const TermsView(),
+      Routes.myOrdersViewRoute: (context) => const MyOrdersView(),
 
     };
   }
@@ -147,6 +149,7 @@ class RouteGenerator {
       case Routes.storeProductsRoute:return MaterialPageRoute(builder: (_) =>  const StoreProductsView());
       case Routes.contactUsRoute:return MaterialPageRoute(builder: (_) =>  const ContactUsView());
       case Routes.termsAndConditionsRoute:return MaterialPageRoute(builder: (_) =>  const TermsView());
+      case Routes.myOrdersViewRoute:return MaterialPageRoute(builder: (_) =>  const MyOrdersView());
 
       default:return unDefinedRoute();
     }

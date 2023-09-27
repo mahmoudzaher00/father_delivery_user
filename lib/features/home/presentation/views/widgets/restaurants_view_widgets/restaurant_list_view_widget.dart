@@ -5,6 +5,7 @@ import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
 import 'package:father_delivery_user/features/home/presentation/views/widgets/restaurants_view_widgets/tooltip_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -74,7 +75,7 @@ class RestaurantListViewWidget extends StatelessWidget {
                                       },
                                     child: Icon(
                                         HomeCubit.get(context).favouriteList[index]?
-                                        Icons.favorite:Icons.favorite_border,
+                                        CupertinoIcons.heart_fill:CupertinoIcons.heart,
                                         color: HomeCubit.get(context).favouriteList[index]?
                                         ColorManager.primaryOrange:ColorManager.gray700
                                     ),

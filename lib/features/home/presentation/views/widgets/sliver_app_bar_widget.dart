@@ -1,6 +1,7 @@
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -74,7 +75,7 @@ class SliverAppBarWidget extends StatelessWidget {
                 onTap: (){
                   Navigator.pushNamed(context, Routes.notificationRoute);
                 },
-                child: const Icon(Icons.notifications_none_outlined,
+                child: const Icon(CupertinoIcons.bell,
                   size: AppSize.s28,
                   color: ColorManager.blackColor,
                 ),

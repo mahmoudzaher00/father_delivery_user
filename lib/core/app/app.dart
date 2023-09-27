@@ -5,6 +5,7 @@ import 'package:father_delivery_user/features/home/presentation/manager/home_cub
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/my_orders/presentation/manager/my_orders_cubit/my_orders_cubit.dart';
 import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
 import '../../features/cart/presentation/manager/cart_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
@@ -54,6 +55,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<HomeCubit>(create: (BuildContext context) => HomeCubit()),
         BlocProvider<CartCubit>(create: (BuildContext context) => CartCubit()),
         BlocProvider<StoreCubit>(create: (BuildContext context) => StoreCubit()),
+        BlocProvider<MyOrdersCubit>(create: (BuildContext context) => MyOrdersCubit()),
         BlocProvider<StoreProductsCubit>(create: (BuildContext context) => StoreProductsCubit()),
         BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
         BlocProvider<CounterCubit>(create: (BuildContext context) => CounterCubit()),
