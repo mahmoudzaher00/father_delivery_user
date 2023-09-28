@@ -22,7 +22,7 @@ class PageViewBodyWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: AppSize.s10),
             shrinkWrap: true,
             itemCount: 13,
-            physics: const BouncingScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context,index){
               return Container(
                 height: AppSize.s100,

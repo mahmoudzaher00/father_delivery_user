@@ -10,6 +10,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
+import '../../features/invoices/presentation/views/order_invoices_view.dart';
 import '../../features/my_orders/presentation/views/my_orders_view.dart';
 import '../../features/orders/presentation/views/new_order_view.dart';
 import '../../features/orders/presentation/views/order_details_view.dart';
@@ -49,6 +50,7 @@ class Routes {
   static const String orderViewRoute = "/orderView";
   static const String orderDetailsRoute = "/orderDetails";
   static const String myOrdersViewRoute = "/myOrdersView";
+  static const String orderInvoicesViewRoute = "/orderInvoicesView";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -116,6 +118,7 @@ class Routes {
       Routes.contactUsRoute: (context) => const ContactUsView(),
       Routes.termsAndConditionsRoute: (context) => const TermsView(),
       Routes.myOrdersViewRoute: (context) => const MyOrdersView(),
+      Routes.orderInvoicesViewRoute: (context) => const OrderInvoicesView(),
 
     };
   }
@@ -150,6 +153,7 @@ class RouteGenerator {
       case Routes.contactUsRoute:return MaterialPageRoute(builder: (_) =>  const ContactUsView());
       case Routes.termsAndConditionsRoute:return MaterialPageRoute(builder: (_) =>  const TermsView());
       case Routes.myOrdersViewRoute:return MaterialPageRoute(builder: (_) =>  const MyOrdersView());
+      case Routes.orderInvoicesViewRoute:return MaterialPageRoute(builder: (_) =>  const OrderInvoicesView());
 
       default:return unDefinedRoute();
     }

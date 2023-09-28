@@ -27,7 +27,9 @@ class DrawerWidget extends StatelessWidget {
             DrawerCustomItem(title: 'طلباتي', image: SvgAssets.creditCard, imageSize: AppSize.s16, onPressed: (){
               Navigator.pushNamed(context, Routes.myOrdersViewRoute);
             }),
-            DrawerCustomItem(title: 'الفواتير', imageSize: AppSize.s16, image: SvgAssets.money,onPressed: (){}),
+            DrawerCustomItem(title: 'الفواتير', imageSize: AppSize.s16, image: SvgAssets.money,onPressed: (){
+              Navigator.pushNamed(context, Routes.orderInvoicesViewRoute);
+            }),
             DrawerCustomItem(title: 'التسعيرات',image: SvgAssets.pricing,onPressed: (){}),
             DrawerCustomItem(title: 'الشروط والأحكام',image: SvgAssets.termsIcon,onPressed: (){
               Navigator.pushNamed(context, Routes.termsAndConditionsRoute);
