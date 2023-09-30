@@ -7,6 +7,7 @@ import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_elevated_button_widget.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../user_locations_input_data.dart';
 import 'custom_services_widget.dart';
@@ -15,31 +16,25 @@ class CustomSetLocationAndServiceButton extends StatelessWidget {
   const CustomSetLocationAndServiceButton({super.key,});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      padding: const EdgeInsets.all(8.0),
-      child: CustomElevatedButtonWidget(
-        width: SizeConfig.screenWidth,
-        height: 50,
-
-        borderRadius: BorderRadius.circular(AppSize.s8),
-        onPressed: () {
-          instance<AppPreferences>().putDataInSharedPreference(
-              value: instance<MapCubit>().savedLocation!.latitude,
-              key: 'lat'
-          );
-          instance<AppPreferences>().putDataInSharedPreference(
-              value: instance<MapCubit>().savedLocation!.longitude ,
-              key: 'lng'
-          );
-
-          selectServicesDialog(context);
-        },
+    return CustomElevatedButtonWidget(
+        width: SizeConfig.screenWidth!,
+        buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ),
         child: Text(
             "أكد مكانك واختار الخدمة",
-            style: Theme.of(context).textTheme.displayLarge!.copyWith(color: ColorManager.whiteColor)
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                fontSize: 18.sp, color: ColorManager.whiteColor)
         ),
-      ),
+      onPressed: (){
+        instance<AppPreferences>().putDataInSharedPreference(
+            value: instance<MapCubit>().savedLocation!.latitude,
+            key: 'lat'
+        );
+        instance<AppPreferences>().putDataInSharedPreference(
+            value: instance<MapCubit>().savedLocation!.longitude ,
+            key: 'lng'
+        );
+        selectServicesDialog(context);
+      },
     );
   }
 }

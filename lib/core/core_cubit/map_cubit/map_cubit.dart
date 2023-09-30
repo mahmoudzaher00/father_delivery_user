@@ -19,6 +19,9 @@ import 'package:http/http.dart' as http;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart' as geocoding;
 
+import '../../app/app_prefs.dart';
+import '../../app/di.dart';
+
 
 part 'map_state.dart';
 
@@ -66,6 +69,7 @@ class MapCubit extends Cubit<MapState> {
     cameraMoving(restaurantLocation.latitude, restaurantLocation.longitude);
 
   }
+
   void getUserLocationFromCache(){
     emptyMarker.add(
         Marker(
@@ -112,6 +116,12 @@ class MapCubit extends Cubit<MapState> {
       savedLocation = myLatLng;
       List<Placemark> addressList = [];
       addressList = await geocoding.placemarkFromCoordinates(currentPosition!.latitude, currentPosition!.longitude);
+      zoneAddress =  addressList.first.street!.isNotEmpty ?
+      addressList.first.street:
+      addressList.first.subAdministrativeArea!.isNotEmpty ?
+      addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
+      addressList.first.administrativeArea : addressList.first.locality);
+      instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
       cameraPosition = CameraPosition(target: myLatLng, zoom: mapZoom);
       mapController!.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
       marker = customMarker(myLatLng);
@@ -142,9 +152,12 @@ class MapCubit extends Cubit<MapState> {
     try {
       savedLocation = latLng;
       addressList = await geocoding.placemarkFromCoordinates(latLng.latitude, latLng.longitude);
-      zoneAddress = addressList.first.subAdministrativeArea!.isNotEmpty ?
+      zoneAddress = addressList.first.street!.isNotEmpty ?
+      addressList.first.street:
+      addressList.first.subAdministrativeArea!.isNotEmpty ?
       addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
       addressList.first.administrativeArea : addressList.first.locality);
+      instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
       cameraMoving(latLng.latitude, latLng.longitude);
       marker = customMarker(latLng);
     } catch (e) {
@@ -153,7 +166,15 @@ class MapCubit extends Cubit<MapState> {
     emit(GetLocationDetailsByTappingMap(latLng));
   }
 
-  void goToSearchLocation(double lat, double lng) {
+  void goToSearchLocation(double lat, double lng) async{
+    List<geocoding.Placemark> addressList = [];
+    addressList = await geocoding.placemarkFromCoordinates(lat, lng);
+    zoneAddress = addressList.first.street!.isNotEmpty ?
+    addressList.first.street:
+    addressList.first.subAdministrativeArea!.isNotEmpty ?
+    addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
+    addressList.first.administrativeArea : addressList.first.locality);
+    instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
     cameraMoving(lat, lng);
     marker = customMarker(LatLng(lat, lng));
     emit(GoToSearchLocation(lat, lng));

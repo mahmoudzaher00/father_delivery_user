@@ -38,27 +38,25 @@ class _StoreProductsSearchWidgetState extends State<StoreProductsSearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: CustomSearchContainer(
-        icon:Icons.search,
-        containerColor: ColorManager.primaryGray,
-        hasFocus:focusNode.hasFocus,
-        child: Container(
-          width: SizeConfig.screenWidth! - AppSize.s90,
-          margin: const EdgeInsets.symmetric(horizontal: AppMargin.m2),
-          child: CustomTextField(
-            focusNode: focusNode,
-            enabledBorderRadius: AppSize.s0,
-            widthBorder: AppSize.s0,
-            isShadow: false,
-            hintText: 'ابحث هنا',
-            fillColorTextFiled: ColorManager.primaryGray,
-            hintStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.grayIcon),
-            inputTextStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.blackColor),
-            onFieldSubmitted: (value) async {
-              if(value.isNotEmpty){}
-            },
-          ),
+    return CustomSearchContainer(
+      icon:Icons.search,
+      containerColor: ColorManager.primaryGray,
+      hasFocus:focusNode.hasFocus,
+      child: Container(
+        width: SizeConfig.screenWidth! - AppSize.s90,
+        margin: const EdgeInsets.symmetric(horizontal: AppMargin.m2),
+        child: CustomTextField(
+          focusNode: focusNode,
+          enabledBorderRadius: AppSize.s0,
+          widthBorder: AppSize.s0,
+          isShadow: false,
+          hintText: 'ابحث هنا',
+          fillColorTextFiled: ColorManager.primaryGray,
+          hintStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.grayIcon),
+          inputTextStyle: Theme.of(context).textTheme.displaySmall!.copyWith(color: ColorManager.blackColor),
+          onFieldSubmitted: (value) async {
+            if(value.isNotEmpty){}
+          },
         ),
       ),
     );

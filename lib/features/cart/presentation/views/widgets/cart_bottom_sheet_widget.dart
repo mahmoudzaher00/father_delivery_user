@@ -1,8 +1,9 @@
-
 import 'package:father_delivery_user/features/cart/presentation/manager/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/app/app_prefs.dart';
+import '../../../../../core/app/di.dart';
 import '../../../../../core/resources/color_manager.dart';
 import '../../../../../core/resources/values_manager.dart';
 import '../../../../../core/utils/size_config.dart';
@@ -17,7 +18,7 @@ class CartBottomSheetWidget extends StatelessWidget {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         return Container(
-          height: AppSize.s320,
+          height: AppSize.s370,
           width: SizeConfig.screenWidth,
           color: ColorManager.primaryGray,
           child: Scaffold(
@@ -61,6 +62,29 @@ class CartBottomSheetWidget extends StatelessWidget {
                             },
                           );
                         }),
+                    const SizedBox(height: 10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('العنوان',
+                            style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                                color: ColorManager.blackColor,fontWeight: FontWeight.bold)
+                        ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: SizeConfig.screenWidth! * 0.65,
+                          child: Text(
+                              maxLines: 4,
+                              instance<AppPreferences>().getDataFromSharedPreference(key:'zoneAddress').toString(),
+                              style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                              color: ColorManager.gray700,fontWeight: FontWeight.bold)
+                          ),
+                        ),
+                        const Icon(Icons.edit_location_outlined)
+                      ],
+                    ),
+
                   ],
                 ),
               ),

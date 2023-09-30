@@ -1,6 +1,7 @@
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
+import 'package:father_delivery_user/features/store/presentation/views/widgets/store_products_search_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -35,6 +36,9 @@ class StoreProductsSliverAppBarWidget extends StatelessWidget {
           ),
         ),
       ),
+      bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(AppSize.s48),
+          child: StoreProductsSearchWidget()),
     );
   }
 }

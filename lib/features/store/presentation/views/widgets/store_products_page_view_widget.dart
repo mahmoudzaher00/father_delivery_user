@@ -9,18 +9,16 @@ class StoreProductsPageViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
-      child: PageView(
-        pageSnapping: true,
-        controller: pageController,
-        physics: const BouncingScrollPhysics(),
-        onPageChanged: (index) {
-          StoreProductsCubit.get(context).changeProductTypeValue(index);
-        },
-        children: StoreProductsCubit.get(context).productsTypeList.map((String string) {
-          return const PageViewBodyWidget();
-        }).toList(),
-      ),
+    return PageView(
+      pageSnapping: true,
+      controller: pageController,
+      physics: const BouncingScrollPhysics(),
+      onPageChanged: (index) {
+        StoreProductsCubit.get(context).changeProductTypeValue(index);
+      },
+      children: StoreProductsCubit.get(context).productsTypeList.map((String string) {
+        return const PageViewBodyWidget();
+      }).toList(),
     );
   }
 }

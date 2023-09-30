@@ -34,7 +34,7 @@ class LangWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: HomeCubit.get(context).lang[index].value ==  HomeCubit.get(context).currentLang ?
-                      ColorManager.primaryOrange:ColorManager.primaryGray,
+                      ColorManager.lightOrange:ColorManager.primaryGray,
                       borderRadius: BorderRadius.circular(22)
                   ),
                   child: Text(

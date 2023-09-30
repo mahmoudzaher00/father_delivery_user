@@ -3,6 +3,9 @@ import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../../core/widgets/custom_elevated_button_widget.dart';
 
 class SpecialOrderView extends StatelessWidget{
   const SpecialOrderView({super.key});
@@ -48,8 +51,8 @@ class SpecialOrderView extends StatelessWidget{
                  ),
                  Container(
                    height: AppSize.s24,
-                   width: AppSize.s120,
-                   padding: const EdgeInsets.all(AppPadding.p4),
+                   width: AppSize.s100,
+                   padding: const EdgeInsets.all(AppPadding.p6),
                    decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(22),
                        color:  index == 0? ColorManager.lightGreen: ColorManager.lightOrange,
@@ -81,32 +84,14 @@ class NewSpecialOrderButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      margin: const EdgeInsets.all(AppSize.s12),
-      width: SizeConfig.screenWidth,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          gradient:  const LinearGradient(
-              begin: Alignment.centerRight,
-              end: Alignment.centerLeft,
-              tileMode: TileMode.decal,
-              colors: [Color(0xffEF554A), Color(0xffFF8C69)])
-      ),
-      child: ElevatedButton(
-          onPressed: (){},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              surfaceTintColor: Colors.transparent,
-              shadowColor: Colors.transparent,
-              foregroundColor: ColorManager.lightOrange,
-              padding: EdgeInsets.zero
-          ),
-          child:  Text('طلب جديد',
-              style: Theme.of(context).textTheme.displayLarge!.copyWith(color: ColorManager.whiteColor)
-          )
-      ),
+    return CustomElevatedButtonWidget(
+        width: SizeConfig.screenWidth!,
+        buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ),
+        child: Text(
+            'طلب جديد',
+          style: Theme.of(context).textTheme.displayLarge!.copyWith(
+              fontSize: 18.sp, color: ColorManager.whiteColor)
+        )
     );
   }
 }

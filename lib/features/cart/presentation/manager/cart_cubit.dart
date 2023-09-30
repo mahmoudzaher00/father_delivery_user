@@ -61,6 +61,7 @@ class CartCubit extends Cubit<CartState> {
 
   void deleteProductFromCart(int index){
     cartList.removeAt(index);
+    productCounts.removeAt(index);
     emit(RemoveProductState(index));
   }
 

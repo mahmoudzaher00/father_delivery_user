@@ -29,3 +29,46 @@ class _StoreProductsViewBodyWidgetState extends State<StoreProductsViewBodyWidge
     );
   }
 }
+
+class StoreProductsViewBodyWidget2 extends StatefulWidget {
+  const StoreProductsViewBodyWidget2({super.key});
+
+  @override
+  State<StoreProductsViewBodyWidget2> createState() => _StoreProductsViewBodyWidgetState2();
+}
+
+class _StoreProductsViewBodyWidgetState2 extends State<StoreProductsViewBodyWidget2> {
+  final PageController pageController = PageController(initialPage: 0,keepPage: false);
+
+  @override
+  Widget build(BuildContext context) {
+    return NestedScrollView(
+        headerSliverBuilder: ((context, innerBoxIsScrolled) {
+          return [
+            SliverOverlapAbsorber(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+              sliver: const SliverSafeArea(
+                  top: false,
+                  sliver: StoreProductsSliverAppBarWidget(),
+              ),
+            ),
+          ];
+        }),
+        body: Column(
+            children: [
+              SafeArea(child: ProductTypesListWidget(pageController: pageController)),
+              const SizedBox(height: AppSize.s4),
+              Expanded(child: StoreProductsPageViewWidget(pageController: pageController)),
+            ])
+    );
+    //   CustomScrollView(
+    //   slivers: [
+    //     const StoreProductsSliverAppBarWidget(),
+    //     const StoreProductsSearchWidget(),
+    //     const SliverToBoxAdapter(child: SizedBox(height: AppSize.s20)),
+    //     ProductTypesListWidget(pageController: pageController),
+    //     StoreProductsPageViewWidget(pageController: pageController),
+    //   ],
+    // );
+  }
+}

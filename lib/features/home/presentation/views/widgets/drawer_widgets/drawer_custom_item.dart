@@ -7,12 +7,17 @@ class DrawerCustomItem extends StatelessWidget {
   final String title;
   final double imageSize;
   final String? image;
+  final bool isIcon;
+  final IconData? icon;
   final Function() onPressed ;
 
   const DrawerCustomItem({super.key,
   required this.title,
   this.image,
-  required this.onPressed, this.imageSize = AppSize.s20
+  required this.onPressed,
+  this.imageSize = AppSize.s20,
+  this.isIcon=false,
+  this.icon
   });
 
   @override
@@ -23,6 +28,8 @@ class DrawerCustomItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal:AppPadding.p20,vertical:AppPadding.p16),
         child: Row(
           children: [
+            isIcon?
+            Icon(icon,color: ColorManager.primaryOrange,):
             SvgPicture.asset(image!,height: imageSize,width: imageSize),
             const SizedBox(width:AppSize.s20),
             Text(

@@ -24,7 +24,7 @@ class GeneralStoresView extends StatelessWidget{
              boxShadow: ContainerManager.shadow
            ),
            child: Wrap(
-               children: List.generate(32,(index){
+               children: List.generate(12,(index){
                  return InkWell(
                      onTap: (){
                        Navigator.pushNamed(context, Routes.storeRoute);
