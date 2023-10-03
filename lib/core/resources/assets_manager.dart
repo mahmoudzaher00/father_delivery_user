@@ -4,6 +4,9 @@ const String jsonPath = "assets/json";
 
 class ImageAssets {
   static const String mapMarker = "$imagePath/map_pin.png";
+  static const String restaurantMarker = "$imagePath/restaurant_marker.png";
+  static const String defaultMarker = "$imagePath/default_marker.png";
+  static const String userMarker = "$imagePath/userMarker.png";
   static const String baki = "$imagePath/baki.png";
   static const String r1 = "$imagePath/r1.png";
   static const String r2 = "$imagePath/r2.png";
@@ -19,7 +22,7 @@ class ImageAssets {
   static const String pharmacy = "$imagePath/pharmacy.png";
   static const String medicine = "$imagePath/medicine.png";
   static const String profile = "$imagePath/profile.jpeg";
-  static const String driverMarker = "$imagePath/driver_marker.jpeg";
+  static const String driverMarker = "$imagePath/driver_marker.png";
 
 
 

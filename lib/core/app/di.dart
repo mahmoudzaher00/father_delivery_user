@@ -19,6 +19,7 @@ import '../../features/my_orders/presentation/manager/my_orders_cubit/my_orders_
 import '../../features/orders/presentation/views/orders_input_data.dart';
 import '../../features/restaurant/presentation/manager/ingredients_bottom_sheet_cubit/ingredients_bottom_sheet_cubit.dart';
 import '../../features/restaurant/presentation/manager/restaurant_cubit/restaurant_cubit.dart';
+import '../../features/tracking/presentation/manager/tracking_map_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../utils/api_service_1.dart';
 import 'app_prefs.dart';
@@ -50,6 +51,7 @@ Future<void> initAppModule() async {
    // instance.registerSingleton<MapCubit>(MapCubit(instance.get<UserLocationsRepoImpl>()));
    // instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
    instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
+   instance.registerLazySingleton<TrackingMapCubit>(() => TrackingMapCubit());
    instance.registerLazySingleton<CartCubit>(() => CartCubit());
    instance.registerLazySingleton<MyOrdersCubit>(() => MyOrdersCubit());
   instance.registerLazySingleton<LoginCubit>(() => LoginCubit());

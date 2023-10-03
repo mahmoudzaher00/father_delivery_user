@@ -35,7 +35,11 @@ class MapCubit extends Cubit<MapState> {
   var emptyMarker = HashSet<Marker>();
   Completer<GoogleMapController>? googleMapCompleter;
   FocusNode textFieldFocusNode = FocusNode();
-  BitmapDescriptor? customDestinationMarker;
+  BitmapDescriptor? userMarker;
+  BitmapDescriptor? restaurantMarker;
+  BitmapDescriptor? defaultMarker;
+  BitmapDescriptor? secUserMarker;
+  BitmapDescriptor? driverMarker;
   Position? currentPosition;
   CameraPosition? cameraPosition;
   double mapZoom = 14;
@@ -43,7 +47,7 @@ class MapCubit extends Cubit<MapState> {
   String? zoneAddress;
   SearchDataModel? searchData;
   bool searchLoader = false ;
-  Marker marker = const Marker(markerId: MarkerId('location'),);
+  Marker marker = const Marker(markerId: MarkerId('location'));
 
   //TODO:Ui functions
 
@@ -87,9 +91,14 @@ class MapCubit extends Cubit<MapState> {
   Marker customMarker(LatLng latLng) => Marker(
     markerId: const MarkerId('location'),
     position: latLng,
-    icon: customDestinationMarker ?? BitmapDescriptor.defaultMarkerWithHue(20),
+    icon: userMarker ?? BitmapDescriptor.defaultMarkerWithHue(20),
   );
-  CameraPosition initialPosition() => const CameraPosition(target: LatLng(26.565191, 49.996376), zoom: 14);
+  CameraPosition initialPosition() => CameraPosition(
+      target: instance<AppPreferences>().getDataFromSharedPreference(key:'lat') != null?
+      LatLng(instance<AppPreferences>().getDataFromSharedPreference(key:'lat').toDouble(),
+             instance<AppPreferences>().getDataFromSharedPreference(key:'lng').toDouble()):
+      const LatLng(26.565191, 49.996376),
+      zoom: 14);
 
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
     ByteData data = await rootBundle.load(path);
@@ -100,11 +109,22 @@ class MapCubit extends Cubit<MapState> {
 
   getCustomMarker() async {
     final Uint8List markerIcon = await getBytesFromAsset(ImageAssets.mapMarker, 80.w.toInt());
-    customDestinationMarker = BitmapDescriptor.fromBytes(markerIcon);
+    final Uint8List restaurantMarkerIcon = await getBytesFromAsset(ImageAssets.restaurantMarker, 80);
+    final Uint8List defaultMarkerIcon = await getBytesFromAsset(ImageAssets.defaultMarker, 60);
+    final Uint8List userMarkerIcon = await getBytesFromAsset(ImageAssets.userMarker, 80);
+    final Uint8List driverMarkerIcon = await getBytesFromAsset(ImageAssets.driverMarker, 80);
+    userMarker = BitmapDescriptor.fromBytes(markerIcon);
+    restaurantMarker = BitmapDescriptor.fromBytes(restaurantMarkerIcon);
+    defaultMarker = BitmapDescriptor.fromBytes(defaultMarkerIcon);
+    secUserMarker = BitmapDescriptor.fromBytes(userMarkerIcon);
+    driverMarker = BitmapDescriptor.fromBytes(driverMarkerIcon);
     marker = Marker(
       markerId: const MarkerId('location'),
-      position: const LatLng(26.565191, 49.996376),
-      icon: customDestinationMarker!,
+      position: instance<AppPreferences>().getDataFromSharedPreference(key:'lat') != null?
+      LatLng(instance<AppPreferences>().getDataFromSharedPreference(key:'lat').toDouble(),
+          instance<AppPreferences>().getDataFromSharedPreference(key:'lng').toDouble()):
+      const LatLng(26.565191, 49.996376),
+      icon: userMarker!,
     );
     emit(GetCustomMarker());
   }

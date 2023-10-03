@@ -28,6 +28,8 @@ import '../../features/store/presentation/views/store_products_view.dart';
 import '../../features/store/presentation/views/store_view.dart';
 import '../../features/terms_contact/presentation/view/contact_us_view.dart';
 import '../../features/terms_contact/presentation/view/terms_view.dart';
+import '../../features/tracking/presentation/view/tracking_driver_view.dart';
+import '../../features/user_locations/presentation/views/confirm_user_location_view.dart';
 import '../../features/user_locations/presentation/views/initial_location_map_view.dart';
 import 'strings_manager.dart';
 
@@ -59,6 +61,8 @@ class Routes {
   static const String editProfileRoute = "/editProfile";
   static const String deliveryPricingRoute = "/deliveryPricing";
   static const String deliveryPricingDetailsRoute = "/deliveryPricingDetails";
+  static const String confirmUserLocationMapViewRoute = "/ConfirmUserLocationMapViewRoute";
+  static const String trackingDriverView = "/TrackingDriverView";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -131,6 +135,8 @@ class Routes {
       Routes.editProfileRoute: (context) => const EditProfileView(),
       Routes.deliveryPricingRoute: (context) => const DeliveryPricingView(),
       Routes.deliveryPricingDetailsRoute: (context) => const DeliveryPricingDetailsView(),
+      Routes.confirmUserLocationMapViewRoute: (context) => const ConfirmUserLocationMapView(),
+      Routes.trackingDriverView: (context) => const TrackingDriverView(),
 
     };
   }
@@ -170,6 +176,8 @@ class RouteGenerator {
       case Routes.editProfileRoute:return MaterialPageRoute(builder: (_) =>  const EditProfileView());
       case Routes.deliveryPricingRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingView());
       case Routes.deliveryPricingDetailsRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingDetailsView());
+      case Routes.confirmUserLocationMapViewRoute:return MaterialPageRoute(builder: (_) =>  const ConfirmUserLocationMapView());
+      case Routes.trackingDriverView:return MaterialPageRoute(builder: (_) =>  const TrackingDriverView());
 
       default:return unDefinedRoute();
     }

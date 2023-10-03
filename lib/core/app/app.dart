@@ -12,6 +12,7 @@ import '../../features/restaurant/presentation/manager/restaurant_cubit/restaura
 import '../../features/restaurant/presentation/manager/tt/counter_cubit.dart';
 import '../../features/store/presentation/manager/store_cubit/store_cubit.dart';
 import '../../features/store/presentation/manager/store_products_cubit/store_products_cubit.dart';
+import '../../features/tracking/presentation/manager/tracking_map_cubit.dart';
 import '../core_cubit/map_cubit/map_cubit.dart';
 import '../resources/routes_manager.dart';
 import '../resources/theme_manager.dart';
@@ -57,10 +58,12 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<StoreCubit>(create: (BuildContext context) => StoreCubit()),
         BlocProvider<MyOrdersCubit>(create: (BuildContext context) => MyOrdersCubit()),
         BlocProvider<StoreProductsCubit>(create: (BuildContext context) => StoreProductsCubit()),
+        //BlocProvider<TrackingMapCubit>(create: (BuildContext context) => TrackingMapCubit()),
         BlocProvider<RestaurantCubit>(create: (BuildContext context) => instance<RestaurantCubit>()),
         BlocProvider<CounterCubit>(create: (BuildContext context) => CounterCubit()),
         BlocProvider<IngredientsBottomSheetCubit>(create: (BuildContext context) => instance<IngredientsBottomSheetCubit>(),),
         BlocProvider<AudioCubit>(create: (BuildContext context) => instance<AudioCubit>(),),
+        BlocProvider<TrackingMapCubit>(create: (BuildContext context) => instance<TrackingMapCubit>()),
       ],
 
       child: MaterialApp(

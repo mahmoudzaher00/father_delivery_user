@@ -7,6 +7,7 @@ import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/container_manager.dart';
 import '../../../../core/resources/values_manager.dart';
+import '../../../../core/utils/functions.dart';
 import '../../../../core/utils/size_config.dart';
 import '../../../../core/widgets/custom_app_bar_widget.dart';
 
@@ -114,9 +115,15 @@ class ContactUsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     LottieWidget(lottieName: JsonAssets.whatsapp,onTap: (){}),
-                    LottieWidget(lottieName: JsonAssets.twitter ,onTap: (){}),
-                    LottieWidget(lottieName: JsonAssets.snapchat,onTap: (){}),
-                    LottieWidget(lottieName: JsonAssets.instagram,onTap: (){}),
+                    LottieWidget(lottieName: JsonAssets.twitter ,onTap: (){
+                      launchCustomUrl(context,"https://x.com/ValorINTEL?t=eN2HRS4r7hEuE3x0TKREcQ&s=09");
+                    }),
+                    LottieWidget(lottieName: JsonAssets.snapchat,onTap: (){
+                      launchCustomUrl(context,"");
+                    }),
+                    LottieWidget(lottieName: JsonAssets.instagram,onTap: (){
+                      launchCustomUrl(context,"https://instagram.com/nsoo7y?igshid=MzRlODBiNWFlZA==");
+                    }),
 
                   ],
                 ),
