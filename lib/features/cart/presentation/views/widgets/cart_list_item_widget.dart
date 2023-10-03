@@ -19,7 +19,7 @@ class CartListItemWidget extends StatelessWidget {
       child: Row(
         children:  [
           CustomImage(
-            ImageAssets.beak,
+            image:ImageAssets.beak,
             radiusCircleAvatar: AppSize.s28,
             circleBorderColor:
             CartCubit.get(context).cartList[index].productCount == CartCubit.get(context).productCounts[index]?

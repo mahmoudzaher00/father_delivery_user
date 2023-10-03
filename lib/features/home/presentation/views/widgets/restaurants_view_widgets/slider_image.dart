@@ -14,7 +14,7 @@ class SliderImage extends StatelessWidget {
     return CarouselSlider(
       items: instance<HomeCubit>().sliderImages.map((item) {
         return CustomImage(
-          item,
+          image:item,
           isNetwork: false,
           width: SizeConfig.screenWidth! * 0.98,
           isShadow: true,

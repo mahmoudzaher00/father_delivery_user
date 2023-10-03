@@ -26,7 +26,7 @@ class RestaurantDetailsMapContainerWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomImage(
-                ImageAssets.beak,
+                image:ImageAssets.beak,
                 isShadow: false,
                 isNetwork: false,
                 width: AppSize.s60,

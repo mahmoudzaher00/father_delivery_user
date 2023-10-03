@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/color_manager.dart';
 
@@ -17,14 +18,17 @@ class CustomElevatedButtonWidget extends StatelessWidget {
   final double? buttonElevation;
   final Gradient? gradient;
   final VoidCallback? onPressed;
-  final Widget child;
+  final Widget? child;
   final ButtonStyle? buttonStyleStyle;
   final bool buttonIsGradient;
+  final String? buttonText;
+  final Color? buttonTextColor;
+  final double? buttonTextSize;
 
   const CustomElevatedButtonWidget({
     Key? key,
     this.onPressed,
-    required this.child,
+    this.child,
     this.borderRadius,
     this.width,
     this.height = 44.0,
@@ -32,7 +36,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
     this.buttonBackgroundColor,
     this.buttonSurfaceTintColor,
     this.buttonShadowColor,
-    this.buttonForegroundColor, this.buttonPadding, this.buttonBorderColor,  this.buttonBorderWidth,  this.buttonElevation,  this.buttonIsGradient=true, this.buttonMargin,
+    this.buttonForegroundColor, this.buttonPadding, this.buttonBorderColor,  this.buttonBorderWidth,  this.buttonElevation,  this.buttonIsGradient=true, this.buttonMargin, this.buttonText, this.buttonTextColor, this.buttonTextSize,
   }) : super(key: key);
 
   @override
@@ -64,7 +68,11 @@ class CustomElevatedButtonWidget extends StatelessWidget {
           ),
 
         ),
-        child: child,
+        child: child?? Text(
+            buttonText??'',
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                fontSize: buttonTextSize??18.sp, color: buttonTextColor??ColorManager.whiteColor)
+        ),
       ),
     );
   }

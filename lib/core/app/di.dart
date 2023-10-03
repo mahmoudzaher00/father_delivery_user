@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:father_delivery_user/core/core_cubit/audio_cubit/audio_record_cubit.dart';
+import 'package:father_delivery_user/features/delivery_pricing/presentation/views/delivery_pricing_input_data.dart';
+import 'package:father_delivery_user/features/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'package:father_delivery_user/features/orders/presentation/manager/new_order_cubit/new_order_cubit.dart';
 import 'package:father_delivery_user/features/user_locations/data/repository/user_locations_repo_impl.dart';
 import 'package:father_delivery_user/features/user_locations/presentation/views/user_locations_input_data.dart';
@@ -11,6 +13,7 @@ import '../../features/auth/presentation/manager/registerDataCubit/register_data
 import '../../features/auth/presentation/manager/register_cubit/register_cubit.dart';
 import '../../features/auth/presentation/views/auth_input_data.dart';
 import '../../features/cart/presentation/manager/cart_cubit.dart';
+import '../../features/edit_profile/presentation/views/edit_profile_input_data.dart';
 import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
 import '../../features/my_orders/presentation/manager/my_orders_cubit/my_orders_cubit.dart';
 import '../../features/orders/presentation/views/orders_input_data.dart';
@@ -39,14 +42,16 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<AuthInputData>(() => AuthInputData());
   instance.registerLazySingleton<UserLocationsInputData>(() => UserLocationsInputData());
   instance.registerLazySingleton<OrdersInputData>(() => OrdersInputData());
+  instance.registerLazySingleton<EditProfileInputData>(() => EditProfileInputData());
+  instance.registerLazySingleton<DeliveryPricingInputData>(() => DeliveryPricingInputData());
 
   //TODO:Cubit instance
    instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
-   //instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
+   // instance.registerSingleton<MapCubit>(MapCubit(instance.get<UserLocationsRepoImpl>()));
+   // instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
    instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
    instance.registerLazySingleton<CartCubit>(() => CartCubit());
    instance.registerLazySingleton<MyOrdersCubit>(() => MyOrdersCubit());
-  // instance.registerLazySingleton<LoginBloc>(() => LoginBloc(instance.get<AuthRepoImpl>()));
   instance.registerLazySingleton<LoginCubit>(() => LoginCubit());
   instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());
   instance.registerLazySingleton<RegisterDataCubit>(() => RegisterDataCubit());
@@ -54,43 +59,7 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<IngredientsBottomSheetCubit>(() => IngredientsBottomSheetCubit());
   instance.registerLazySingleton<AudioCubit>(() => AudioCubit());
   instance.registerLazySingleton<NewOrderCubit>(() => NewOrderCubit());
-  // instance.registerLazySingleton<RegisterBloc>(() => RegisterBloc(instance.get<AuthRepoImpl>()));
-  // instance.registerLazySingleton<OtpBloc>(() => OtpBloc(instance.get<AuthRepoImpl>()));
-  // instance.registerLazySingleton<MainBloc>(() => MainBloc());
-  // instance.registerLazySingleton<HomeBloc>(() => HomeBloc(instance.get<MainRepoImpl>()));
-  // instance.registerLazySingleton<CategoriesBloc>(() => CategoriesBloc(instance.get<MainRepoImpl>()));
-  // instance.registerLazySingleton<StoreProductBloc>(() => StoreProductBloc());
-  // instance.registerLazySingleton<AccountBloc>(() => AccountBloc());
-  // instance.registerLazySingleton<CartBloc>(() => CartBloc());
-  // instance.registerLazySingleton<MapBloc>(() => MapBloc(instance.get<MapRepoImpl>()));
-  // instance.registerLazySingleton<OrdersBloc>(() => OrdersBloc());
-  // instance.registerLazySingleton<CheckOutBloc>(() => CheckOutBloc());
-  // instance.registerLazySingleton<AddressBloc>(() => AddressBloc(instance.get<UserAddressRepoImpl>()));
-  // instance.registerLazySingleton<AddNewAddressBloc>(() => AddNewAddressBloc(instance.get<UserAddressRepoImpl>()));
-  // instance.registerLazySingleton<EditAddressBloc>(() => EditAddressBloc(instance.get<UserAddressRepoImpl>()));
-  // instance.registerLazySingleton<ProfileBloc>(() => ProfileBloc(instance.get<MainRepoImpl>()));
-  // instance.registerLazySingleton<ChangeLanguageBloc>(() => ChangeLanguageBloc());
-  // instance.registerLazySingleton<TextFieldCubit>(() => TextFieldCubit());
-  // instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());
-  // instance.registerLazySingleton<NewPasswordCubit>(() => NewPasswordCubit());
-  // instance.registerLazySingleton<MainCubit>(() => MainCubit());
-
-  // instance.registerLazySingleton<NotificationCubit>(() => NotificationCubit());
-  // instance.registerLazySingleton<ProfileCubit>(() => ProfileCubit(instance.get<MainRepoImpl>()));
-  // instance.registerLazySingleton<EditProfileCubit>(() => EditProfileCubit());
-  // instance.registerLazySingleton<RatingServiceCubit>(() => RatingServiceCubit());
-  // instance.registerLazySingleton<UserAddressesCubit>(() => UserAddressesCubit());
-  // instance.registerLazySingleton<OrdersCubit>(() => OrdersCubit());
-  // instance.registerLazySingleton<SettingCubit>(() => SettingCubit());
-  // instance.registerLazySingleton<PaymentCubit>(() => PaymentCubit());
-  // instance.registerLazySingleton<MapCubit>(() => MapCubit());
-  // instance.registerLazySingleton<PaymentCardsCubit>(() => PaymentCardsCubit());
-  // instance.registerLazySingleton<CameraMaintenanceCubit>(() => CameraMaintenanceCubit());
-  // instance.registerLazySingleton<PlumbingServiceCubit>(() => PlumbingServiceCubit());
-  // instance.registerLazySingleton<ElectricityServiceCubit>(() => ElectricityServiceCubit());
-  // instance.registerLazySingleton<ContactUsCubit>(() => ContactUsCubit());
-  // instance.registerLazySingleton<ChangePasswordCubit>(() => ChangePasswordCubit());
-  // instance.registerSingleton<CacheHelper>(CacheHelper());
+  instance.registerLazySingleton<EditProfileCubit>(() => EditProfileCubit());
 
   // network info
   // instance.registerLazySingleton<NetworkInfo>(

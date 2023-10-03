@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:father_delivery_user/core/resources/assets_manager.dart';
-import 'package:flutter/material.dart';
 
 import '../../../data/models/restaurant_model.dart';
 
@@ -9,9 +8,8 @@ part 'restaurant_state.dart';
 
 class RestaurantCubit extends Cubit<RestaurantState> {
   RestaurantCubit() : super(RestaurantInitial());
-  int selectedIndexOfTabBar=0;
-  late TabController tabController;
-  final List<MealDataModel> restaurantTabBarList  =[
+  int selectedIndexOfPageView=0;
+  final List<MealDataModel> list  =[
     MealDataModel(ImageAssets.r1, 'عروضنا'),
     MealDataModel(ImageAssets.r2, 'بروست'),
     MealDataModel(ImageAssets.r3, 'سندوتش'),
@@ -25,9 +23,9 @@ class RestaurantCubit extends Cubit<RestaurantState> {
   //   return index;
   // }
 
-  void tabBarSwapIndex(){
-    selectedIndexOfTabBar=tabController.index;
+  void pageViewSwapIndex(index){
+    selectedIndexOfPageView=index;
 
-    emit(IndexOfTapBarState(selectedIndexOfTabBar));
+    emit(IndexOfTapBarState(index));
   }
 }

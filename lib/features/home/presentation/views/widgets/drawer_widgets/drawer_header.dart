@@ -22,7 +22,7 @@ class DrawerHeaderWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CustomImage(
-                ImageAssets.profileImage,
+                image:ImageAssets.profileImage,
                 isShadow: false,
                 isNetwork: false,
               ),

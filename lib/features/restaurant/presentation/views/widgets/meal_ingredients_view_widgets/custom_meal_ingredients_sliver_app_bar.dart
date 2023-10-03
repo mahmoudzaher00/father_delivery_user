@@ -47,7 +47,7 @@ class CustomMealIngredientsSliverAppBar extends StatelessWidget {
         alignment: AlignmentDirectional.bottomStart,
         children: [
           CustomImage(
-            ImageAssets.mealIngredients,
+            image:ImageAssets.mealIngredients,
             isShadow: false,
             isNetwork: false,
             height: 340.h + SizeConfig.statusBarHeight!,

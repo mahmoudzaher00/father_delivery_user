@@ -29,11 +29,11 @@ class MapCubit extends Cubit<MapState> {
   final UserLocationRepo userLocationRepo;
 
   MapCubit(this.userLocationRepo) : super(MapInitial());
-
+  static MapCubit get(context)=>BlocProvider.of(context);
   //TODO:Map Inputs
   LatLng? savedLocation;
   var emptyMarker = HashSet<Marker>();
-  final Completer<GoogleMapController> googleMapCompleter = Completer<GoogleMapController>();
+  Completer<GoogleMapController>? googleMapCompleter;
   FocusNode textFieldFocusNode = FocusNode();
   BitmapDescriptor? customDestinationMarker;
   Position? currentPosition;

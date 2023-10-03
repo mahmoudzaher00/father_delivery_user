@@ -1,3 +1,4 @@
+import 'package:father_delivery_user/core/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class RegisterDataViewBody extends StatelessWidget {
           const CustomEmailTextField(),
           SizedBox(height: 40.h,),
           CustomElevatedButtonWidget(
-            onPressed: (){},
+            onPressed: ()=>Navigator.pushNamedAndRemoveUntil(context, Routes.homeRoute, (route) => false),
             child:  Text('تأكيد بياناتك',style: Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp,color: ColorManager.whiteColor),), )
 
         ],

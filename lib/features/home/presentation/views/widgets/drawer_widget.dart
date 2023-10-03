@@ -26,14 +26,16 @@ class DrawerWidget extends StatelessWidget {
 
             children: [
               const DrawerHeaderWidget(),
-              DrawerCustomItem(title: "تعديل بياناتي", image: SvgAssets.settings, onPressed: (){}),
+              DrawerCustomItem(title: "تعديل بياناتي", image: SvgAssets.settings, onPressed: ()=>Navigator.pushNamed(context, Routes.editProfileRoute)),
               DrawerCustomItem(title: 'طلباتي', image: SvgAssets.creditCard, imageSize: AppSize.s16, onPressed: (){
                 Navigator.pushNamed(context, Routes.myOrdersViewRoute);
               }),
               DrawerCustomItem(title: 'الفواتير', imageSize: AppSize.s16, image: SvgAssets.money,onPressed: (){
                 Navigator.pushNamed(context, Routes.orderInvoicesViewRoute);
               }),
-              DrawerCustomItem(title: 'التسعيرات',image: SvgAssets.pricing,onPressed: (){}),
+              DrawerCustomItem(title: 'التسعيرات',image: SvgAssets.pricing,onPressed: (){
+                Navigator.pushNamed(context, Routes.deliveryPricingRoute);
+              }),
               DrawerCustomItem(title: 'الشروط والأحكام',image: SvgAssets.termsIcon,onPressed: (){
                 Navigator.pushNamed(context, Routes.termsAndConditionsRoute);
               }),
@@ -46,8 +48,9 @@ class DrawerWidget extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight! * 0.06),
               const LangWidget(),
               SizedBox(height: 20.h),
-              InkWell(
-                  onTap: (){},
+              TextButton(
+                onPressed: ()=>Navigator.pushNamedAndRemoveUntil(context, Routes.loginRoute, (route) => false),
+                  style: TextButton.styleFrom(foregroundColor: ColorManager.extraLightOrange),
                   child: Text("تسجيل الخروج", style: Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 14))
               ),
               SizedBox(height: 20.h)

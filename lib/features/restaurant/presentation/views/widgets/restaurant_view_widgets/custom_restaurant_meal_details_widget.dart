@@ -21,7 +21,7 @@ class CustomRestaurantMealDetailsWidget extends StatelessWidget {
             alignment: AlignmentDirectional.topEnd,
             children: [
               CustomImage(
-                ImageAssets.restOffer,
+                image:ImageAssets.restOffer,
                 isNetwork: false,
                 isShadow: false,
                 width: SizeConfig.screenWidth!,

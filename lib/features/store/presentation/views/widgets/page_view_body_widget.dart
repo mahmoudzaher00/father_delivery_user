@@ -139,7 +139,7 @@ class PageViewBodyWidget extends StatelessWidget {
                       ),
                     ),
                     const CustomImage(
-                      ImageAssets.medicine,
+                        image:ImageAssets.medicine,
                       isNetwork: false,
                       height: AppSize.s100, width: AppSize.s120),
                   ]),

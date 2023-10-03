@@ -47,7 +47,7 @@ class StoresListWidget extends StatelessWidget {
                           color: ColorManager.whiteColor
                       ),
                       child: const CustomImage(
-                        ImageAssets.pharmacy,
+                        image:ImageAssets.pharmacy,
                         isNetwork: false,
                         isShadow: false,
                       ),

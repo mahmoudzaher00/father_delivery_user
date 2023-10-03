@@ -12,29 +12,6 @@ class RegisterDataView extends StatelessWidget {
     return  Scaffold(
       appBar: CustomAppBar(
         appBarToolbarHeight: 50,
-        // leadingWidget: FittedBox(
-        //   child: Padding(
-        //     padding: const EdgeInsetsDirectional.only(start: 16, bottom: 0),
-        //     child: ElevatedButton(
-        //       onPressed: () => Navigator.pop(context),
-        //       style: ElevatedButton.styleFrom(
-        //           padding: EdgeInsets.zero,
-        //           elevation: 3,
-        //           foregroundColor: ColorManager.shadowColor,
-        //           shape: RoundedRectangleBorder(
-        //             borderRadius: BorderRadius.circular(20),
-        //           ),
-        //           backgroundColor: ColorManager.whiteColor,
-        //           surfaceTintColor: ColorManager.whiteColor,
-        //           minimumSize: const Size(54, 40)),
-        //       child: const Icon(
-        //         Icons.arrow_back,
-        //         size: 30,
-        //         color: ColorManager.primaryBlack,
-        //       ),
-        //     ),
-        //   ),
-        // ),
         titleContent: Padding(
           padding: const EdgeInsets.only(top: 6),
           child: Text(

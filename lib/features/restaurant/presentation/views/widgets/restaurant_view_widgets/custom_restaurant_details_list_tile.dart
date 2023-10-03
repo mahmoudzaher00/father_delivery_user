@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../core/resources/assets_manager.dart';
@@ -19,7 +20,7 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
       padding:  const EdgeInsets.symmetric(vertical: 12),
       child: ListTile(
         leading: const CustomImage(
-          ImageAssets.baki,
+          image:ImageAssets.baki,
           isShadow: false,
           isNetwork: false,
           isAsset: true,
@@ -61,7 +62,8 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
               Navigator.pushNamed(context, Routes.restaurantMapRoute);
             },
             padding: EdgeInsets.zero,
-            icon: const Icon(FontAwesomeIcons.mapLocationDot,color: ColorManager.primaryBlack,),
+            icon:
+            const Icon(FontAwesomeIcons.mapLocationDot,color: ColorManager.primaryBlack,),
             iconSize: 20,
           ),
         ),

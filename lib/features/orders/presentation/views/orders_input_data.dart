@@ -19,6 +19,7 @@ class OrdersInputData{
   bool userImageEmpty = true;
   final picker = ImagePicker();
 
+
   // TODO:Dialog to set, delete and change user image
   buildSelectImageAlertDialog(BuildContext context) {
     customAlertDialog(

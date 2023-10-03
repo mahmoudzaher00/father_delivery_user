@@ -22,7 +22,7 @@ class CustomEmptyWidget extends StatelessWidget {
         children: [
           SizedBox(height:mediaQuery.height*0.1 ,),
           CustomImage(
-            image??'assets/images/no_documents.png',
+            image:image??'assets/images/no_documents.png',
             height: heightImage??mediaQuery.height*.3,
             width: widthImage??mediaQuery.width*.6,
             fit: BoxFit.fill,

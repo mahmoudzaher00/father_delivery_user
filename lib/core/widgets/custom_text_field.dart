@@ -46,10 +46,12 @@ class CustomTextField extends StatelessWidget {
   final int? maxLines;
   final int? errorMaxLines;
   final Widget? suffix;
+  final Color? inputTextColor;
+  final double? inputTextSize;
 
 
   const CustomTextField({super.key, this.controller, this.fillColorTextFiled, this.inputFormatters, this.filledColorTextFiled, this.textType, this.hintStyle, this.hintText, this.onChangedFunction, this.validatorFunction, this.onEditingCompleteFunction, this.focusNode, this.textInputAction, this.prefixIconWidget, this.suffixIconWidget, this.obscure, this.height, this.width, this.vertical, this.labelText, this.labelStyle, this.cursorColor, this.onFieldSubmitted, this.focusedBorderColor, this.enabledBorderColor, this.widthBorder, this.maxLines, this.errorTextStyle, this.enabledBorderRadius, this.focusedBorderRadius, this.inputTextStyle, this.focusedErrorBorderRadius, this.errorBorderRadius, this.errorMaxLines,
-  this.isShadow = true, this.hintTextSize, this.suffix
+  this.isShadow = true, this.hintTextSize, this.suffix, this.inputTextColor, this.inputTextSize,
   });
 
 
@@ -66,7 +68,7 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         enableSuggestions: true,
-        style:inputTextStyle?? Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 20.sp),
+        style:inputTextStyle?? Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: inputTextSize??20.sp,color:inputTextColor??ColorManager.primaryBlack ),
         cursorColor: cursorColor??ColorManager.primaryBlack,
         keyboardType: textType ?? TextInputType.text,
         inputFormatters: inputFormatters,

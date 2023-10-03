@@ -32,7 +32,7 @@ class NotificationViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomImage(
-                  ImageAssets.baki,
+                  image:ImageAssets.baki,
                   isShadow: false,
                   isNetwork: false,
                   isAsset: true,

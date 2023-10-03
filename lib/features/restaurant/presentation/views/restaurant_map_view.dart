@@ -50,6 +50,7 @@ class _RestaurantMapViewState extends State<RestaurantMapView> {
                   child: CustomAppBar(
                     appBarToolbarHeight: AppSize.s60,
                     appBarBackgroundColor: ColorManager.transparentColor,
+                    leadingOnPressed: ()=>   Navigator.pushReplacementNamed(context, Routes.restaurantRoute),
                     titleContent: Text("المطعم",
                         style: Theme.of(context).textTheme.displayMedium!.copyWith(fontWeight: FontWeight.bold)
                     ),

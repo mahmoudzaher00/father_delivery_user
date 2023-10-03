@@ -2,6 +2,7 @@ import 'package:father_delivery_user/features/auth/presentation/views/active_acc
 import 'package:father_delivery_user/features/auth/presentation/views/login_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/otp_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
+import 'package:father_delivery_user/features/edit_profile/presentation/views/edit_profile_view.dart';
 import 'package:father_delivery_user/features/home/presentation/views/home_view.dart';
 import 'package:father_delivery_user/features/notification/presentation/views/notification_view.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/restaurant_view.dart';
@@ -10,6 +11,8 @@ import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/auth/presentation/views/register_data_view.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
+import '../../features/delivery_pricing/presentation/views/delivery_pricing_details_view.dart';
+import '../../features/delivery_pricing/presentation/views/delivery_pricing_view.dart';
 import '../../features/invoices/presentation/views/order_invoice_details_view.dart';
 import '../../features/invoices/presentation/views/order_invoices_view.dart';
 import '../../features/my_orders/presentation/views/my_orders_view.dart';
@@ -53,6 +56,9 @@ class Routes {
   static const String myOrdersViewRoute = "/myOrdersView";
   static const String orderInvoicesViewRoute = "/orderInvoicesView";
   static const String orderInvoiceDetailsViewRoute = "/OrderInvoiceDetailsView";
+  static const String editProfileRoute = "/editProfile";
+  static const String deliveryPricingRoute = "/deliveryPricing";
+  static const String deliveryPricingDetailsRoute = "/deliveryPricingDetails";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -122,6 +128,9 @@ class Routes {
       Routes.myOrdersViewRoute: (context) => const MyOrdersView(),
       Routes.orderInvoicesViewRoute: (context) => const OrderInvoicesView(),
       Routes.orderInvoiceDetailsViewRoute: (context) => const OrderInvoiceDetailsView(),
+      Routes.editProfileRoute: (context) => const EditProfileView(),
+      Routes.deliveryPricingRoute: (context) => const DeliveryPricingView(),
+      Routes.deliveryPricingDetailsRoute: (context) => const DeliveryPricingDetailsView(),
 
     };
   }
@@ -158,6 +167,9 @@ class RouteGenerator {
       case Routes.myOrdersViewRoute:return MaterialPageRoute(builder: (_) =>  const MyOrdersView());
       case Routes.orderInvoicesViewRoute:return MaterialPageRoute(builder: (_) =>  const OrderInvoicesView());
       case Routes.orderInvoiceDetailsViewRoute:return MaterialPageRoute(builder: (_) =>  const OrderInvoiceDetailsView());
+      case Routes.editProfileRoute:return MaterialPageRoute(builder: (_) =>  const EditProfileView());
+      case Routes.deliveryPricingRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingView());
+      case Routes.deliveryPricingDetailsRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingDetailsView());
 
       default:return unDefinedRoute();
     }

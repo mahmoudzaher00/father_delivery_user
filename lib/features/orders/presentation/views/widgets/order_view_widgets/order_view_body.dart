@@ -32,7 +32,7 @@ class OrderViewBody extends StatelessWidget {
                   child: Row(
                     children: [
                       const CustomImage(
-                        ImageAssets.baki,
+                        image:ImageAssets.baki,
                         radiusCircleAvatar: 30,
                         isAsset: true,
                         isCircular: true,

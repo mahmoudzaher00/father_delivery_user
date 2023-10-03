@@ -36,7 +36,7 @@ class CustomMealRatingWidget extends StatelessWidget {
                   Row(
                     children:  [
                       const CustomImage(
-                        ImageAssets.profileImage,
+                        image:ImageAssets.profileImage,
                         isAsset: true,
                         isShadow: false,
                         isCircular: true,

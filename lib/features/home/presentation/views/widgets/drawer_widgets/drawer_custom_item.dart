@@ -22,8 +22,15 @@ class DrawerCustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+          foregroundColor: ColorManager.lightOrange,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5)
+        ),
+        padding: EdgeInsets.zero
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal:AppPadding.p20,vertical:AppPadding.p16),
         child: Row(

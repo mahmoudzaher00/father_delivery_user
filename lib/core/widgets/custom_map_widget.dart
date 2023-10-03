@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,10 +46,12 @@ class CustomMapWidget extends StatelessWidget {
                 }
               },
               onMapCreated: onMapCreated??(GoogleMapController googleMapController) {
-                context.read<MapCubit>().googleMapCompleter.complete(googleMapController);
-                //instance<MapCubit>().googleMapCompleter.complete(googleMapController);
-                context.read<MapCubit>().mapController=googleMapController;
-                //instance<MapCubit>().mapController=googleMapController;
+                // if (!MapCubit.get(context).googleMapCompleter.isCompleted) {
+                //   MapCubit.get(context).googleMapCompleter.complete(googleMapController);
+                // }
+                instance<MapCubit>().googleMapCompleter = Completer<GoogleMapController>();
+                instance<MapCubit>().googleMapCompleter!.complete(googleMapController);
+                instance<MapCubit>().mapController=googleMapController;
                 if(getMyLocation!) {
                   instance<MapCubit>().getMyLocation(context);
                 }

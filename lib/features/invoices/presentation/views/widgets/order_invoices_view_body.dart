@@ -32,11 +32,11 @@ class OrderInvoicesViewBody extends StatelessWidget {
                         child: Row(
                           children: [
                             const CustomImage(
-                              ImageAssets.baki,
-                              radiusCircleAvatar: 30,
-                              isAsset: true,
-                              isCircular: true,
-                              isShadow: false),
+                                image:ImageAssets.baki,
+                                radiusCircleAvatar: 30,
+                                isAsset: true,
+                                isCircular: true,
+                                isShadow: false),
                             const SizedBox(width: 20),
                             Text('مطعم البيك',
                               style: Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp))

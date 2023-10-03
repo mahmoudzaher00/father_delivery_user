@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/resources/routes_manager.dart';
 
-
-
 class RestaurantListViewWidget extends StatelessWidget {
   const RestaurantListViewWidget({super.key});
 
@@ -23,7 +21,7 @@ class RestaurantListViewWidget extends StatelessWidget {
         itemBuilder: (context,index){
           return InkWell(
             onTap: (){
-              Navigator.pushNamed(context, Routes.restaurantRoute);
+              Navigator.pushNamed(context, Routes.ordersRoute);
             },
             child: Container(
               height: AppSize.s80,
@@ -38,7 +36,7 @@ class RestaurantListViewWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const CustomImage(
-                    ImageAssets.beak,
+                    image:ImageAssets.beak,
                     isNetwork: false,
                     isShadow: false,
                     height: AppSize.s60,

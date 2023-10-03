@@ -1,4 +1,3 @@
-import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';

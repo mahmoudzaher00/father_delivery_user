@@ -33,10 +33,10 @@ class GeneralStoresView extends StatelessWidget{
                  Row(
                      children: [
                        const CustomImage(
-                         ImageAssets.beak,
-                         isNetwork: false,
-                         isShadow: false,
-                         height: AppSize.s60, width: AppSize.s60
+                           image: ImageAssets.beak,
+                           isNetwork: false,
+                           isShadow: false,
+                           height: AppSize.s60, width: AppSize.s60
                        ),
                        const SizedBox(width: AppSize.s6),
                        Text('#37056221',
