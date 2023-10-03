@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../utils/internet_handling/internet_handling_cubit.dart';
+import '../core_cubit/internet_handling/internet_handling_cubit.dart';
 import 'custom_no_internet_widget.dart';
 
 class WrapperInternet extends StatefulWidget {

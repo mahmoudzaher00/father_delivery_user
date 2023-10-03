@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../network_info.dart';
+import '../../utils/network_info.dart';
 
 
 part 'internet_handling_state.dart';

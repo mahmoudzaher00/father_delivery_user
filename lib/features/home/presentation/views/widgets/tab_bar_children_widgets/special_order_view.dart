@@ -1,5 +1,6 @@
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
+import 'package:father_delivery_user/core/resources/routes_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
@@ -85,8 +86,9 @@ class NewSpecialOrderButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButtonWidget(
+      onPressed: ()=>Navigator.pushNamed(context, Routes.newOrderRoute),
         width: SizeConfig.screenWidth!,
-        buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ),
+        buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w,bottom: 12.h ),
         child: Text(
             'طلب جديد',
           style: Theme.of(context).textTheme.displayLarge!.copyWith(

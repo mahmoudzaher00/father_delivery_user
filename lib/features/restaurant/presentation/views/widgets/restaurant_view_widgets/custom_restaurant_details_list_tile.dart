@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +40,6 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
             RatingBarIndicator(
               rating:3,
               unratedColor: ColorManager.dividerColor,
-
               itemBuilder: (context, index) => const Icon(
                 Icons.star,
                 color: ColorManager.errorColor,
@@ -63,7 +63,7 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
             },
             padding: EdgeInsets.zero,
             icon:
-            const Icon(FontAwesomeIcons.mapLocationDot,color: ColorManager.primaryBlack,),
+            const Icon(CupertinoIcons.map_pin_ellipse,color: ColorManager.primaryBlack,),
             iconSize: 20,
           ),
         ),
