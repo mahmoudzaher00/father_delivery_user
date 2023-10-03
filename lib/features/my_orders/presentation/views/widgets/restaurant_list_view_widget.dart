@@ -19,18 +19,22 @@ class RestaurantListViewWidget extends StatelessWidget {
         itemCount: 10,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context,index){
-          return InkWell(
-            onTap: (){
-              Navigator.pushNamed(context, Routes.ordersRoute);
-            },
-            child: Container(
-              height: AppSize.s80,
-              margin: const EdgeInsets.symmetric(horizontal: AppMargin.m10,vertical: AppMargin.m10),
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10,vertical: AppPadding.p10),
-              decoration: BoxDecoration(
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10,vertical: AppPadding.p10),
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, Routes.ordersRoute);
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor:  ColorManager.primaryGray,
+                  surfaceTintColor: ColorManager.primaryGray,
+                  foregroundColor:  ColorManager.borderColor,
+                  elevation: 3,
+                  // shadowColor: ColorManager.shadowColor,
+                  padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10,vertical: AppPadding.p10),
+                  shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
-                  color: ColorManager.primaryGray,
-                  boxShadow: ContainerManager.shadow
+                )
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,8 +43,11 @@ class RestaurantListViewWidget extends StatelessWidget {
                     image:ImageAssets.beak,
                     isNetwork: false,
                     isShadow: false,
-                    height: AppSize.s60,
-                    width: AppSize.s60,
+                    isAsset: true,
+                    isCircular: true,
+                    radiusCircleAvatar: 23,
+                    circleColor: ColorManager.transparentColor,
+                    circleBorderColor: ColorManager.primaryOrange,
                   ),
                   const SizedBox(width: AppSize.s10),
                   SizedBox(

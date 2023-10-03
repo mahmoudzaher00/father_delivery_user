@@ -10,7 +10,8 @@ import '../../orders_input_data.dart';
 
 class CustomPickedImageListView extends StatelessWidget {
   final bool deleteImage;
-  const CustomPickedImageListView({super.key, this.deleteImage=true,});
+  final int? listLength;
+  const CustomPickedImageListView({super.key, this.deleteImage=true, this.listLength,});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomPickedImageListView extends StatelessWidget {
               child: ListView.separated(
                   padding: EdgeInsets.only(top: 12.h),
                   scrollDirection: Axis.horizontal,
-                  itemCount: instance<OrdersInputData>().imageList.length,
+                  itemCount: listLength??instance<OrdersInputData>().imageList.length,
                   separatorBuilder: (context, index) =>const Padding(padding: EdgeInsetsDirectional.only(end: 15,)) ,
                   itemBuilder:  (context, index) =>
                       Container(
@@ -71,7 +72,7 @@ class CustomPickedImageListView extends StatelessWidget {
                 child: ListView.separated(
                     padding:  EdgeInsetsDirectional.symmetric(vertical: 12.h,horizontal: 20,),
                     scrollDirection: Axis.horizontal,
-                    itemCount: instance<OrdersInputData>().imageList.length,
+                    itemCount:listLength?? instance<OrdersInputData>().imageList.length,
                     separatorBuilder: (context, index) =>const Padding(padding: EdgeInsetsDirectional.only(end: 15,)) ,
                     itemBuilder:  (context, index) =>
                         Container(

@@ -19,6 +19,8 @@ class ImageAssets {
   static const String pharmacy = "$imagePath/pharmacy.png";
   static const String medicine = "$imagePath/medicine.png";
   static const String profile = "$imagePath/profile.jpeg";
+  static const String driverMarker = "$imagePath/driver_marker.jpeg";
+
 
 
 

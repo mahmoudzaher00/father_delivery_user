@@ -28,7 +28,7 @@ class CustomImage extends StatelessWidget {
     this.errorImageHeight,
     this.errorImageWidth,
     this.errorImageFit,
-    this.circleBorderColor,
+    this.circleBorderColor, this.circleColor,
   }) : super(key: key);
 
   final String image;
@@ -50,6 +50,7 @@ class CustomImage extends StatelessWidget {
   final double? errorImageWidth;
   final BoxFit? errorImageFit;
   final double? radiusCircleAvatar;
+  final Color? circleColor;
   final BorderRadius? borderRadius;
   final BoxFit fit;
 
@@ -73,8 +74,8 @@ class CustomImage extends StatelessWidget {
         ),
         child: CircleAvatar(
           radius: radiusCircleAvatar,
-          backgroundColor: ColorManager.whiteColor,
-          backgroundImage: AssetImage(image),
+          backgroundColor: circleColor??ColorManager.whiteColor,
+          backgroundImage: AssetImage(image,),
         ),
       ) :
       Image.asset(image, height: height, width: width, fit: fit);

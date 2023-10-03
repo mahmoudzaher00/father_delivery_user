@@ -296,61 +296,57 @@ class _TrackOrderViewBodyState extends State<TrackOrderViewBody> {
     );
   }
 
-  Container buildContainer(BuildContext context, Map<dynamic, dynamic> arguments) {
+  Widget buildContainer(BuildContext context, Map<dynamic, dynamic> arguments) {
     return Container(
-              width: SizeConfig.screenWidth,
-              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 4),
-              margin:  const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: ColorManager.whiteColor
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const CircleAvatar(
-                    backgroundColor: ColorManager.primaryGray,
-                    child: Icon(CupertinoIcons.person_fill,color: ColorManager.borderColor,),
-                  ),
-                  Expanded(
-                    child: Builder(
-                        builder: (context) {
-                          playAudioHelper.beforeSliderBuild();
-
-                          return Slider(
-                              value: playAudioHelper.getSliderValue(),
-                              activeColor: ColorManager.primaryOrange,
-                              onChanged: playAudioHelper.onSliderChange
-                          );
-                        }
-                    ),
-                  ),
-                  if(playAudioHelper.position!=null)
-                    Text(
-                        RegExp(r'((^0*[1-9]\d*:)?\d{2}:\d{2})\.\d+$').firstMatch("$remaining")?.group(1) ?? '$remaining',
-                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.throughLineColor,fontSize: 15.sp)),
-                  IconButton(
-                      onPressed: () {
-                        if(playAudioHelper.isPlaying()){
-                          playAudioHelper.pause();
-                        }else
-                        {
-                          // AudioCubit.get(context).playRecording();
-                          playAudioHelper.play(arguments['audioFile']);
-                        }
-                        setState((){});
-
-
-                        // widget.playAudioHelper.play(widget.model.body);
-                      },
-                      icon: Icon(
-                        playAudioHelper.isPlaying() ? CupertinoIcons.pause : CupertinoIcons.play_fill,
-                        color:Theme.of(context).dividerColor,size: 20,
-                      )),
-
-                ],
-              ),
-            );
+      width: SizeConfig.screenWidth,
+      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 4),
+      margin:  const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: ColorManager.whiteColor
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const CircleAvatar(
+            backgroundColor: ColorManager.primaryGray,
+            child: Icon(CupertinoIcons.person_fill,color: ColorManager.borderColor,),
+          ),
+          Expanded(
+            child: Builder(
+                builder: (context) {
+                  playAudioHelper.beforeSliderBuild();
+                  return Slider(
+                      value: playAudioHelper.getSliderValue(),
+                      activeColor: ColorManager.primaryOrange,
+                      onChanged: playAudioHelper.onSliderChange
+                  );
+                }
+                ),
+          ),
+          if(playAudioHelper.position!=null)
+            Text(
+                RegExp(r'((^0*[1-9]\d*:)?\d{2}:\d{2})\.\d+$').firstMatch("$remaining")?.group(1) ?? '$remaining',
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: ColorManager.throughLineColor,fontSize: 15.sp)),
+          IconButton(
+              onPressed: () {
+                if(playAudioHelper.isPlaying()){
+                  playAudioHelper.pause();
+                }else
+                {
+                  // AudioCubit.get(context).playRecording();
+                  playAudioHelper.play(arguments['audioFile']);
+                }
+                setState((){});
+                // widget.playAudioHelper.play(widget.model.body);
+              },
+              icon: Icon(
+                playAudioHelper.isPlaying() ? CupertinoIcons.pause : CupertinoIcons.play_fill,
+                color:Theme.of(context).dividerColor,size: 20,
+              )),
+        ],
+      ),
+    );
   }
   Duration get remaining => playAudioHelper.duration! - playAudioHelper.position!;
 

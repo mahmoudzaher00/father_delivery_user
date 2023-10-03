@@ -11,7 +11,7 @@ class RestaurantViewBody extends StatefulWidget {
 }
 
 class _RestaurantViewBodyState extends State<RestaurantViewBody>{
-  final PageController _pageController = PageController(initialPage: 0,keepPage: false);
+  final PageController _pageController = PageController(keepPage: true);
 
   @override
   void dispose() {

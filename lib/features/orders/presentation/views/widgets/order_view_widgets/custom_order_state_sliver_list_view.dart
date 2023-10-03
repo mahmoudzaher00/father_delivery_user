@@ -15,7 +15,9 @@ class CustomOrderStateSliverList extends StatelessWidget {
           return Column(
             children: [
               InkWell(
-                onTap: ()=> Navigator.pushNamed(context, Routes.orderDetailsRoute,),
+                onTap: ()=> Navigator.pushNamed(context, Routes.orderDetailsRoute, arguments: {
+                  'generalOrder':false
+                }),
                 child: CustomOrderStateWidget(
                   orderState: list[index],
                 ),

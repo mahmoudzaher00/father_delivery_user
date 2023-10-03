@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'custom_restaurant_meal_details_widget.dart';
 
 class CustomRestaurantMealDetailsGridView extends StatelessWidget {
-  const CustomRestaurantMealDetailsGridView({
-    super.key,
-  });
+  const CustomRestaurantMealDetailsGridView({super.key,});
 
   @override
   Widget build(BuildContext context) {
