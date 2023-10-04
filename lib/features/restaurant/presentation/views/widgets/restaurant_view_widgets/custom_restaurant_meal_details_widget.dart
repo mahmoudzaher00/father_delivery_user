@@ -17,6 +17,7 @@ class CustomRestaurantMealDetailsWidget extends StatelessWidget {
       onTap: ()=>Navigator.pushNamed(context, Routes.offerMealRoute),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20.h,horizontal: 12.w),
+        // width: SizeConfig.screenWidth!*.48-24.w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

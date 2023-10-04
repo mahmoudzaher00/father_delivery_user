@@ -8,8 +8,22 @@ class CustomRestaurantMealDetailsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return
+      Center(
+        child: GridView.count(
+          padding:  EdgeInsets.zero,
+          crossAxisCount: 2, // 2 items per row
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          children: List.generate(8, (index) => const CustomRestaurantMealDetailsWidget()),
+        ),
+      );
+
+
+      // List.generate(8, (index) =>   CustomRestaurantMealDetailsWidget(),));
+      GridView.builder(
       padding: EdgeInsets.zero,
+      shrinkWrap: true,
       itemCount: 8,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: context.withFormFactor<int>(
@@ -17,9 +31,9 @@ class CustomRestaurantMealDetailsGridView extends StatelessWidget {
             onDesktop: 8,
             onTablet: 4
         ), // Number of grid columns
-        mainAxisSpacing: 1.0, // Spacing between grid items vertically
-        crossAxisSpacing: 1.0, // Spacing between grid items horizontally
-        childAspectRatio: 1.0, // Ratio of grid item's width to its height
+        // mainAxisSpacing: 1.0, // Spacing between grid items vertically
+        // crossAxisSpacing: 1.0, // Spacing between grid items horizontally
+        // childAspectRatio: 1.0, // Ratio of grid item's width to its height
       ),
       itemBuilder:  (context, index) => const CustomRestaurantMealDetailsWidget(),
     );
