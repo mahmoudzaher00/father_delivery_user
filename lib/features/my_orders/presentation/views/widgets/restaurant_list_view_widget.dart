@@ -40,7 +40,7 @@ class RestaurantListViewWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const CustomImage(
-                    image:ImageAssets.beak,
+                    image:ImageAssets.baik,
                     isNetwork: false,
                     isShadow: false,
                     isAsset: true,

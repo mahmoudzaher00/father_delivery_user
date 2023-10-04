@@ -21,7 +21,7 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
       padding:  const EdgeInsets.symmetric(vertical: 12),
       child: ListTile(
         leading: const CustomImage(
-          image:ImageAssets.baki,
+          image:ImageAssets.baik,
           isShadow: false,
           isNetwork: false,
           isAsset: true,

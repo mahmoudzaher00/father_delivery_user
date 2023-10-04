@@ -28,13 +28,14 @@ class CustomImage extends StatelessWidget {
     this.errorImageHeight,
     this.errorImageWidth,
     this.errorImageFit,
-    this.circleBorderColor, this.circleColor,
+    this.circleBorderColor, this.circleColor, this.circlePadding,
   }) : super(key: key);
 
   final String image;
   final double width;
   final double horizontal;
   final double vertical;
+  final double? circlePadding;
   final double height;
   final double borderWidth;
   final bool isShadow;
@@ -66,8 +67,9 @@ class CustomImage extends StatelessWidget {
     if (isAsset) {
       content = isCircular ?
       Container(
-        padding: const EdgeInsets.all(1),
+        padding:  EdgeInsets.all(circlePadding??1),
         decoration: BoxDecoration(
+          color: circleColor??ColorManager.whiteColor,
           border: Border.all(
               color: circleBorderColor ?? ColorManager.whiteColor),
           shape: BoxShape.circle,

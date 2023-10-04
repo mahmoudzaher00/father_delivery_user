@@ -3,6 +3,7 @@ import 'package:father_delivery_user/features/auth/presentation/views/login_view
 import 'package:father_delivery_user/features/auth/presentation/views/otp_view.dart';
 import 'package:father_delivery_user/features/auth/presentation/views/register_view.dart';
 import 'package:father_delivery_user/features/edit_profile/presentation/views/edit_profile_view.dart';
+import 'package:father_delivery_user/features/favourite/presentation/views/favourite_view.dart';
 import 'package:father_delivery_user/features/home/presentation/views/home_view.dart';
 import 'package:father_delivery_user/features/notification/presentation/views/notification_view.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/restaurant_view.dart';
@@ -20,6 +21,7 @@ import '../../features/orders/presentation/views/new_order_view.dart';
 import '../../features/orders/presentation/views/order_details_view.dart';
 import '../../features/orders/presentation/views/orders_view.dart';
 import '../../features/orders/presentation/views/track_order_view.dart';
+import '../../features/play_audio/play_audio_view.dart';
 import '../../features/restaurant/presentation/views/offer_meal_view.dart';
 import '../../features/restaurant/presentation/views/restaurant_map_view.dart';
 import '../../features/restaurant/presentation/views/meal_ingredients_view.dart';
@@ -61,8 +63,10 @@ class Routes {
   static const String editProfileRoute = "/editProfile";
   static const String deliveryPricingRoute = "/deliveryPricing";
   static const String deliveryPricingDetailsRoute = "/deliveryPricingDetails";
-  static const String confirmUserLocationMapViewRoute = "/ConfirmUserLocationMapViewRoute";
-  static const String trackingDriverView = "/TrackingDriverView";
+  static const String confirmUserLocationMapRoute = "/confirmUserLocationMapView";
+  static const String trackingDriverRoute = "/trackingDriver";
+  static const String favouriteRoute = "/favourite";
+  static const String playAudioRoute = "/playAudio";
 
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String newPasswordRoute = "/newPasswordViewBody";
@@ -71,7 +75,6 @@ class Routes {
   static const String categoryProductRoute = "/CategoryProduct";
   static const String filtersRoute = "/filters";
   static const String storeFilterRoute = "/storeFilter";
-  //static const String storeProductsRoute = "/storeProducts";
   static const String ratingProductsRoute = "/ratingProducts";
   static const String storeProfileRoute = "/storeProfile";
   static const String addressRoute = "/address";
@@ -135,8 +138,10 @@ class Routes {
       Routes.editProfileRoute: (context) => const EditProfileView(),
       Routes.deliveryPricingRoute: (context) => const DeliveryPricingView(),
       Routes.deliveryPricingDetailsRoute: (context) => const DeliveryPricingDetailsView(),
-      Routes.confirmUserLocationMapViewRoute: (context) => const ConfirmUserLocationMapView(),
-      Routes.trackingDriverView: (context) => const TrackingDriverView(),
+      Routes.confirmUserLocationMapRoute: (context) => const ConfirmUserLocationMapView(),
+      Routes.trackingDriverRoute: (context) => const TrackingDriverView(),
+      Routes.favouriteRoute: (context) => const FavouriteView(),
+      Routes.playAudioRoute: (context) => const PlayAudio(),
 
     };
   }
@@ -176,8 +181,10 @@ class RouteGenerator {
       case Routes.editProfileRoute:return MaterialPageRoute(builder: (_) =>  const EditProfileView());
       case Routes.deliveryPricingRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingView());
       case Routes.deliveryPricingDetailsRoute:return MaterialPageRoute(builder: (_) =>  const DeliveryPricingDetailsView());
-      case Routes.confirmUserLocationMapViewRoute:return MaterialPageRoute(builder: (_) =>  const ConfirmUserLocationMapView());
-      case Routes.trackingDriverView:return MaterialPageRoute(builder: (_) =>  const TrackingDriverView());
+      case Routes.confirmUserLocationMapRoute:return MaterialPageRoute(builder: (_) =>  const ConfirmUserLocationMapView());
+      case Routes.trackingDriverRoute:return MaterialPageRoute(builder: (_) =>  const TrackingDriverView());
+      case Routes.favouriteRoute:return MaterialPageRoute(builder: (_) =>  const FavouriteView());
+      case Routes.playAudioRoute:return MaterialPageRoute(builder: (_) =>  const PlayAudio());
 
       default:return unDefinedRoute();
     }

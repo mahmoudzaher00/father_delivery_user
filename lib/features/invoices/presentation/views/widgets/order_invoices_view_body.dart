@@ -32,7 +32,7 @@ class OrderInvoicesViewBody extends StatelessWidget {
                         child: Row(
                           children: [
                             const CustomImage(
-                                image:ImageAssets.baki,
+                                image:ImageAssets.baik,
                                 radiusCircleAvatar: 30,
                                 isAsset: true,
                                 isCircular: true,

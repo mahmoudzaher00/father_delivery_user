@@ -1,6 +1,7 @@
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DrawerCustomItem extends StatelessWidget {
@@ -32,7 +33,7 @@ class DrawerCustomItem extends StatelessWidget {
         padding: EdgeInsets.zero
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:AppPadding.p20,vertical:AppPadding.p16),
+        padding:  EdgeInsets.symmetric(horizontal:AppPadding.p20,vertical:AppPadding.p16.h),
         child: Row(
           children: [
             isIcon?

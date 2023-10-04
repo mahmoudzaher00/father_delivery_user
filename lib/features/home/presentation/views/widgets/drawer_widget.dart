@@ -27,6 +27,9 @@ class DrawerWidget extends StatelessWidget {
             children: [
               const DrawerHeaderWidget(),
               DrawerCustomItem(title: "تعديل بياناتي", image: SvgAssets.settings, onPressed: ()=>Navigator.pushNamed(context, Routes.editProfileRoute)),
+              DrawerCustomItem(title: 'المفضلة',isIcon: true,icon:CupertinoIcons.heart,onPressed: (){
+                Navigator.pushNamed(context, Routes.favouriteRoute);
+              }),
               DrawerCustomItem(title: 'طلباتي', image: SvgAssets.creditCard, imageSize: AppSize.s16, onPressed: (){
                 Navigator.pushNamed(context, Routes.myOrdersViewRoute);
               }),
@@ -42,9 +45,7 @@ class DrawerWidget extends StatelessWidget {
               DrawerCustomItem(title: 'تواصل معنا',image: SvgAssets.contactUsIcon,onPressed: (){
                 Navigator.pushNamed(context, Routes.contactUsRoute);
               }),
-              DrawerCustomItem(title: 'المفضلة',isIcon: true,icon:CupertinoIcons.heart,onPressed: (){
-                Navigator.pushNamed(context, Routes.contactUsRoute);
-              }),
+
               SizedBox(height: SizeConfig.screenHeight! * 0.06),
               const LangWidget(),
               SizedBox(height: 20.h),

@@ -56,7 +56,7 @@ class _OrderDetailsViewBodyState extends State<OrderDetailsViewBody> {
               child: Row(
                 children: [
                   CustomImage(
-                    image:arguments['generalOrder']?ImageAssets.pharmacy:ImageAssets.beak,
+                    image:arguments['generalOrder']?ImageAssets.pharmacy:ImageAssets.baik,
                     radiusCircleAvatar: 30,
                     circleColor: ColorManager.transparentColor,
                     circleBorderColor: ColorManager.primaryOrange,
@@ -232,9 +232,10 @@ class _OrderDetailsViewBodyState extends State<OrderDetailsViewBody> {
                         rating:3,
                         unratedColor: ColorManager.dividerColor,
 
-                        itemBuilder: (context, index) => const Icon(
-                          Icons.star,
-                          color: ColorManager.errorColor,
+                        itemBuilder: (context, index) =>  Icon(
+                          index < 3 ? CupertinoIcons.star_fill: CupertinoIcons.star,
+                          color: ColorManager.primaryOrange,
+                          // color: ColorManager.errorColor,
                         ),
                         itemCount: 5,
                         itemSize: 18.h,

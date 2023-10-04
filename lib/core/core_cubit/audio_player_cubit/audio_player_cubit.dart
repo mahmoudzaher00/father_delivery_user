@@ -1,47 +1,88 @@
+
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:audioplayers/audioplayers.dart' as ap;
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-
 part 'audio_player_state.dart';
 
 
 
-enum AudioPlayerStatus { stopped, playing, paused }
-
-class AudioPlayerCubit extends Cubit<AudioPlayerStatus> {
+class AudioPlayerCubit extends Cubit<AudioPlayerState> {
   final ap.AudioPlayer _audioPlayer = ap.AudioPlayer();
   Duration? position;
   Duration? duration;
+  bool canSetValue = false;
+  late StreamSubscription<void> _playerStateChangedSubscription;
+  late StreamSubscription<Duration?> _durationChangedSubscription;
+  late StreamSubscription<Duration> _positionChangedSubscription;
 
-  AudioPlayerCubit() : super(AudioPlayerStatus.stopped);
+  AudioPlayerCubit() : super(const AudioPlayerInitial());
 
-  Future<void> play(String source) async {
-    await _audioPlayer.play(
-      kIsWeb ? ap.UrlSource(source) : ap.DeviceFileSource(source),    );
-    emit(AudioPlayerStatus.playing);
+
+  void init() async{
+    _playerStateChangedSubscription = _audioPlayer.onPlayerComplete.listen((state) async {
+      await stop1();
+      emit(AudioPlayerStateChanged()); // You can emit a custom state if needed
+    });
+
+    _positionChangedSubscription = _audioPlayer.onPositionChanged.listen((position) {
+      this.position = position;
+      emit(AudioPlayerPositionUpdated(position));
+    });
+
+    _durationChangedSubscription = _audioPlayer.onDurationChanged.listen((duration) {
+      this.duration = duration;
+      emit(AudioPlayerDurationUpdated(duration));
+    });
+  }
+  void play(String source) async {
+    if (state is AudioPlayerPlaying) {
+      _audioPlayer.pause();
+      emit(const AudioPlayerPaused());
+    } else {
+      await _audioPlayer.play( kIsWeb ? ap.UrlSource(source) : ap.DeviceFileSource(source),);
+      emit( AudioPlayerPlaying());
+    }
   }
 
-  Future<void> pause() async {
-    await _audioPlayer.pause();
-    emit(AudioPlayerStatus.paused);
+  void pause() {
+    if (state is AudioPlayerPlaying) {
+      _audioPlayer.pause();
+      emit(const AudioPlayerPaused());
+    }
   }
 
-  Future<void> stop() async {
-    await _audioPlayer.stop();
-    emit(AudioPlayerStatus.stopped);
+  void stop() {
+    _audioPlayer.stop();
+    emit(const AudioPlayerStopped());
   }
 
-  Future<void> seekTo(Duration position) async {
-    await _audioPlayer.seek(position);
+
+
+  void seek(double value) {
+    if (duration != null) {
+      final position = value * duration!.inMilliseconds;
+      _audioPlayer.seek(Duration(milliseconds: position.round()));
+    }
+    emit(Seek());
+  }
+  double getSliderValue() {
+    return canSetValue && duration != null && position != null
+        ? position!.inMilliseconds / duration!.inMilliseconds
+        : 0.0;
+
   }
 
   void updatePosition(Duration position) {
     this.position = position;
+    emit(AudioPlayerPositionUpdated(position));
   }
 
   void updateDuration(Duration duration) {
     this.duration = duration;
+    emit(AudioPlayerDurationUpdated(duration));
   }
+  Future<void> stop1() => _audioPlayer.stop();
 }
 

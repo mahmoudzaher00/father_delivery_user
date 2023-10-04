@@ -7,7 +7,6 @@ class ImageAssets {
   static const String restaurantMarker = "$imagePath/restaurant_marker.png";
   static const String defaultMarker = "$imagePath/default_marker.png";
   static const String userMarker = "$imagePath/userMarker.png";
-  static const String baki = "$imagePath/baki.png";
   static const String r1 = "$imagePath/r1.png";
   static const String r2 = "$imagePath/r2.png";
   static const String r3 = "$imagePath/r3.png";
@@ -16,7 +15,7 @@ class ImageAssets {
   static const String restOffer = "$imagePath/rest_offer.png";
   static const String profileImage = "$imagePath/profile_image.png";
   static const String imageSlider = "$imagePath/image_slider.png";
-  static const String beak = "$imagePath/beak.png";
+  static const String baik = "$imagePath/baik.png";
   static const String mealIngredients = "$imagePath/mealIngredients.png";
   static const String person = "$imagePath/person.jpeg";
   static const String pharmacy = "$imagePath/pharmacy.png";
