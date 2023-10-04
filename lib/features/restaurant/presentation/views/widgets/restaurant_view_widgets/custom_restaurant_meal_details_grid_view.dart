@@ -8,7 +8,13 @@ class CustomRestaurantMealDetailsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
+    return Center(
+      child: SingleChildScrollView(
+        child: Wrap(
+          children: List.generate(8, (index) =>   CustomRestaurantMealDetailsWidget(),)) ,
+        ),
+    );
+
       Center(
         child: GridView.count(
           padding:  EdgeInsets.zero,

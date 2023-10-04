@@ -27,7 +27,7 @@ class CustomRestaurantPageViewHeader extends StatelessWidget {
             itemBuilder:  (context, index) {
             return ElevatedButton(
               onPressed: (){
-                pageController.jumpToPage(index, );
+                pageController.jumpToPage(index);
                 // pageController.animateToPage(index, duration: const Duration(milliseconds: 250), curve: Curves.ease);
                 instance<RestaurantCubit>().pageViewSwapIndex(index);
               },
