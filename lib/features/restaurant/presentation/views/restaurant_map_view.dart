@@ -41,7 +41,7 @@ class _RestaurantMapViewState extends State<RestaurantMapView> {
               borderRadius: BorderRadius.zero,
               showMarker: false,
               onTap: (latLng){
-                instance<MapCubit>().convertNetworkImageToMapMarker();
+                //instance<MapCubit>().convertNetworkImageToMapMarker();
               },
             ),
             Positioned(
