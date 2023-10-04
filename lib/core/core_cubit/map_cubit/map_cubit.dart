@@ -40,6 +40,7 @@ class MapCubit extends Cubit<MapState> {
   BitmapDescriptor? defaultMarker;
   BitmapDescriptor? secUserMarker;
   BitmapDescriptor? driverMarker;
+  BitmapDescriptor? circleMarker;
   Position? currentPosition;
   CameraPosition? cameraPosition;
   double mapZoom = 14;
@@ -52,25 +53,26 @@ class MapCubit extends Cubit<MapState> {
   //TODO:Ui functions
 
   void convertNetworkImageToMapMarker() async{
-    String iconUrl ="https://w7.pngwing.com/pngs/753/264/png-transparent-map-marker-icon-google-map-maker-google-maps-map-marker-blue-angle-triangle-thumbnail.png";
-    Uint8List dataBytes;
-    var request = await http.get(Uri.parse(iconUrl));
-    Uint8List bytes = request.bodyBytes;
-    dataBytes = bytes;
-    emit(FetchImageMarker());
+    // String iconUrl ="https://w7.pngwing.com/pngs/753/264/png-transparent-map-marker-icon-google-map-maker-google-maps-map-marker-blue-angle-triangle-thumbnail.png";
+    // Uint8List dataBytes;
+    // var request = await http.get(Uri.parse(iconUrl));
+    // Uint8List bytes = request.bodyBytes;
+    // dataBytes = bytes;
+    // emit(FetchImageMarker());
 
     LatLng restaurantLocation = const LatLng(31.44377763284619, 31.691754944622517);
     emptyMarker.add(
         Marker(
          // icon: BitmapDescriptor.fromBytes(dataBytes.buffer.asUint8List(),size: const Size(20,20)),
-          icon: BitmapDescriptor.defaultMarkerWithHue(20),
+          icon: restaurantMarker ??BitmapDescriptor.defaultMarkerWithHue(20),
           markerId: const MarkerId('RestaurantLocation'),
           position: restaurantLocation,
         )
     );
     getUserLocationFromCache();
     emit(AddRestaurantAndUserMarker(restaurantLocation.latitude,restaurantLocation.longitude));
-    cameraMoving(restaurantLocation.latitude, restaurantLocation.longitude);
+    //cameraMoving(restaurantLocation.latitude, restaurantLocation.longitude);
+    cameraMoving(31.45295797598678, 31.69081181287766);
 
   }
 
@@ -78,8 +80,8 @@ class MapCubit extends Cubit<MapState> {
     emptyMarker.add(
         Marker(
           markerId: const MarkerId('UserLocation'),
-          position: const LatLng(31.45295797598678,31.69081181287766),
-          icon: BitmapDescriptor.defaultMarkerWithHue(90),
+          position: const LatLng(31.431891276316236, 31.678985618054863),
+          icon: circleMarker?? BitmapDescriptor.defaultMarkerWithHue(90),
         )
     );
   }
@@ -109,15 +111,17 @@ class MapCubit extends Cubit<MapState> {
 
   getCustomMarker() async {
     final Uint8List markerIcon = await getBytesFromAsset(ImageAssets.mapMarker, 80.w.toInt());
-    final Uint8List restaurantMarkerIcon = await getBytesFromAsset(ImageAssets.restaurantMarker, 80);
+    final Uint8List restaurantMarkerIcon = await getBytesFromAsset(ImageAssets.restaurantMarker, 100);
     final Uint8List defaultMarkerIcon = await getBytesFromAsset(ImageAssets.defaultMarker, 60);
-    final Uint8List userMarkerIcon = await getBytesFromAsset(ImageAssets.userMarker, 80);
-    final Uint8List driverMarkerIcon = await getBytesFromAsset(ImageAssets.driverMarker, 80);
+    final Uint8List userMarkerIcon = await getBytesFromAsset(ImageAssets.userMarker, 100);
+    final Uint8List driverMarkerIcon = await getBytesFromAsset(ImageAssets.driverMarker, 100);
+    final Uint8List circleMarkerIcon = await getBytesFromAsset(ImageAssets.circleMarker, 200);
     userMarker = BitmapDescriptor.fromBytes(markerIcon);
     restaurantMarker = BitmapDescriptor.fromBytes(restaurantMarkerIcon);
     defaultMarker = BitmapDescriptor.fromBytes(defaultMarkerIcon);
     secUserMarker = BitmapDescriptor.fromBytes(userMarkerIcon);
     driverMarker = BitmapDescriptor.fromBytes(driverMarkerIcon);
+    circleMarker = BitmapDescriptor.fromBytes(circleMarkerIcon);
     marker = Marker(
       markerId: const MarkerId('location'),
       position: instance<AppPreferences>().getDataFromSharedPreference(key:'lat') != null?

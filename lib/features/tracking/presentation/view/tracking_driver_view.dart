@@ -9,6 +9,7 @@ import '../../../../core/app/di.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/values_manager.dart';
+import '../../../../core/utils/functions.dart';
 import '../../../../core/utils/size_config.dart';
 import '../../../../core/widgets/custom_app_bar_widget.dart';
 import '../../../../core/widgets/custom_elevated_button_widget.dart';
@@ -57,8 +58,7 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
                   zoomGesturesEnabled: true,
                   scrollGesturesEnabled: true,
                   compassEnabled: false,
-                ),
-                TrackingMapCubit.get(context).state is GetPolyLineDataLoading?
+                ), TrackingMapCubit.get(context).state is GetPolyLineDataLoading?
                 Center(
                   child: Container(
                     color: Colors.redAccent,
@@ -120,7 +120,9 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
                               ),
                             ]),
                           const Spacer(),
-                          IconButton(onPressed: (){},
+                          IconButton(onPressed: (){
+                            makePhoneCall('+201156662456');
+                          },
                               icon: const Icon(
                                 CupertinoIcons.phone_circle_fill,
                                 color: ColorManager.successColor,

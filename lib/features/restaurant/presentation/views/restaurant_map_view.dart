@@ -36,11 +36,13 @@ class _RestaurantMapViewState extends State<RestaurantMapView> {
           alignment: Alignment.bottomCenter,
           children: [
             CustomMapWidget(
-              mapHeight: SizeConfig.screenHeight,
+              mapHeight: SizeConfig.screenHeight! ,
               getMyLocation: false,
               borderRadius: BorderRadius.zero,
               showMarker: false,
-              onTap: (latLng){},
+              onTap: (latLng){
+                instance<MapCubit>().convertNetworkImageToMapMarker();
+              },
             ),
             Positioned(
               top: AppSize.s0, right: AppSize.s0, left: AppSize.s0,

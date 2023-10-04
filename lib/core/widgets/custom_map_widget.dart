@@ -38,6 +38,7 @@ class CustomMapWidget extends StatelessWidget {
             child: GoogleMap(
               initialCameraPosition: instance<MapCubit>().initialPosition(),
               mapType: MapType.normal,
+
               onTap: onTap??(latLng){
                 instance<MapCubit>().getLocationDetailsByTapping(latLng);
                 //instance<MapCubit>().getLatLngOnMap(latLng);
@@ -51,7 +52,7 @@ class CustomMapWidget extends StatelessWidget {
                 // }
                 instance<MapCubit>().googleMapCompleter = Completer<GoogleMapController>();
                 instance<MapCubit>().googleMapCompleter!.complete(googleMapController);
-                instance<MapCubit>().mapController=googleMapController;
+                instance<MapCubit>().mapController = googleMapController;
                 if(getMyLocation!) {
                   instance<MapCubit>().getMyLocation(context);
                 }

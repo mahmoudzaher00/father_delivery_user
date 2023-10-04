@@ -1,10 +1,14 @@
 import 'package:father_delivery_user/features/cart/presentation/manager/cart_cubit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/app/app_prefs.dart';
 import '../../../../../core/app/di.dart';
+import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/resources/color_manager.dart';
+import '../../../../../core/resources/routes_manager.dart';
 import '../../../../../core/resources/values_manager.dart';
 import '../../../../../core/utils/size_config.dart';
 import 'cart_bottom_sheet_confirm_order_button_widget.dart';
@@ -67,21 +71,28 @@ class CartBottomSheetWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('العنوان',
-                            style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                                color: ColorManager.blackColor,fontWeight: FontWeight.bold)
+                        Container(
+                          height: 50,width: 50,
+                          padding: const EdgeInsets.all(8),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: ColorManager.whiteColor
+                          ),
+                          child: SvgPicture.asset(SvgAssets.primaryLocation)
                         ),
-                        const SizedBox(width: 10),
-                        SizedBox(
-                          width: SizeConfig.screenWidth! * 0.65,
+                        const SizedBox(width: 2),
+                        Container(
+                          padding: const EdgeInsets.only(top: 10),
+                          width: SizeConfig.screenWidth! * 0.68,
                           child: Text(
                               maxLines: 4,
                               instance<AppPreferences>().getDataFromSharedPreference(key:'zoneAddress').toString(),
-                              style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                              color: ColorManager.gray700,fontWeight: FontWeight.bold)
+                              style: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.bold)
                           ),
                         ),
-                        const Icon(Icons.edit_location_outlined)
+                        InkWell(
+                            onTap:()=>Navigator.pushReplacementNamed(context, Routes.confirmUserLocationMapRoute),
+                            child: SvgPicture.asset(SvgAssets.editSquare))
                       ],
                     ),
 

@@ -1,6 +1,5 @@
 import 'package:father_delivery_user/features/store/presentation/views/widgets/product_types_filter_list_widget.dart';
 import 'package:father_delivery_user/features/store/presentation/views/widgets/store_products_page_view_widget.dart';
-import 'package:father_delivery_user/features/store/presentation/views/widgets/store_products_search_widget.dart';
 import 'package:father_delivery_user/features/store/presentation/views/widgets/store_products_sliver_appbar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,30 +13,6 @@ class StoreProductsViewBodyWidget extends StatefulWidget {
 }
 
 class _StoreProductsViewBodyWidgetState extends State<StoreProductsViewBodyWidget> {
-  final PageController pageController = PageController(initialPage: 0,keepPage: false);
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        const StoreProductsSliverAppBarWidget(),
-        const StoreProductsSearchWidget(),
-        const SliverToBoxAdapter(child: SizedBox(height: AppSize.s20)),
-        ProductTypesListWidget(pageController: pageController),
-        StoreProductsPageViewWidget(pageController: pageController),
-      ],
-    );
-  }
-}
-
-class StoreProductsViewBodyWidget2 extends StatefulWidget {
-  const StoreProductsViewBodyWidget2({super.key});
-
-  @override
-  State<StoreProductsViewBodyWidget2> createState() => _StoreProductsViewBodyWidgetState2();
-}
-
-class _StoreProductsViewBodyWidgetState2 extends State<StoreProductsViewBodyWidget2> {
   final PageController pageController = PageController(initialPage: 0,keepPage: false);
 
   @override
@@ -61,14 +36,5 @@ class _StoreProductsViewBodyWidgetState2 extends State<StoreProductsViewBodyWidg
               Expanded(child: StoreProductsPageViewWidget(pageController: pageController)),
             ])
     );
-    //   CustomScrollView(
-    //   slivers: [
-    //     const StoreProductsSliverAppBarWidget(),
-    //     const StoreProductsSearchWidget(),
-    //     const SliverToBoxAdapter(child: SizedBox(height: AppSize.s20)),
-    //     ProductTypesListWidget(pageController: pageController),
-    //     StoreProductsPageViewWidget(pageController: pageController),
-    //   ],
-    // );
   }
 }

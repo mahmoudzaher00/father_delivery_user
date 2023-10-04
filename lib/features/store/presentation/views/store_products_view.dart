@@ -7,7 +7,7 @@ class StoreProductsView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return const Scaffold(
-       body: StoreProductsViewBodyWidget2()
+       body: StoreProductsViewBodyWidget()
    );
   }
 }

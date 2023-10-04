@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/resources/color_manager.dart';
@@ -138,10 +139,45 @@ class PageViewBodyWidget extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CustomImage(
-                        image:ImageAssets.medicine,
-                      isNetwork: false,
-                      height: AppSize.s100, width: AppSize.s120),
+                    Stack(
+                      alignment: AlignmentDirectional.topEnd,
+                      children: [
+                        const CustomImage(
+                            image:ImageAssets.medicine,
+                            isNetwork: false,
+                            height: AppSize.s100, width: AppSize.s120
+                        ),
+                        ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: ColorManager.throughLineColor,
+                              surfaceTintColor: Colors.transparent,
+                              foregroundColor: ColorManager.primaryOrange,
+                              padding: EdgeInsets.zero,
+                              elevation: 4,
+                              minimumSize: const Size(28, 28),
+                              shape: const CircleBorder()
+                          ),
+                          child: Container(height:28,
+                              width: 28,
+                              // margin: const EdgeInsets.all(8.0),
+                              decoration:   const BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [Color(0xffEF554A), Color(0xffFF8C69),]),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset(SvgAssets.cartIcon,height: 16),
+                                ],
+                              )),
+                        ),
+                      ],
+                    ),
                   ]),
               );
         });

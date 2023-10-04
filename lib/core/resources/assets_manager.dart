@@ -22,6 +22,7 @@ class ImageAssets {
   static const String medicine = "$imagePath/medicine.png";
   static const String profile = "$imagePath/profile.jpeg";
   static const String driverMarker = "$imagePath/driver_marker.png";
+  static const String circleMarker = "$imagePath/circleMarker.png";
 
 
 
@@ -56,6 +57,8 @@ class SvgAssets {
   static const String pricing = "$svgPath/pricing.svg";
   static const String termsIcon = "$svgPath/terms_icon.svg";
   static const String settings = "$svgPath/settings.svg";
+  static const String editSquare = "$svgPath/edit_square.svg";
+  static const String primaryLocation = "$svgPath/primaryLocation.svg";
 
 
 

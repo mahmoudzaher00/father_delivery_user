@@ -23,9 +23,7 @@ class ProductTypesListWidget extends StatelessWidget {
                 return InkWell(
                   borderRadius: BorderRadius.circular(6),
                   onTap: (){
-                    pageController.animateToPage(index,
-                        duration: const Duration(milliseconds: 250),
-                        curve: Curves.ease);
+                    pageController.jumpToPage(index);
                     StoreProductsCubit.get(context).changeProductTypeValue(index);
                   },
                   child: Container(
