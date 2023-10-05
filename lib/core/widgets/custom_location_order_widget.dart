@@ -1,9 +1,11 @@
+import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';
+import '../resources/routes_manager.dart';
 
 class CustomLocationOrderWidget extends StatelessWidget {
   final String text;
@@ -16,11 +18,18 @@ class CustomLocationOrderWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(text,
-          style: Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp,color: ColorManager.borderColor),
+        SizedBox(
+          width: SizeConfig.screenWidth!*.6,
+          child: Text(text,
+            style:
+            Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 16.sp,color: ColorManager.borderColor),
+            maxLines: 4,
+          ),
         ),
         IconButton(
-            onPressed: onPressed??() {},
+            onPressed: onPressed??() {
+            Navigator.pushNamed(context, Routes.confirmUserLocationMapRoute);
+            },
             padding: EdgeInsets.zero,
             tooltip: text.replaceAll('حدد', ''),
             visualDensity: const VisualDensity(vertical: -4, horizontal: -4),

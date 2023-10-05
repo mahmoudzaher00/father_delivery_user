@@ -23,7 +23,7 @@ class AudioPlayerCubit extends Cubit<AudioPlayerState> {
   void init() async{
     _playerStateChangedSubscription = _audioPlayer.onPlayerComplete.listen((state) async {
       await stop1();
-      emit(AudioPlayerStateChanged()); // You can emit a custom state if needed
+      emit(const AudioPlayerStateChanged()); // You can emit a custom state if needed
     });
 
     _positionChangedSubscription = _audioPlayer.onPositionChanged.listen((position) {
@@ -42,7 +42,7 @@ class AudioPlayerCubit extends Cubit<AudioPlayerState> {
       emit(const AudioPlayerPaused());
     } else {
       await _audioPlayer.play( kIsWeb ? ap.UrlSource(source) : ap.DeviceFileSource(source),);
-      emit( AudioPlayerPlaying());
+      emit( const AudioPlayerPlaying());
     }
   }
 
@@ -65,7 +65,7 @@ class AudioPlayerCubit extends Cubit<AudioPlayerState> {
       final position = value * duration!.inMilliseconds;
       _audioPlayer.seek(Duration(milliseconds: position.round()));
     }
-    emit(Seek());
+    emit(const Seek());
   }
   double getSliderValue() {
     return canSetValue && duration != null && position != null

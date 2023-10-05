@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../core/resources/assets_manager.dart';
 import '../../../../../../core/resources/color_manager.dart';
@@ -59,7 +57,7 @@ class CustomRestaurantDetailsListTile extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, Routes.restaurantMapRoute);
+              Navigator.pushReplacementNamed(context, Routes.restaurantMapRoute);
             },
             padding: EdgeInsets.zero,
             icon:

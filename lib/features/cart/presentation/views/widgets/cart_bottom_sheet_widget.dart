@@ -1,5 +1,4 @@
 import 'package:father_delivery_user/features/cart/presentation/manager/cart_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -86,7 +85,8 @@ class CartBottomSheetWidget extends StatelessWidget {
                           width: SizeConfig.screenWidth! * 0.68,
                           child: Text(
                               maxLines: 4,
-                              instance<AppPreferences>().getDataFromSharedPreference(key:'zoneAddress').toString(),
+                              instance<AppPreferences>().getDataFromSharedPreference(key: 'zoneAddress')??
+                                  'حدد موقع الإستلام',
                               style: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.bold)
                           ),
                         ),

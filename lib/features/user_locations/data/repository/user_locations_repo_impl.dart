@@ -18,14 +18,14 @@ class UserLocationsRepoImpl implements UserLocationRepo {
   @override
   Future<Either<Failure, SearchDataModel>> fetchSearchData(String? value,) async {
     try {
-      var resp = await apiService1
-          .getMapSearchData(endPoint: Constants.mapSearchUrl, parameters: {
+      var resp = await apiService1.getMapSearchData(endPoint: Constants.mapSearchUrl, parameters: {
         "api_key": "5b3ce3597851110001cf6248ba446ffbbaf74d328bd2e5899a08358e",
         "text": value,
         "size": "50",
         "boundary.country": "eg"
       });
       SearchDataModel searchData = SearchDataModel.fromJson(resp);
+      print(resp);
       return right(searchData);
     } on Exception catch (e) {
       print('<<<<<<$e>>>>>>>>>');

@@ -9,6 +9,11 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
 
+  void cleanup() {
+    instance<AuthInputData>().loginPhoneController.removeListener(formatInput);
+    // close();
+  }
+
   void formatInput() {
     if (instance<AuthInputData>().loginPhoneController.text.isEmpty) {
       return;
@@ -17,27 +22,19 @@ class LoginCubit extends Cubit<LoginState> {
 
     if (textInput.length > 10) {
       textInput = textInput.substring(0, 10); // Limit to 10 characters
-      }
+    }
     String formattedText = '';
     for (int i = 0; i < textInput.length; i++) {
       if (i % 3 == 0 && i != 0) {
         formattedText += ' '; // Add a space every 3 characters
-        }
+      }
       formattedText += textInput[i];
     }
-    instance<AuthInputData>().loginPhoneController.value =  instance<AuthInputData>().loginPhoneController.value.copyWith(
-        text: formattedText,
-        selection: TextSelection.collapsed(offset: formattedText.length),
-        );
+    instance<AuthInputData>().loginPhoneController.value =
+        instance<AuthInputData>().loginPhoneController.value.copyWith(
+              text: formattedText,
+              selection: TextSelection.collapsed(offset: formattedText.length),
+            );
     emit(LoginPhoneInputFormatState(formattedText));
-
-}
-
-
-
-
-
-
-
-
+  }
 }

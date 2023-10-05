@@ -1,6 +1,5 @@
 import 'package:father_delivery_user/core/resources/assets_manager.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
-import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';

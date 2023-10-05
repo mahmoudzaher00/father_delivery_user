@@ -13,29 +13,36 @@ class ProductTypesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppSize.s36,
+      height: AppSize.s40,
       child: BlocBuilder<StoreProductsCubit, StoreProductsState>(
         builder: (context, state) {
           return ListView.builder(
               itemCount: StoreProductsCubit.get(context).productsTypeList.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return InkWell(
-                  borderRadius: BorderRadius.circular(6),
-                  onTap: (){
-                    pageController.jumpToPage(index);
-                    StoreProductsCubit.get(context).changeProductTypeValue(index);
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: AppMargin.m4),
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p12),
-                    height: AppSize.s30,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: StoreProductsCubit.get(context).productTypeFilterValue == index ?
-                      ColorManager.primaryOrange :ColorManager.primaryGray,
+                return Padding(
+                  padding:  const EdgeInsets.symmetric(horizontal: AppMargin.m4,vertical: 3),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      pageController.jumpToPage(index);
+                      StoreProductsCubit.get(context).changeProductTypeValue(index);
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: StoreProductsCubit.get(context).productTypeFilterValue == index ?
+                        ColorManager.primaryOrange :ColorManager.primaryGray,
+                        surfaceTintColor: ColorManager.transparentColor,
+                        foregroundColor:  ColorManager.borderColor,
+                        shadowColor: ColorManager.shadowColor,
+                        elevation: 1,
+
+
+                        // shadowColor: ColorManager.shadowColor,
+                        padding: const EdgeInsets.symmetric(horizontal: AppPadding.p12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        )
                     ),
-                    alignment: Alignment.center,
+
                     child: Text(StoreProductsCubit.get(context).productsTypeList[index],
                         style: Theme.of(context).textTheme.displaySmall!.copyWith(
                           color: StoreProductsCubit.get(context).productTypeFilterValue == index ?

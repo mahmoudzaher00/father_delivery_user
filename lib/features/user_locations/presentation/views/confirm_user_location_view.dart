@@ -16,7 +16,7 @@ class ConfirmUserLocationMapView extends StatelessWidget{
     return WillPopScope(
       onWillPop: () async{
         //Navigator.pushReplacementNamed(context, Routes.restaurantRoute);
-        return false;
+        return true;
       },
       child: Scaffold(
         body: Stack(

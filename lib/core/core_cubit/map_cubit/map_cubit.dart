@@ -14,7 +14,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:http/http.dart' as http;
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart' as geocoding;
@@ -72,7 +71,7 @@ class MapCubit extends Cubit<MapState> {
     getUserLocationFromCache();
     emit(AddRestaurantAndUserMarker(restaurantLocation.latitude,restaurantLocation.longitude));
     //cameraMoving(restaurantLocation.latitude, restaurantLocation.longitude);
-    cameraMoving(31.45295797598678, 31.69081181287766);
+    cameraMoving(31.44377763284619, 31.691754944622517,mapZoom: 13.5);
 
   }
 
@@ -157,10 +156,10 @@ class MapCubit extends Cubit<MapState> {
     }
   }
 
-  Future cameraMoving(double lat, double lng) => mapController!.animateCamera(
+  Future cameraMoving(double lat, double lng, {double? mapZoom}) => mapController!.animateCamera(
     CameraUpdate.newCameraPosition(
       CameraPosition(
-        zoom: mapZoom,
+        zoom: mapZoom??14,
         target: LatLng(lat, lng),
       ),
     ),

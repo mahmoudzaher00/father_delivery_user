@@ -18,6 +18,7 @@ class TrackingMapCubit extends Cubit<TrackingMapState> {
   Set<Marker> markers = {};
   DrawLineDataModel? drawLineDataModel;
 
+
   Marker customMarker({required LatLng latLng,String? markerId,BitmapDescriptor? marker}) => Marker(
     markerId: MarkerId(markerId??'location'),
     position: latLng,
@@ -46,6 +47,7 @@ class TrackingMapCubit extends Cubit<TrackingMapState> {
               polylineId: const PolylineId("direction"),
               points: drawLineDataModel!.listOfPoints),
       );
+
       emit(GetPolyLineDataSuccess());
 
     }catch(e){
@@ -56,4 +58,5 @@ class TrackingMapCubit extends Cubit<TrackingMapState> {
     }
     return drawLineDataModel;
   }
+
 }

@@ -10,8 +10,13 @@ part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(RegisterInitial());
-  AuthInputData authInputData=AuthInputData();
   //TODO:Register Ui Function
+
+  void cleanup() {
+    instance<AuthInputData>().registerPhoneController.removeListener(formatInput);
+    // instance<AuthInputData>().registerPhoneController.dispose();
+    // close();
+  }
   void formatInput() {
     if (instance<AuthInputData>().registerPhoneController.text.isEmpty) {
       return;
@@ -41,7 +46,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   Future<void> close() {
     // TODO: implement close
     instance<AuthInputData>().registerPhoneController.removeListener(instance<RegisterCubit>().formatInput);
-    instance<AuthInputData>().registerPhoneController.dispose();
+    // instance<AuthInputData>().registerPhoneController.dispose();
 
     return super.close();
   }

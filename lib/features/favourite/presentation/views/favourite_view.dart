@@ -22,7 +22,7 @@ class FavouriteView extends StatelessWidget {
           ),
         ),
       ),
-      body:FavouriteViewBody() ,
+      body:const FavouriteViewBody() ,
     );
   }
 }

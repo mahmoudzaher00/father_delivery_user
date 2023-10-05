@@ -6,13 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/resources/assets_manager.dart';
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/resources/container_manager.dart';
+import '../../../../../../core/resources/routes_manager.dart';
 import '../../../../../../core/utils/play_audio_helper.dart';
 import '../../../../../../core/utils/size_config.dart';
 import '../../../../../../core/widgets/custom_elevated_button_widget.dart';
 import '../../../../../../core/widgets/custom_image_widget.dart';
 import '../custom_order_info_details_widget.dart';
 import '../custom_order_state_widget.dart';
-import '../new_order_view_widgets/custom_picked_image_list_view.dart';
 
 class OrderDetailsViewBody extends StatefulWidget {
   const OrderDetailsViewBody({Key? key}) : super(key: key);
@@ -273,6 +273,7 @@ class _OrderDetailsViewBodyState extends State<OrderDetailsViewBody> {
             ),
 
             CustomElevatedButtonWidget(
+                onPressed:()=>Navigator.pushNamed(context, Routes.trackingDriverRoute) ,
                 width: SizeConfig.screenWidth!,
                 buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ),
                 child: Text(
@@ -328,7 +329,7 @@ class _OrderDetailsViewBodyState extends State<OrderDetailsViewBody> {
                 }else
                 {
                   // AudioCubit.get(context).playRecording();
-                  playAudioHelper.play(arguments['audioFile']);
+                  playAudioHelper.play('https://edmarkk.com/maas/public/storage/tasks/October2023/files/1696377212.wav');
                 }
                 setState((){});
                 // widget.playAudioHelper.play(widget.model.body);

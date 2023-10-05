@@ -20,6 +20,7 @@ class NewOrderView extends StatelessWidget {
             style: Theme.of(context).textTheme.displayLarge!.copyWith(
               fontSize: 20.sp,
             ),
+
           ),
         ),
       ),

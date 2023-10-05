@@ -18,19 +18,20 @@ class CustomCreateAccountText extends StatelessWidget {
             TextSpan(
                 text: 'ليس لديك حساب؟  ',
                 style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                    fontSize: 14.sp,
+                    fontSize: 15.sp,
                     color: ColorManager.hintTextColor
                 )
             ),
             TextSpan(
                 text: 'تسجيل جديد',
-                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                  fontSize: 14.sp,
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  fontSize: 15.sp,
                   color: ColorManager.primaryOrange,
                   decoration: TextDecoration.underline,
                   decorationColor: ColorManager.primaryOrange,
                 ),
                 recognizer: TapGestureRecognizer()..onTap = () {
+
                   Navigator.pushNamed(context, Routes.registerRoute);
                 }),
           ])

@@ -5,8 +5,10 @@ import 'package:father_delivery_user/features/home/presentation/views/widgets/dr
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/app/di.dart';
 import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/resources/routes_manager.dart';
+import '../../manager/home_cubit/home_cubit.dart';
 import 'drawer_widgets/drawer_header.dart';
 import 'drawer_widgets/lang_widget.dart';
 
@@ -26,23 +28,33 @@ class DrawerWidget extends StatelessWidget {
 
             children: [
               const DrawerHeaderWidget(),
-              DrawerCustomItem(title: "تعديل بياناتي", image: SvgAssets.settings, onPressed: ()=>Navigator.pushNamed(context, Routes.editProfileRoute)),
+              DrawerCustomItem(title: "تعديل بياناتي", image: SvgAssets.settings, onPressed: () {
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
+                Navigator.pushNamed(context, Routes.editProfileRoute);
+
+              }),
               DrawerCustomItem(title: 'المفضلة',isIcon: true,icon:CupertinoIcons.heart,onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.favouriteRoute);
               }),
               DrawerCustomItem(title: 'طلباتي', image: SvgAssets.creditCard, imageSize: AppSize.s16, onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.myOrdersViewRoute);
               }),
               DrawerCustomItem(title: 'الفواتير', imageSize: AppSize.s16, image: SvgAssets.money,onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.orderInvoicesViewRoute);
               }),
               DrawerCustomItem(title: 'التسعيرات',image: SvgAssets.pricing,onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.deliveryPricingRoute);
               }),
               DrawerCustomItem(title: 'الشروط والأحكام',image: SvgAssets.termsIcon,onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.termsAndConditionsRoute);
               }),
               DrawerCustomItem(title: 'تواصل معنا',image: SvgAssets.contactUsIcon,onPressed: (){
+                instance<HomeCubit>().globalKey.currentState!.closeDrawer();
                 Navigator.pushNamed(context, Routes.contactUsRoute);
               }),
 

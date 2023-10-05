@@ -11,7 +11,7 @@ class CustomRestaurantMealDetailsGridView extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         child: Wrap(
-          children: List.generate(8, (index) =>   CustomRestaurantMealDetailsWidget(),)) ,
+          children: List.generate(8, (index) =>   const CustomRestaurantMealDetailsWidget(),)) ,
         ),
     );
 
@@ -20,7 +20,7 @@ class CustomRestaurantMealDetailsGridView extends StatelessWidget {
           padding:  EdgeInsets.zero,
           crossAxisCount: 2, // 2 items per row
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: List.generate(8, (index) => const CustomRestaurantMealDetailsWidget()),
         ),
       );

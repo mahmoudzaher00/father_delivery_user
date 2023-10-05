@@ -5,8 +5,6 @@ import 'package:father_delivery_user/core/widgets/custom_map_widget.dart';
 import 'package:father_delivery_user/features/restaurant/presentation/views/widgets/restaurant_map_view_widgets/restaurant_details_map_container_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/app/di.dart';
-import '../../../../core/core_cubit/map_cubit/map_cubit.dart';
 import '../../../../core/resources/routes_manager.dart';
 import '../../../../core/resources/values_manager.dart';
 
@@ -21,7 +19,7 @@ class _RestaurantMapViewState extends State<RestaurantMapView> {
 
   @override
   void initState() {
-    instance<MapCubit>().convertNetworkImageToMapMarker();
+    // instance<MapCubit>().convertNetworkImageToMapMarker();
     super.initState();
   }
   @override
@@ -39,9 +37,10 @@ class _RestaurantMapViewState extends State<RestaurantMapView> {
               mapHeight: SizeConfig.screenHeight! ,
               getMyLocation: false,
               borderRadius: BorderRadius.zero,
+              showNetworkMarker: true,
               showMarker: false,
               onTap: (latLng){
-                //instance<MapCubit>().convertNetworkImageToMapMarker();
+                // instance<MapCubit>().convertNetworkImageToMapMarker();
               },
             ),
             Positioned(

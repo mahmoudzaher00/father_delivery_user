@@ -38,24 +38,36 @@ class SliverAppBarWidget extends StatelessWidget {
         ),
         child: SvgPicture.asset(SvgAssets.splashBike),
       ),
-      leading: InkWell(
-        onTap: (){
-          instance<HomeCubit>().globalKey.currentState!.openDrawer();
-        },
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: AppMargin.m12,horizontal: AppMargin.m20),
+      leading: Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppMargin.m12,horizontal: AppMargin.m20),
+        child: DecoratedBox(
           decoration: BoxDecoration(
-            color: ColorManager.whiteColor,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: ContainerManager.shadow,
+          color: ColorManager.whiteColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: ContainerManager.shadow,
+        ),
+          child: ElevatedButton(
+            onPressed: ()=> instance<HomeCubit>().globalKey.currentState!.openDrawer(),
+            style: ElevatedButton.styleFrom(
+              alignment: Alignment.center,
+              padding: EdgeInsets.zero,
+              backgroundColor:ColorManager.whiteColor,
+              surfaceTintColor: ColorManager.whiteColor,
+              foregroundColor: ColorManager.gray300,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              )
+            ),
+            child:  const Icon(Icons.menu,size: AppSize.s28, color: ColorManager.blackColor),
           ),
-          child: const Icon(Icons.menu,size: AppSize.s28, color: ColorManager.blackColor),
         ),
       ),
+
       actions: [
         Container(
           height: AppSize.s44,
-          width: AppSize.s90,
+          width: 96,
           margin: const EdgeInsets.symmetric(horizontal: AppMargin.m20),
           decoration: BoxDecoration(
             color: ColorManager.whiteColor,
@@ -65,46 +77,57 @@ class SliverAppBarWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:  [
-              InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, Routes.cartRoute);
-                    },
-                  child: Badge(
+
+              IconButton(
+                  onPressed: ()=>   Navigator.pushNamed(context, Routes.cartRoute),
+                  padding: EdgeInsets.zero,
+                  icon: Badge(
                       smallSize: 10,
                       backgroundColor: ColorManager.primaryOrange,
-                      child: SvgPicture.asset(SvgAssets.shoppingCart)
+                      child: SvgPicture.asset(SvgAssets.shoppingCart,height: 24,)
                   )
               ),
-              InkWell(
-                onTap: (){
-                  Navigator.pushNamed(context, Routes.notificationRoute);
-                },
-                child: const Icon(CupertinoIcons.bell,
-                  size: AppSize.s28,
+              IconButton(
+                  onPressed: ()=> Navigator.pushNamed(context, Routes.notificationRoute),
+                  padding: EdgeInsets.zero,
+                  iconSize: 26,
                   color: ColorManager.blackColor,
-                ),
-              )
+                  icon: const Icon(CupertinoIcons.bell, )
+              ),
+
             ],
           ),
         ),
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(AppSize.s48),
-        child: TabBar(
-          physics: const BouncingScrollPhysics(),
-          controller: tabController,
-          labelColor:ColorManager.primaryOrange,
-          unselectedLabelColor:ColorManager.primaryOrange30,
-          indicatorColor:ColorManager.primaryOrange,
-          indicatorSize: TabBarIndicatorSize.tab,
-          indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
-          dividerColor: Colors.transparent,
-          labelStyle: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.bold),
-          tabs: const [
-            Tab(text: "المطاعم"),
-            Tab(text: "المتاجر العامة"),
-            Tab(text: "الطلبات الخاصة"),
-          ],
+        child: Theme(
+          data: ThemeData(
+            splashColor: ColorManager.extraLightOrange,
+
+
+          ),
+          child: TabBar(
+            physics: const BouncingScrollPhysics(),
+            controller: tabController,
+            indicator: const UnderlineTabIndicator(
+              borderSide: BorderSide(color: ColorManager.primaryOrange,width: 2),
+               borderRadius: BorderRadius.zero,
+            ),
+            labelColor:ColorManager.primaryOrange,
+            unselectedLabelColor:ColorManager.primaryOrange30,
+
+            indicatorColor:ColorManager.primaryOrange,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
+            dividerColor: Colors.transparent,
+            labelStyle: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.bold),
+            tabs: const [
+              Tab(text: "المطاعم"),
+              Tab(text: "المتاجر العامة"),
+              Tab(text: "الطلبات الخاصة"),
+            ],
+          ),
         ),
       ),
     );

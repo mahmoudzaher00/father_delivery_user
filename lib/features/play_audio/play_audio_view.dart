@@ -131,7 +131,7 @@ class PlayAudioContent extends StatelessWidget {
           height: 120,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-          margin: EdgeInsets.only(top: 12),
+          margin: const EdgeInsets.only(top: 12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: Colors.white,
@@ -171,13 +171,13 @@ class PlayAudioContent extends StatelessWidget {
                     final remainingText = formatDuration(remainingDuration);
                     return Text(
                       remainingText,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.red,
                         fontSize: 15,
                       ),
                     );
                   } else {
-                    return SizedBox(); // Hide the time when not playing
+                    return const SizedBox(); // Hide the time when not playing
                   }
                 },
               ),

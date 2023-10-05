@@ -1,3 +1,4 @@
+import 'package:father_delivery_user/core/app/app_prefs.dart';
 import 'package:father_delivery_user/core/app/di.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
 import 'package:father_delivery_user/core/resources/container_manager.dart';
@@ -43,7 +44,10 @@ class NewOrderViewBody extends StatelessWidget {
                 const CustomDeliveryTimeWidget(),
                 SizedBox(height: 12.h,),
                 const Divider(color: ColorManager.whiteColor, thickness: 2,),
-                const CustomLocationOrderWidget(text: 'حدد موقع الإستلام',),
+                 CustomLocationOrderWidget(text:
+                    instance<AppPreferences>().getDataFromSharedPreference(key: 'zoneAddress')??
+                        'حدد موقع الإستلام'
+                  ,),
                 SizedBox(height: 8.h,),
                 const Divider(color: ColorManager.whiteColor, thickness: 2,),
                 const CustomLocationOrderWidget(text: 'حدد موقع التسليم',),

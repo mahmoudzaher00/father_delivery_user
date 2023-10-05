@@ -1,3 +1,4 @@
+import 'package:father_delivery_user/core/widgets/custom_loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,6 +29,7 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
 
   @override
   void initState() {
+
     instance<TrackingMapCubit>().getPolyLineData(
       startPointLat: 31.447340394687288, startPointLng:31.685297484620047 ,
       endPointLat: 31.462351801738357, endPointLng: 31.687636621389956,
@@ -39,17 +41,20 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
   Widget build(BuildContext context) {
     return  WillPopScope(
       onWillPop: () async{
+        Navigator.pop(context);
         //Navigator.pushReplacementNamed(context, Routes.restaurantRoute);
         return false;
       },
       child: Scaffold(
         body: BlocBuilder<TrackingMapCubit, TrackingMapState>(
+
           builder: (context, state) {
+            print(state);
             return Stack(
               alignment: Alignment.bottomCenter,
               children: [
                 GoogleMap(
-                  initialCameraPosition: const CameraPosition(target: LatLng(31.447340394687288, 31.685297484620047), zoom: 14),
+                  initialCameraPosition: const CameraPosition(target: LatLng(31.447340394687288, 31.685297484620047), zoom: 13.2),
                   mapType: MapType.normal,
                   onMapCreated:(GoogleMapController googleMapController) {},
                   polylines: instance<TrackingMapCubit>().polyLines,
@@ -59,10 +64,9 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
                   scrollGesturesEnabled: true,
                   compassEnabled: false,
                 ), TrackingMapCubit.get(context).state is GetPolyLineDataLoading?
-                Center(
-                  child: Container(
-                    color: Colors.redAccent,
-                    height: 340,width: 340,
+                const Center(
+                  child: CustomLoadingWidget(
+                    loadingColor: ColorManager.primaryOrange,
                   ),
                 ):const SizedBox(),
                 Positioned(
@@ -121,7 +125,7 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
                             ]),
                           const Spacer(),
                           IconButton(onPressed: (){
-                            makePhoneCall('+201156662456');
+                            makePhoneCall('+201156643287');
                           },
                               icon: const Icon(
                                 CupertinoIcons.phone_circle_fill,
@@ -151,6 +155,7 @@ class _TrackingDriverViewState extends State<TrackingDriverView> {
                     ],
                   ),
                 ),
+
               ],
             );
             },

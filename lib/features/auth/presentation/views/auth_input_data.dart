@@ -15,8 +15,9 @@ import '../manager/registerDataCubit/register_data_cubit.dart';
 
 class AuthInputData{
   //TODO: Login Input Data & TextField Validation
-  final loginPhoneController = TextEditingController();
+  TextEditingController loginPhoneController = TextEditingController();
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+
   // GenericCubit<bool> visibleLoginPassword=GenericCubit<bool>(data: true);
 
   String? loginPhoneValidator(String? value) {
@@ -33,7 +34,7 @@ class AuthInputData{
   bool userImageEmpty = true;
   final picker = ImagePicker();
   final registerUserNameController = TextEditingController();
-  final registerPhoneController = TextEditingController();
+  TextEditingController registerPhoneController = TextEditingController();
   final registerEmailController = TextEditingController();
   final registerPasswordController = TextEditingController();
   final GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();

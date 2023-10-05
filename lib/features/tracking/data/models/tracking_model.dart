@@ -5,9 +5,9 @@ class DrawLineDataModel{
   DrawLineDataModel.froJson(Map<String ,dynamic> json){
     final list = json["features"][0]["geometry"]["coordinates"] as List;
 
-    list.forEach((element) {
+    for (var element in list) {
       listOfPoints.add(LatLng(element[1],element[0]));
-    });
+    }
 
   }
 }

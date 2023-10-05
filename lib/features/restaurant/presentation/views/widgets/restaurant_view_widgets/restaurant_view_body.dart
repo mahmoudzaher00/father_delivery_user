@@ -10,7 +10,7 @@ class RestaurantViewBody extends StatefulWidget {
   State<RestaurantViewBody> createState() => _RestaurantViewBodyState();
 }
 
-class _RestaurantViewBodyState extends State<RestaurantViewBody>{
+class _RestaurantViewBodyState extends State<RestaurantViewBody> with AutomaticKeepAliveClientMixin{
   final PageController _pageController = PageController(keepPage: true);
 
   @override
@@ -29,6 +29,10 @@ class _RestaurantViewBodyState extends State<RestaurantViewBody>{
         );
 
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive =>true;
 }
 
 

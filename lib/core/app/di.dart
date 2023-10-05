@@ -34,7 +34,6 @@ Future<void> initAppModule() async {
 
   instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
 
-
   // app prefs instance
 
   instance.registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
@@ -45,15 +44,14 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<OrdersInputData>(() => OrdersInputData());
   instance.registerLazySingleton<EditProfileInputData>(() => EditProfileInputData());
   instance.registerLazySingleton<DeliveryPricingInputData>(() => DeliveryPricingInputData());
-
   //TODO:Cubit instance
-   instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
-   // instance.registerSingleton<MapCubit>(MapCubit(instance.get<UserLocationsRepoImpl>()));
-   // instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
-   instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
-   instance.registerLazySingleton<TrackingMapCubit>(() => TrackingMapCubit());
-   instance.registerLazySingleton<CartCubit>(() => CartCubit());
-   instance.registerLazySingleton<MyOrdersCubit>(() => MyOrdersCubit());
+  instance.registerLazySingleton<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
+  // instance.registerSingleton<MapCubit>(MapCubit(instance.get<UserLocationsRepoImpl>()));
+  // instance.registerFactory<MapCubit>(() => MapCubit(instance.get<UserLocationsRepoImpl>()));
+  instance.registerLazySingleton<HomeCubit>(() => HomeCubit());
+  instance.registerLazySingleton<TrackingMapCubit>(() => TrackingMapCubit());
+  instance.registerLazySingleton<CartCubit>(() => CartCubit());
+  instance.registerLazySingleton<MyOrdersCubit>(() => MyOrdersCubit());
   instance.registerLazySingleton<LoginCubit>(() => LoginCubit());
   instance.registerLazySingleton<RegisterCubit>(() => RegisterCubit());
   instance.registerLazySingleton<RegisterDataCubit>(() => RegisterDataCubit());
@@ -63,6 +61,8 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<NewOrderCubit>(() => NewOrderCubit());
   instance.registerLazySingleton<EditProfileCubit>(() => EditProfileCubit());
 
+
+
   // network info
   // instance.registerLazySingleton<NetworkInfo>(
   //     () => NetworkInfoImpl(InternetConnectionChecker()));
@@ -70,16 +70,15 @@ Future<void> initAppModule() async {
   // dio factory
   instance.registerSingleton<ApiService1>(ApiService1(Dio()));
 
-
   // instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
   // Dio dio = await instance<DioFactory>().getDio();
 
   //app service client
   // instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
 
-
   // repository
-  instance.registerSingleton<UserLocationsRepoImpl>(UserLocationsRepoImpl(instance.get<ApiService1>()));
+  instance.registerSingleton<UserLocationsRepoImpl>(
+      UserLocationsRepoImpl(instance.get<ApiService1>()));
   // instance.registerSingleton<UserAddressRepoImpl>(UserAddressRepoImpl(instance.get<ApiService>()));
   // instance.registerSingleton<MapRepoImpl>(MapRepoImpl(instance.get<ApiService1>()));
   // instance.registerSingleton<MainRepoImpl>(MainRepoImpl(instance.get<ApiService>(),instance.get<ApiService1>()));

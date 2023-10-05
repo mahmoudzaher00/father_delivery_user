@@ -1,6 +1,5 @@
 import 'package:father_delivery_user/core/resources/assets_manager.dart';
 import 'package:father_delivery_user/core/resources/color_manager.dart';
-import 'package:father_delivery_user/core/resources/container_manager.dart';
 import 'package:father_delivery_user/core/resources/values_manager.dart';
 import 'package:father_delivery_user/core/utils/size_config.dart';
 import 'package:father_delivery_user/core/widgets/custom_image_widget.dart';
@@ -24,18 +23,20 @@ class RestaurantListViewWidget extends StatelessWidget {
         itemCount: 10,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context,index){
-          return InkWell(
-            onTap: (){
-              Navigator.pushNamed(context, Routes.restaurantRoute);
-            },
-            child: Container(
-              height: AppSize.s105,
-              margin: const EdgeInsets.symmetric(horizontal: AppMargin.m10,vertical: AppMargin.m10),
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10,vertical: AppPadding.p10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: ColorManager.primaryGray,
-                  boxShadow: ContainerManager.shadow
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppMargin.m10,vertical: AppMargin.m10),
+            child: ElevatedButton(
+              onPressed: () {   Navigator.pushNamed(context, Routes.restaurantRoute); },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor:  ColorManager.primaryGray,
+                  surfaceTintColor:  ColorManager.primaryGray,
+                  shadowColor:  ColorManager.primaryGray,
+                  foregroundColor:  ColorManager.borderColor,
+                  padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10,vertical: AppPadding.p10),
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  )
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

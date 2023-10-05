@@ -280,7 +280,7 @@ class _TrackOrderViewBodyState extends State<TrackOrderViewBody> {
             CustomElevatedButtonWidget(
                 width: SizeConfig.screenWidth!,
                  onPressed:()=>Navigator.pushNamed(context, Routes.trackingDriverRoute) ,
-                buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ),
+                buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w ,top: 12.h),
                 child: Text(
               'تتبع الطلب',
               style: Theme.of(context).textTheme.displayLarge!.copyWith(

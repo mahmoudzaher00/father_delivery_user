@@ -31,8 +31,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   }
   @override
   void dispose() {
-    instance<AuthInputData>().loginPhoneController.removeListener(instance<LoginCubit>().formatInput);
-    instance<AuthInputData>().loginPhoneController.dispose();
+    instance<LoginCubit>().cleanup();
     super.dispose();
   }
   @override

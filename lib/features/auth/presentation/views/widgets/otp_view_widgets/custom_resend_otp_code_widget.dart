@@ -22,7 +22,7 @@ class CustomResendOtpCodeWidget extends StatelessWidget {
             'ارسال الكود مرة أخرى',
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                  fontSize: 14.sp,
+                  fontSize: 15.sp,
                   color: ColorManager.hintTextColor,
                 ),
           ),

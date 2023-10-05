@@ -3,13 +3,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/color_manager.dart';
 import '../../../../../../core/resources/routes_manager.dart';
+import '../../../../../../core/widgets/custom_elevated_button_widget.dart';
 
 class CustomActiveAccountButton extends StatelessWidget {
   const CustomActiveAccountButton({super.key,});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return CustomElevatedButtonWidget(
+      buttonMargin: EdgeInsetsDirectional.only( start: 20, bottom: 18.h,end: 10),
+      onPressed: ()=> Navigator.pushNamed(context, Routes.activeAccountRoute),
+      buttonText: 'تفعيل الحساب',
+      buttonTextSize: 18.sp,
+    );
+      Container(
       height: 50,
       margin:  EdgeInsetsDirectional.only( start: 20, bottom: 18.h,end: 10),
       padding: EdgeInsets.zero,

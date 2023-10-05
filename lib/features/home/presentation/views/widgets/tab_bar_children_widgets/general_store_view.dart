@@ -13,10 +13,11 @@ class GeneralStoresView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return SingleChildScrollView(
+
      child: Column(
        children: [
          Container(
-           margin: const EdgeInsets.only(right: AppMargin.m18,left:AppMargin.m18,top: AppMargin.m18,bottom: AppMargin.m4),
+           margin: const EdgeInsets.only(right: AppMargin.m18,left:AppMargin.m18,top: AppMargin.m18,bottom: AppMargin.m12),
            padding: const EdgeInsets.symmetric(vertical: AppPadding.p10),
            decoration:  BoxDecoration(
              color: ColorManager.primaryGray,

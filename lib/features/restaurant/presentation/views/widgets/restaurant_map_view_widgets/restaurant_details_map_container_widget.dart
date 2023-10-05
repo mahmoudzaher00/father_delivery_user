@@ -15,7 +15,7 @@ class RestaurantDetailsMapContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppSize.s230,
+      height: 210,
       width: SizeConfig.screenWidth,
       padding: const EdgeInsets.symmetric(horizontal:AppSize.s14,vertical: AppSize.s8),
       color: ColorManager.whiteColor,

@@ -20,10 +20,11 @@ class CustomMapWidget extends StatelessWidget {
   final BorderRadius? borderRadius;
   final bool? showMarker;
   final bool? getMyLocation;
+  final bool? showNetworkMarker;
   final MapCreatedCallback? onMapCreated;
 
 
-  const CustomMapWidget({Key? key,  this.mapWidth,  this.mapHeight,  this.onTap, this.showMarker=true,  this.borderRadius, this.getMyLocation=true, this.onMapCreated, }) : super(key: key);
+  const CustomMapWidget({Key? key,  this.mapWidth,  this.mapHeight,  this.onTap, this.showMarker=true,  this.borderRadius, this.getMyLocation=true, this.onMapCreated, this.showNetworkMarker=false, }) : super(key: key);
 
 
   @override
@@ -52,9 +53,13 @@ class CustomMapWidget extends StatelessWidget {
                 // }
                 instance<MapCubit>().googleMapCompleter = Completer<GoogleMapController>();
                 instance<MapCubit>().googleMapCompleter!.complete(googleMapController);
+                bool? t;
                 instance<MapCubit>().mapController = googleMapController;
                 if(getMyLocation!) {
                   instance<MapCubit>().getMyLocation(context);
+                }
+                if(showNetworkMarker!) {
+                  instance<MapCubit>().convertNetworkImageToMapMarker();
                 }
 
                 // googleMapController.setMapStyle(MapManager.mapStyle);

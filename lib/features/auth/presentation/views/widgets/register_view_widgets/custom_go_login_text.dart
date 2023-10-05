@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/color_manager.dart';
+import '../../../../../../core/resources/routes_manager.dart';
 
 class CustomGoLoginText extends StatelessWidget {
   const CustomGoLoginText({super.key,});
@@ -17,20 +18,21 @@ class CustomGoLoginText extends StatelessWidget {
             TextSpan(
                 text: 'لديك حساب بالفعل؟  ',
                 style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                    fontSize: 14.sp,
+                    fontSize:15.sp,
                     color: ColorManager.hintTextColor
                 )
             ),
             TextSpan(
                 text: 'تسجيل الدخول',
-                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                  fontSize: 14.sp,
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  fontSize: 15.sp,
                   color: ColorManager.primaryOrange,
                   decoration: TextDecoration.underline,
                   decorationColor: ColorManager.primaryOrange,
                 ),
                 recognizer: TapGestureRecognizer()..onTap = () {
-                  Navigator.pop(context);
+                  Navigator.pushReplacementNamed(context, Routes.loginRoute);
+                  // Navigator.pop(context);
                 }),
           ])
       ),

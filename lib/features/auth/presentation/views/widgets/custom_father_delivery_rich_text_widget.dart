@@ -16,14 +16,14 @@ class CustomFatherDeliveryRichTextWidget extends StatelessWidget {
             TextSpan(
                 text: 'Father  ',
                 style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                    fontSize: 30.sp,
+                    fontSize: 28.sp,
                     color: ColorManager.primaryOrange
                 )
             ),
             TextSpan(
                 text: 'Delivery',
                 style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                    fontSize: 30.sp,
+                    fontSize: 28.sp,
                     color: ColorManager.primaryBlack
                 )
             ),

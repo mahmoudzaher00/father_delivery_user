@@ -16,7 +16,8 @@ class ServicesWidget extends StatelessWidget {
     return InkWell(
       onTap: (){
         Navigator.pop(context);
-        Navigator.pushReplacementNamed(context, Routes.homeRoute);
+        Navigator.pushNamedAndRemoveUntil(context, Routes.homeRoute, (route) => false);
+
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal:AppPadding.p8,vertical: AppPadding.p4),
