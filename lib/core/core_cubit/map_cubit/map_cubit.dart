@@ -145,6 +145,8 @@ class MapCubit extends Cubit<MapState> {
       addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
       addressList.first.administrativeArea : addressList.first.locality);
       instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
+      instance<AppPreferences>().putDataInSharedPreference(value: myLatLng.latitude , key: 'lat');
+      instance<AppPreferences>().putDataInSharedPreference(value: myLatLng.longitude , key: 'lng');
       cameraPosition = CameraPosition(target: myLatLng, zoom: mapZoom);
       mapController!.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
       marker = customMarker(myLatLng);
@@ -181,6 +183,8 @@ class MapCubit extends Cubit<MapState> {
       addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
       addressList.first.administrativeArea : addressList.first.locality);
       instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
+      instance<AppPreferences>().putDataInSharedPreference(value: latLng.latitude , key: 'lat');
+      instance<AppPreferences>().putDataInSharedPreference(value: latLng.longitude , key: 'lng');
       cameraMoving(latLng.latitude, latLng.longitude);
       marker = customMarker(latLng);
     } catch (e) {
@@ -198,6 +202,8 @@ class MapCubit extends Cubit<MapState> {
     addressList.first.subAdministrativeArea : (addressList.first.administrativeArea!.isNotEmpty ?
     addressList.first.administrativeArea : addressList.first.locality);
     instance<AppPreferences>().putDataInSharedPreference(value: zoneAddress , key: 'zoneAddress');
+    instance<AppPreferences>().putDataInSharedPreference(value: lat , key: 'lat');
+    instance<AppPreferences>().putDataInSharedPreference(value: lng , key: 'lng');
     cameraMoving(lat, lng);
     marker = customMarker(LatLng(lat, lng));
     emit(GoToSearchLocation(lat, lng));

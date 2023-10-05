@@ -85,8 +85,8 @@ class CartBottomSheetWidget extends StatelessWidget {
                           width: SizeConfig.screenWidth! * 0.68,
                           child: Text(
                               maxLines: 4,
-                              instance<AppPreferences>().getDataFromSharedPreference(key: 'zoneAddress')??
-                                  'حدد موقع الإستلام',
+                              instance<AppPreferences>().getDataFromSharedPreference(key: 'zoneAddress') == null ?
+                              'حدد موقع الإستلام':instance<AppPreferences>().getDataFromSharedPreference(key: 'zoneAddress').toString(),
                               style: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.bold)
                           ),
                         ),

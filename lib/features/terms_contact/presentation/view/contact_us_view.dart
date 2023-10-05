@@ -116,13 +116,13 @@ class ContactUsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     LottieWidget(lottieName: JsonAssets.whatsapp,onTap: (){
-                      OpenWhatsApp().openWhatsapp('+201066442320');
+                      OpenWhatsApp().openWhatsapp('+201156643287');
                     }),
                     LottieWidget(lottieName: JsonAssets.twitter ,onTap: (){
                       launchCustomUrl(context,"https://x.com/ValorINTEL?t=eN2HRS4r7hEuE3x0TKREcQ&s=09");
                     }),
                     LottieWidget(lottieName: JsonAssets.snapchat,onTap: (){
-                      launchCustomUrl(context,"");
+                      launchCustomUrl(context,"https://www.snapchat.com/add/mzaher566?share_id=58PJqWtA94E&locale=en-US");
                     }),
                     LottieWidget(lottieName: JsonAssets.instagram,onTap: (){
                       launchCustomUrl(context,"https://instagram.com/nsoo7y?igshid=MzRlODBiNWFlZA==");

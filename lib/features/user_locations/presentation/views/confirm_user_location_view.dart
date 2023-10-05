@@ -43,6 +43,7 @@ class ConfirmUserLocationMapView extends StatelessWidget{
             ),
             CustomElevatedButtonWidget(
                 width: SizeConfig.screenWidth!,
+                onPressed: ()=> Navigator.pop(context),
                 buttonMargin: EdgeInsetsDirectional.only(start: 25.w,end: 20.w,bottom: 25.h),
                 child: Text(
                     'تأكيد موقع الإستلام',
